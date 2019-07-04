@@ -19,7 +19,11 @@ export const MyMapComponent = compose(
   withGoogleMap
 )(props => (
   <GoogleMap
-    defaultZoom={10}
+    options={{
+      minZoom: 4,
+      maxZoom: 5
+    }}
+    zoom={4}
     defaultCenter={{ lat: 54.372158, lng: 18.638306 }}
   >
     {props.isMarkerShown && (
