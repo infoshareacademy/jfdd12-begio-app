@@ -1,0 +1,9 @@
+.eventInfoCard {
+    height: 200px;
+    width: 500px;
+    background-color: cadetblue;
+}
+
+.eventInfoCardHeader {
+    color: red;
+}
