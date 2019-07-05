@@ -4,8 +4,10 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker
+  InfoWindow
 } from "react-google-maps";
+
+import { MarkerList } from "./MarkerList";
 
 export const MyMapComponent = compose(
   withProps({
@@ -20,17 +22,26 @@ export const MyMapComponent = compose(
 )(props => (
   <GoogleMap
     options={{
-      minZoom: 4,
-      maxZoom: 5
+      minZoom: 10,
+      maxZoom: 20,
+      mapTypeControl: false,
+      fullscreenControl: false,
+      streetViewControl: false,
+      showingInfoWindow: true
     }}
-    zoom={4}
+    zoom={10}
     defaultCenter={{ lat: 54.372158, lng: 18.638306 }}
+    mapTypeControl={false}
   >
-    {props.isMarkerShown && (
-      <Marker
-        position={{ lat: 54.372158, lng: 18.638306 }}
-        onClick={props.onMarkerClick}
-      />
-    )}
+    <MarkerList />
   </GoogleMap>
 ));
+
+// {
+//   props.isMarkerShown && (
+//     <Marker
+//       position={{ lat: 54.372158, lng: 18.638306 }}
+//       onClick={props.onMarkerClick}
+//     />
+//   );
+// }
