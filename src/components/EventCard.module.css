@@ -1,0 +1,7 @@
+.EventCard {
+  margin: 0;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-flow: raw;
+  padding: 0;
+}
