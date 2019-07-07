@@ -6,3 +6,4 @@ export const EventName = () => {
         <a href="#" className={styles.eventName}>Nazwa Wydarzenia</a>
     )
 }
+
