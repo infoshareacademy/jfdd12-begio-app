@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {MyCalendar} from './components/Calendar'
+import MyCalendar from './components/Calendar'
 
 ReactDOM.render(<MyCalendar />, document.getElementById('root'));
 

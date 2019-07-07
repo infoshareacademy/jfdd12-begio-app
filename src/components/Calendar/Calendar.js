@@ -8,25 +8,31 @@ const localizer = momentLocalizer(moment)
 const events = [
     {
       'title': '10',
-      'start': new Date(2019, 7, 10),
-      'end': new Date(2019, 7, 10)
+      'allDay': true,
+      'start': new Date(2019, 6, 11),
+      'end': new Date(2019, 6, 11),
     },
     {
       'title': '20',
+      'allDay': true,
       'start': new Date(2019, 7, 8),
       'end': new Date(2019, 7, 8)
     }
 ]  
 
-export const MyCalendar = props => (
-  <div style={{ height: 700, width:800}}>
+
+const MyCalendar = props => (
+  <div style={{ height: 400, width:600}}>
     <Calendar
       localizer={localizer}
       events={events}
       views={{
-        month: true,
-        week: true
+        month: true
       }}
+      eventPropGetter={() => ({style: {backgroundColor: 'green', borderRadius: '50%', width: '50%', height: '50', textAlign: 'center', fontSize: '100', position: 'center', marginLeft: '25%'}})}
+      messages={{next:"Następny",previous:"Poprzedni",today:"Dziś"}}
     />
   </div>
 )
+
+export default MyCalendar
