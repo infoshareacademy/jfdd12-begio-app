@@ -1,24 +1,66 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import range from 'lodash/range';
+import styled from 'styled-components';
+import ItemsCarousel from 'react-items-carousel';
+
+const noOfItems = 4;
+const noOfCards = 1;
+const chevronWidth = 40;
+
+const Wrapper = styled.div`
+  padding: 0 ${chevronWidth}px;
+  max-width: 1000px;
+  margin: 0 auto;
+`;
+
+const SlideItem = styled.div`
+  height: 200px;
+  background: #EEE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+`;
+
+const carouselItems = range(noOfItems).map(index => (
+  <SlideItem key={index}>
+    <img src="https://media-cdn.tripadvisor.com/media/photo-s/12/ab/e8/e1/getlstd-property-photo.jpg"/>
+  </SlideItem>
+));
+
+class AutoPlayCarousel extends React.Component {
+  state = {
+    activeItemIndex: 0,
+  };
+
+  onChange = value => this.setState({ activeItemIndex: value });
+
+  render() {
+    return (
+      <Wrapper>
+        <ItemsCarousel
+          gutter={12}
+          numberOfCards={noOfCards}
+          activeItemIndex={this.state.activeItemIndex}
+          requestToChangeActive={this.onChange}
+          rightChevron={<button>{'>'}</button>}
+          leftChevron={<button>{'<'}</button>}
+          chevronWidth={chevronWidth}
+          outsideChevron
+          children={carouselItems}
+        />
+      </Wrapper>
+    );
+  }
+}
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header" />
+      <AutoPlayCarousel />
     </div>
   );
 }
