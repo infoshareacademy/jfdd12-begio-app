@@ -1,18 +1,10 @@
 import React from "react";
-import AutoPlayCarousel from "./components/AutoPlayCarousel";
-import { EventName } from "./components/EventName";
-import { EventDescription } from "./components/EventDescription";
-import { EventDate } from "./components/EventDate";
-import { EventPlace } from "./components/EventPlace";
+import EventView from "./components/EventView"
 
 function App() {
   return (
     <div className="App">
-      <EventName />
-      <AutoPlayCarousel />
-      <EventDate />
-      <EventDescription />
-      <EventPlace />
+     <EventView />
     </div>
   );
 }

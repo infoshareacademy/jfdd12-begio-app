@@ -9,7 +9,7 @@ const chevronWidth = 40;
 
 const Wrapper = styled.div`
   padding: 0 ${chevronWidth}px;
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
 `;
 
