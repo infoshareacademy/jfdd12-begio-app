@@ -1,5 +1,5 @@
 import React from "react";
 
 export const EventName = () => {
-  return <a href="#">Gdzie?</a>;
+  return <h1>Nazwa</h1>;
 };
