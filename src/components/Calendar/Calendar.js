@@ -9,8 +9,8 @@ const events = [
     {
       'title': '10',
       'allDay': true,
-      'start': new Date(2019, 6, 11),
-      'end': new Date(2019, 6, 11),
+      'start': new Date(2019, 0, 7),
+      'end': new Date(2019, 0, 8),
     },
     {
       'title': '20',
@@ -27,7 +27,8 @@ const MyCalendar = props => (
       localizer={localizer}
       events={events}
       views={{
-        month: true
+        month: true,
+        day: true
       }}
       eventPropGetter={() => ({style: {backgroundColor: 'green', borderRadius: '50%', width: '50%', height: '50', textAlign: 'center', fontSize: '100', position: 'center', marginLeft: '25%'}})}
       messages={{next:"Następny",previous:"Poprzedni",today:"Dziś"}}
