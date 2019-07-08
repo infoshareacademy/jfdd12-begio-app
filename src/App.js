@@ -1,12 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
 import "./App.css"
-import "./EventInfoCard.css"
-import { EventInfoCard } from "./components/EventInfoCard"
+import { EventList } from "./components/EventList"
 
 function App() {
+    const [myEvents, setMyEvents] = useState([])
+    const [events, setEvents] = useState([{ id: 0 }, { id: 1 }, { id: 2 }])
+
     return (
         <div className="App">
-            <EventInfoCard />
+            <EventList
+                myEvents={myEvents}
+                setFavourite={setMyEvents}
+                events={events}
+            />
         </div>
     )
 }
