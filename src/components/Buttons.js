@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./EventView.module.css"
 
 export const ExitButton = () => {
     return (
-        <button>X</button>
+        <button className={styles.exitButton}>X</button>
     )
 }
 
