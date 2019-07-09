@@ -7,10 +7,7 @@ export function EventListElement(props) {
     return (
         <>
             <li className="listElement">{event.title}</li>
-            <GoButton
-                toggleMyEvent={props.toggleMyEvent}
-                event={props.toggleMyEvent}
-            />
+            <GoButton toggleMyEvent={props.toggleMyEvent} event={props.event} />
         </>
     )
 }
