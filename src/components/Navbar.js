@@ -1,45 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "./logo.png";
+import UserLogo from "./userLogo.png"
+import './NavBar.css';
 export const Navbar = props => {
   return (
-    <nav
-      style={{
-        backgroundColor: "#EEE",
-        height: "100px",
-        width: "100%",
-        fontSize: "2em"
-      }}
-    >
-      <ul
-        style={{
-          marginTop: 0,
-          display: "flex",
-          listStyleType: "none"
-        }}
-      >
-        <li>
-          <img src={Logo} />
-          <NavLink
-            exact
-            className={"default-link"}
-            activeClassName={"active-link"}
-            to="/"
-          >
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            exact
-            className={"default-link"}
-            activeClassName={"active-link"}
-            to="/callender"
-          >
-            Todo app
-          </NavLink>
-        </li>
-      </ul>
+    <nav>
+      <div>
+
+        <p style={{ marginTop: "18px" }}>  <NavLink to="/" exact><img className="logo" src={Logo} /> Start</NavLink></p>
+
+        <p><NavLink to="/clock"><img className="UserLogo" src={UserLogo} />Profil</NavLink></p>
+      </div>
     </nav>
   );
 };

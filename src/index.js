@@ -16,13 +16,11 @@ const Root = () => {
     <Router>
       <div>
         <Navbar />
-        <div>
-          <Switch>
-            <Route exact path="/" component={App} />
-            <Route path="/callender" component={App} />
-            <Redirect from="/home" to="/" />
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route path="/callender" component={App} />
+          <Redirect from="/home" to="/" />
+        </Switch>
       </div>
     </Router>
   );

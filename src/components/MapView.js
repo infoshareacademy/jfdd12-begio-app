@@ -114,7 +114,7 @@ class Map extends React.Component {
 const WrappedMap = withScriptjs(withGoogleMap(Map))
 export function MapView() {
     return (
-        <div style={{ width: "600px", height: "400px" }}>
+        <div style={{ width: "100%", height: "400px" }}>
             <WrappedMap
                 googleMapURL={
                     "https://maps.googleapis.com/maps/api/js?key=AIzaSyCbDcLrfuv3vfFRvaLTfS5OeKdWTSoYzmw&v=3.exp&libraries=geometry,drawing,places"
