@@ -1,14 +1,15 @@
 import React from "react";
-import styles from "./EventView.module.css"
+import Button from '@material-ui/core/Button';
+import styles from "./EventView.module.css";
 
 export const ExitButton = () => {
     return (
-        <button className={styles.exitButton}>X</button>
+        <Button className={styles.exitButton}>X</Button>
     )
 }
 
 export const ButtonGo = () => {
     return (
-        <button>GO!</button>
+        <button className={styles.buttonGo}>GO!</button>
     )
 }

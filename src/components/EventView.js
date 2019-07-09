@@ -19,6 +19,7 @@ function EventView({ event }) {
       </div>
       <AutoPlayCarousel images={event.images} />
       <div className={styles.bottomView}>
+      <div className={styles.eventTime}>
         <img src={calendar} className={styles.calendar} alt="calendar" />
         <EventDate
           startYear={event.startDate.year}
@@ -30,12 +31,13 @@ function EventView({ event }) {
           endDay={event.endDate.day}
           endTime={event.endDate.time}
         />
-        <EventDescription description={event.description} />
-        <EventPlace
+          <EventPlace
           city={event.address.city}
           street={event.address.street}
           house={event.address.houseNumber}
-        />
+        /></div>
+        
+        <EventDescription description={event.description} />
       </div>
     </div>
   );
