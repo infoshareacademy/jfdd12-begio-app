@@ -21,10 +21,14 @@ function EventView({ event }) {
       <div className={styles.bottomView}>
         <img src={calendar} className={styles.calendar} alt="calendar" />
         <EventDate
-          year={event.startDate.year}
-          month={event.startDate.month}
-          day={event.startDate.day}
-          time={event.startDate.time}
+          startYear={event.startDate.year}
+          startMonth={event.startDate.month}
+          startDay={event.startDate.day}
+          startTime={event.startDate.time}
+          endYear={event.endDate.year}
+          endMonth={event.endDate.month}
+          endDay={event.endDate.day}
+          endTime={event.endDate.time}
         />
         <EventDescription description={event.description} />
         <EventPlace

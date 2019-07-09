@@ -3,7 +3,9 @@ import React from "react";
 export const EventDate = props => {
   return (
     <div>
-      {props.year} {props.month} {props.day} {props.time}
+      {props.startYear} {props.startMonth} {props.startDay} {props.startTime}
+      <br />
+      {props.endYear} {props.endMonth} {props.endDay} {props.endtTime}
     </div>
   );
 };
