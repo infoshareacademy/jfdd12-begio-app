@@ -1,5 +1,10 @@
 import React from "react";
 
-export const EventPlace = () => {
-  return <div>Gdzie?</div>;
+export const EventPlace = props => {
+  return (
+    <div>
+      {props.city}
+      <br /> {props.street} {props.house}
+    </div>
+  );
 };

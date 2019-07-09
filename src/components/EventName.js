@@ -1,5 +1,5 @@
 import React from "react";
 
-export const EventName = () => {
-  return <h1>Nazwa</h1>;
+export const EventName = props => {
+  return <h1>{props.name}</h1>;
 };
