@@ -3,6 +3,7 @@ body {
   margin-right: 2em;
   border: 3px solid rgb(68, 66, 105);
   border-radius: 10px;
+  /* background: url("./components/background.jpg"); */
 }
 .App {
   text-align: center;
