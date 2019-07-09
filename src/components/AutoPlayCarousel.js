@@ -23,12 +23,6 @@ const SlideItem = styled.div`
   font-weight: bold;
 `;
 
-const carouselItems = range(noOfItems).map(index => (
-  <SlideItem key={index}>
-    <img src="https://media-cdn.tripadvisor.com/media/photo-s/12/ab/e8/e1/getlstd-property-photo.jpg" />
-  </SlideItem>
-));
-
 class AutoPlayCarousel extends React.Component {
   state = {
     activeItemIndex: 0
@@ -48,7 +42,11 @@ class AutoPlayCarousel extends React.Component {
           leftChevron={<button>{"<"}</button>}
           chevronWidth={chevronWidth}
           outsideChevron
-          children={carouselItems}
+          children={this.props.images.map((url, index) => (
+            <SlideItem key={index}>
+              <img src={url} alt="zdjecie wydarzenia" />
+            </SlideItem>
+          ))}
         />
       </Wrapper>
     );

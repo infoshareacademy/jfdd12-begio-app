@@ -17,7 +17,7 @@ function EventView({ event }) {
         <ButtonGo />
         <ExitButton />
       </div>
-      <AutoPlayCarousel />
+      <AutoPlayCarousel images={event.images} />
       <div className={styles.bottomView}>
         <img src={calendar} className={styles.calendar} alt="calendar" />
         <EventDate
