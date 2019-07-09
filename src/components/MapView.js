@@ -7,7 +7,7 @@ import {
     InfoWindow
 } from "react-google-maps"
 import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer"
-import events from "./events.json"
+import events from "../events.json"
 
 class Map extends React.Component {
     state = {
@@ -112,7 +112,7 @@ class Map extends React.Component {
     }
 }
 const WrappedMap = withScriptjs(withGoogleMap(Map))
-export default function Map() {
+export function MapView() {
     return (
         <div style={{ width: "600px", height: "400px" }}>
             <WrappedMap
