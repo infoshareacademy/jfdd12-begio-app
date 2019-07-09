@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import "./App.css"
 import { EventList } from "./components/EventList"
+import events from "./events.json"
 
 function App() {
     const [myEvents, setMyEvents] = useState([])
-    const [events, setEvents] = useState([{ id: 0 }, { id: 1 }, { id: 2 }])
 
     return (
         <div className="App">
