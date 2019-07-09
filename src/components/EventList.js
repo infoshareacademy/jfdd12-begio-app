@@ -8,7 +8,10 @@ export class EventList extends Component {
             <div>
                 <ul className="list">
                     {this.props.events.map(event => (
-                        <EventListElement toogleMyEvent={event} />
+                        <EventListElement
+                            // toogleMyEvent={event}
+                            event={event}
+                        />
                     ))}
                 </ul>
             </div>
