@@ -8,6 +8,10 @@ import { MapView } from "./components/MapView"
 function App() {
     const [currentUser, setCurrentUser] = useState(users[0])
     const [myEvents, setMyEvents] = useState([])
+
+    function toogleMyEvent() {
+        setCurrentUser(currentUser.events.push())
+    }
     return (
         <div className="App">
             <MapView />
@@ -15,6 +19,7 @@ function App() {
                 myEvents={myEvents}
                 setFavourite={setMyEvents}
                 events={events}
+                toogleMyEvent={this.toogleMyEvent}
             />
             {currentUser.name}
         </div>
