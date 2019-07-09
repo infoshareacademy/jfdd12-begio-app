@@ -1,0 +1,199 @@
+{
+  "features": [
+    {
+      "id": "8f8b0e9e-7c6d-4d41-9131-d70322d58180",
+      "title": "Kino letnie",
+      "date": {
+        "year": 2019,
+        "month": 6,
+        "day": 22
+      },
+      "address": {
+        "city": "Gdańsk",
+        "street": "Wajdeloty",
+        "houseNumber": "3",
+        "location": {
+          "lat": 54.38185,
+          "lng": 18.61312
+        }
+      },
+      "images": [
+        "https://live.staticflickr.com/8310/7911049890_e96a1a65d2_b.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/2/2f/Filmnaechte.jpg",
+        "https://www.goldenglobes.com/sites/default/files/articles/cover_images/bo_modern_times_piazza_2.jpg",
+        "https://live.staticflickr.com/4212/35406275492_01e8f6c089_b.jpg"
+      ]
+    },
+    {
+      "id": "91cf5f61-3171-49bd-b217-4fa2efda16c3",
+      "title": "Jazz festival",
+      "date": {
+        "year": 2019,
+        "month": 6,
+        "day": 20
+      },
+      "address": {
+        "city": "Gdańsk",
+        "street": "Aleja Wojska Polskiego",
+        "houseNumber": "31",
+        "location": {
+          "lat": 54.38764,
+          "lng": 18.58332
+        }
+      },
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/b/b5/The_Oslo_Jazz_Festival_Orchestra_2016_Victoria_Oslo_Jazzfestival_%28221311%29.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/0/02/Montreux_Jazz_Festival.jpg",
+        "https://live.staticflickr.com/1188/721462049_7ea78efb4e_z.jpg",
+        "https://live.staticflickr.com/1807/42552936644_54a291fde3_b.jpg"
+      ]
+    },
+    {
+      "id": "54015806-6bcf-48ac-8ac4-41f3832ff597",
+      "title": "Wystawa Archipelag",
+      "date": {
+        "year": 2019,
+        "month": 6,
+        "day": 15
+      },
+      "address": {
+        "city": "Gdańsk",
+        "street": "Dmowskiego",
+        "houseNumber": "15",
+        "location": {
+          "lat": 54.37931,
+          "lng": 18.60713
+        }
+      },
+      "images": ["https://cdn.pixabay.com/photo/2014/12/23/12/17/fjallbacka-578267_960_720.jpg", "https://c.pxhere.com/photos/82/21/crete_greece_beach_sea_the_stones_the_sun_weather_holidays-780701.jpg!d", "https://cdn.pixabay.com/photo/2015/02/17/15/13/crane-639488_960_720.jpg"]
+    },
+    {
+      "id": "ba228b12-f658-42e3-9a5b-2cd3fffd8f93",
+      "title": "Spektakl Zaczarowany Ołówek",
+      "date": {
+        "year": 2019,
+        "month": 6,
+        "day": 25
+      },
+      "address": {
+        "city": "Gdańsk",
+        "street": "Aleja Grunwaldzka",
+        "houseNumber": "16",
+        "location": {
+          "lat": 54.375,
+          "lng": 18.61799
+        }
+      },
+      "images": ["https://upload.wikimedia.org/wikipedia/commons/6/68/Budynek_Miejskiego_Teatr_Miniatura_z_naprzeciwka.jpg", "https://upload.wikimedia.org/wikipedia/commons/1/14/Teatr_Baj_Pomorski_w_Toruniu.jpg", "https://backgroundcheckall.com/wp-content/uploads/2017/12/theatre-background-5.jpg"]
+    },
+    {
+      "id": "370006c1-cbc9-41a7-a57a-1b410e1c21d4",
+      "title": "Stand-up",
+      "date": {
+        "year": 2019,
+        "month": 6,
+        "day": 17
+      },
+      "address": {
+        "city": "Gdańsk",
+        "street": "Miedziana",
+        "houseNumber": "2",
+        "location": {
+          "lat": 54.38477,
+          "lng": 18.59578
+        }
+      },
+      "images": [
+        "https://c1.staticflickr.com/6/5624/30430747175_9bdf26faef_b.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/9/9e/Donovan_Strain_performing_stand-up_at_Flappers_Comedy_Club_in_Burbank%2C_CA_2013.jpg",
+        "https://archive.defense.gov/dodcmsshare/photoessay/2013-11/hires_131107-D-VO565-018c.jpg",
+        "https://c1.staticflickr.com/9/8338/8226486199_3589462a78_b.jpg"
+      ]
+    },
+    {
+      "id": "cd4d7e87-ab69-43ce-8a5f-4fd28bdb7ee7",
+      "title": "Salsa",
+      "date": {
+        "year": 2019,
+        "month": 6,
+        "day": 29
+      },
+      "address": {
+        "city": "Gdańsk",
+        "street": "Moniuszki",
+        "houseNumber": "3",
+        "location": {
+          "lat": 54.38812,
+          "lng": 18.58722
+        }
+      },
+      "images": [
+        "https://media.defense.gov/2008/Apr/30/2000626436/780/780/0/080429-F-0870P-002.JPG",
+        "https://www.tendenci.com/media/cached/photos/658/640x640/constrain/90/2012-iFest-Opening-Ceremony-Photos-by-Derek-Key-Schipul-Web-Design-25-c788b.jpg",
+        "https://live.staticflickr.com/3459/3356502357_5e9426af92_b.jpg"
+      ]
+    },
+    {
+      "id": "ccd7609a-727a-40be-a793-94f5bfc351f9",
+      "title": "Targi mody",
+      "date": {
+        "year": 2019,
+        "month": 6,
+        "day": 18
+      },
+      "address": {
+        "city": "Gdańsk",
+        "street": "Słowackiego",
+        "houseNumber": "23",
+        "location": {
+          "lat": 54.38015,
+          "lng": 18.58501
+        }
+      },
+      "images": ["https://upload.wikimedia.org/wikipedia/commons/6/62/Claudia_Bertolero_Miami_Fashion_Week.jpg", "https://live.staticflickr.com/2828/33143868804_1454c053f2_b.jpg", "https://pixnio.com/free-images/2018/06/29/2018-06-29-22-43-33-1200x675.jpg"]
+    },
+    {
+      "id": "b2f76419-5f6d-4823-90ab-4d0cdd719df1",
+      "title": "Beer Fest",
+      "date": {
+        "year": 2019,
+        "month": 7,
+        "day": 9
+      },
+      "address": {
+        "city": "Gdańsk",
+        "street": "Grunwaldzka",
+        "houseNumber": "161",
+        "location": {
+          "lat": 54.3837,
+          "lng": 18.59727
+        }
+      },
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/2/2b/VIVA_Cerveza%21_Festival_2016%2C_Quito%2C_Ecuador..jpg",
+        "https://farm3.staticflickr.com/2897/33354458063_b344003741_b.jpg",
+        "https://media.defense.gov/2012/Nov/05/2000099611/-1/-1/0/121102-F-NI784-135.JPG",
+        "https://cdn.pixabay.com/photo/2017/06/04/11/00/beer-2370783_960_720.jpg"
+      ]
+    },
+    {
+      "id": "81e01d6e-4af0-4cee-a97b-63f453f5e749",
+      "title": "Almost Maraton",
+      "date": {
+        "year": 2019,
+        "month": 7,
+        "day": 1
+      },
+      "address": {
+        "city": "Gdańsk",
+        "street": "Kilińskiego",
+        "houseNumber": "32",
+        "location": {
+          "lat": 54.38589,
+          "lng": 18.60542
+        }
+      },
+      "images": ["https://cdn.pixabay.com/photo/2018/05/30/16/22/total-3441824_960_720.jpg", "https://upload.wikimedia.org/wikipedia/commons/9/97/Maraton_de_Lausanne_%282974133055%29.jpg", "https://farm5.staticflickr.com/4881/46306554732_52d583be46_b.jpg"]
+    }
+  ]
+}
