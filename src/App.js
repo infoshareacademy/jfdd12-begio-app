@@ -6,7 +6,6 @@ import { Map } from "./components/Map"
 
 function App() {
     const [myEvents, setMyEvents] = useState([])
-
     return (
         <div className="App">
             <Map />
