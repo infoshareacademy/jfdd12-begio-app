@@ -1,0 +1,20 @@
+[
+    {
+      "id": "28b919ba-7570-477a-9fe1-67d7729d5bb5",
+      "name": "Janek",
+      "profile_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiaCvj_ZxdhHfRuNzF-gqssaiTv9Tg17ifFG2vBzlaWJ32Z0Q1",
+      "events": []
+    },
+    {
+      "id": "c1cd9374-5486-4ef1-b9ee-92ce6734cb4e",
+      "name": "Kasia",
+      "profile_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6ZqEKfT-1DmCK7_9vewowWPJ-aZMOk-cUAkBIcXS4Y__Ku4Jv",
+      "events": []
+    },
+    {
+      "id": "50370ff9-cfe9-496f-8b82-95b6a430c713",
+      "name": "Halina",
+      "profile_image": "https://live.staticflickr.com/7913/31610301797_cdedce4760_b.jpg",
+      "events": []
+    }
+]
