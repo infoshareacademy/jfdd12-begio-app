@@ -3,7 +3,9 @@ import {Calendar, momentLocalizer} from 'react-big-calendar'
 import moment from 'moment'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import 'moment/locale/pl'
+import eventsJson from "../../events.json";
 
+console.log(eventsJson)
 const localizer = momentLocalizer(moment) 
 const events = [
     {
