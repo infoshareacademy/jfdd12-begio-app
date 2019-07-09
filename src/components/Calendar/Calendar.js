@@ -7,12 +7,18 @@ import 'moment/locale/pl'
 const localizer = momentLocalizer(moment) 
 
 
-function EventsCalendar(events){
-  console.log(events)
+function EventsCalendar(props){
+  const userEvents = props.events.map(event => 
+    Object.assign({}, {
+   'title': event.title,
+   'start': new Date(event.startDate.year, event.startDate.month - 1 , event.startDate.day, event.startDate.time[0], event.startDate.time[0]),
+   'end': new Date(event.endDate.year, event.endDate.month - 1, event.endDate.day, event.endDate.time[0], event.endDate.time[0])
+ }))
+  console.log(props.events)
   return  <div style={{ height: 600, width:1000}}>
   <Calendar
     localizer={localizer}
-    events={events.events}
+    events={userEvents}
     views={{
       month: true,
       day: true
