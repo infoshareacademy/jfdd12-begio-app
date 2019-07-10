@@ -8,7 +8,7 @@ import { Carousel } from 'react-responsive-carousel';
 export function PhotoGallery(props) {
     return <>
         <div style={{
-            width: "50%",
+            width: "400px",
             margin: "0 auto"
         }}>
 
