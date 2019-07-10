@@ -1,14 +1,18 @@
 {
-  "name": "jfdd12-begio-app",
+  "name": "mapkatesty",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.2.0",
     "lodash": "^4.17.11",
+    "react-items-carousel": "^2.3.6",
+    "google-map-react": "^1.1.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-items-carousel": "^2.3.6",
-    "react-scripts": "3.0.1"
+    "react-google-maps": "^9.4.5",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-toggle-switch": "^3.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
