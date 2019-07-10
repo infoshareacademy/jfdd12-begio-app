@@ -8,7 +8,7 @@ import {
 } from "react-google-maps";
 import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer";
 import events from "../events.json";
-
+import { Detal } from "./Detal"
 import Modal from "react-modal";
 class Map extends React.Component {
   state = {
@@ -19,12 +19,12 @@ class Map extends React.Component {
   setSelectedEvent = change => {
     change
       ? this.setState({
-          selectedEvent: change
-        })
+        selectedEvent: change
+      })
       : this.setState({
-          selectedEvent: change,
-          showEventDetails: false
-        });
+        selectedEvent: change,
+        showEventDetails: false
+      });
   };
 
   toggleEventDetails = () => {
@@ -99,9 +99,9 @@ class Map extends React.Component {
                     {this.state.selectedEvent.address.houseNumber}
                     <br />
                     <b>
-                      {this.state.selectedEvent.date.day}.
-                      {this.state.selectedEvent.date.month}.
-                      {this.state.selectedEvent.date.year}
+                      {this.state.selectedEvent.startDate.day}.
+                      {this.state.selectedEvent.startDate.month}.
+                      {this.state.selectedEvent.startDate.year}
                     </b>
                   </p>
                   <button
@@ -124,14 +124,21 @@ class Map extends React.Component {
             isOpen={this.state.showEventDetails}
             onRequestClose={this.toggleEventDetails}
           >
-            <button onClick={this.toggleEventDetails}>close</button>
-            <h1> EVENT DETAILS </h1>
-            <h2> {this.state.selectedEvent.title}</h2>
-            <h3>
-              {this.state.selectedEvent.date.day}.
-              {this.state.selectedEvent.date.month}.
-              {this.state.selectedEvent.date.year}
-            </h3>
+            <button style={{ padding: "10px", cursor: "pointer", float: "right", borderRadius: "8px", color: "white", border: "none", background: "rgb(68, 66, 105)" }} onClick={this.toggleEventDetails}>x</button>
+
+            <Detal title={this.state.selectedEvent.title}
+              city={this.state.selectedEvent.address.city}
+              street={this.state.selectedEvent.address.street}
+              houseNumber={this.state.selectedEvent.address.houseNumber}
+              day={this.state.selectedEvent.startDate.day}
+              month={this.state.selectedEvent.startDate.month}
+              year={this.state.selectedEvent.startDate.year}
+              photoOne={this.state.selectedEvent.images[0]}
+              photoTwo={this.state.selectedEvent.images[1]}
+              photoThree={this.state.selectedEvent.images[2]}
+              description={this.state.selectedEvent.description} />
+
+
           </Modal>
         )}
       </div>
