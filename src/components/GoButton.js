@@ -6,11 +6,15 @@ export class GoButton extends Component {
     state = {
         switched: false
     }
+
     toggleSwitch = () => {
-        this.props.toggleMyEvent(this.props.event.id)
         this.setState(prevState => {
             return { switched: !prevState.switched }
         })
+        // debugger
+        this.state.switched
+            ? console.log(`Nie idę na ${this.props.event.id}`)
+            : this.props.addMyEvent(this.props.event.id)
     }
 
     render() {
@@ -21,7 +25,10 @@ export class GoButton extends Component {
                 className="switch"
             >
                 <i class="material-icons">GO!</i>
+                <p>{this.props.event.id}</p>
             </Switch>
         )
     }
 }
+
+// this.props.addMyEvent(this.props.event.id)

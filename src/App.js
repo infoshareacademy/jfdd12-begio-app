@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "./App.css"
 import { EventList } from "./components/EventList"
 import events from "./events.json"
@@ -9,8 +9,11 @@ function App() {
     const [currentUser, setCurrentUser] = useState(users[0])
     const [myEvents, setMyEvents] = useState([])
 
-    function toogleMyEvent() {
-        setCurrentUser(currentUser.events.push())
+    useEffect(() => {
+        console.log(myEvents)
+    }, [myEvents])
+    const addMyEvent = id => {
+        setMyEvents([...myEvents, id])
     }
     return (
         <div className="App">
@@ -19,7 +22,7 @@ function App() {
                 myEvents={myEvents}
                 setFavourite={setMyEvents}
                 events={events}
-                toogleMyEvent={this.toogleMyEvent}
+                addMyEvent={addMyEvent}
             />
             {currentUser.name}
         </div>
