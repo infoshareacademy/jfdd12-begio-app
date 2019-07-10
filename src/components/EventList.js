@@ -10,6 +10,7 @@ export class EventList extends Component {
                     {this.props.events.map(event => (
                         <EventListElement
                             addMyEvent={this.props.addMyEvent}
+                            removeMyEvent={this.props.removeMyEvent}
                             event={event}
                         />
                     ))}

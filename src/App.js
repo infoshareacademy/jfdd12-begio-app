@@ -15,6 +15,13 @@ function App() {
     const addMyEvent = id => {
         setMyEvents([...myEvents, id])
     }
+    const removeMyEvent = id => {
+        const eventToDelete = myEvents.find(eventId => eventId === id)
+        const eventsWithDeletedEvent = myEvents.filter(
+            eventId => eventId !== eventToDelete
+        )
+        setMyEvents([...eventsWithDeletedEvent])
+    }
     return (
         <div className="App">
             <MapView />
@@ -23,6 +30,7 @@ function App() {
                 setFavourite={setMyEvents}
                 events={events}
                 addMyEvent={addMyEvent}
+                removeMyEvent={removeMyEvent}
             />
             {currentUser.name}
         </div>

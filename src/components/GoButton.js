@@ -13,7 +13,7 @@ export class GoButton extends Component {
         })
         // debugger
         this.state.switched
-            ? console.log(`Nie idę na ${this.props.event.id}`)
+            ? this.props.removeMyEvent(this.props.event.id)
             : this.props.addMyEvent(this.props.event.id)
     }
 
