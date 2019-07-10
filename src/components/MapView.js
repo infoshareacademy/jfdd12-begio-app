@@ -90,7 +90,7 @@ class Map extends React.Component {
                     src={this.state.selectedEvent.images[0]}
                   />
                   <p>
-                    <p onClick={this.toggleEventDetails}>
+                    <p style={{ color: "blue" }} onClick={this.toggleEventDetails}>
                       {this.state.selectedEvent.title}
                     </p>
                     <br />
