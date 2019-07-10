@@ -3,17 +3,18 @@ import { GoButton } from "./GoButton"
 import "../EventListElement.css"
 
 export function EventListElement(props) {
-    const { event } = props
+    const { event, addMyEvent, removeMyEvent } = props
+    const liStyle = { margin: "20px", display: "block", overflow: "hidden" }
     return (
         <>
-            <li className="listElement">
-                {event.title} - {event.address.street}{" "}
-                {event.address.houseNumber}
+            <li style={liStyle} className="listElement">
+                {event.title}
             </li>
+            <p>Id wydarzenia: {event.id}</p>
             <GoButton
-                toggleMyEvent={props.toggleMyEvent}
-                event={props.toggleMyEvent}
-                id={event.id}
+                addMyEvent={addMyEvent}
+                removeMyEvent={removeMyEvent}
+                event={event}
             />
         </>
     )
