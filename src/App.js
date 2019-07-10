@@ -48,7 +48,7 @@ function App() {
           </div>
           )} />
           <Route path="/callender" component={App} />
-          <Route path="/userProfile" render={() => (<EventsCalendar events = {events}/>)} />
+          <Route path="/userProfile" render={() => (<EventsCalendar events = {events} userEvents = {myEvents}/>)} />
           <Redirect from="/home" to="/" />
         </Switch>
       </div>
