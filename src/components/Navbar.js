@@ -10,7 +10,7 @@ export const Navbar = props => {
 
         <p style={{ marginTop: "18px" }}>  <NavLink to="/" exact><img className="logo" src={Logo} /> Start</NavLink></p>
 
-        <p><NavLink to="/clock"><img className="UserLogo" src={UserLogo} />Profil</NavLink></p>
+        <p><NavLink to="/userProfile"><img className="UserLogo" src={UserLogo} />Profil</NavLink></p>
       </div>
     </nav>
   );
