@@ -8,6 +8,7 @@ import {
 } from "react-google-maps";
 import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer";
 import events from "../events.json";
+import EventView from "../components/EventView";
 
 import Modal from "react-modal";
 class Map extends React.Component {
@@ -125,13 +126,7 @@ class Map extends React.Component {
             onRequestClose={this.toggleEventDetails}
           >
             <button onClick={this.toggleEventDetails}>close</button>
-            <h1> EVENT DETAILS </h1>
-            <h2> {this.state.selectedEvent.title}</h2>
-            <h3>
-              {this.state.selectedEvent.date.day}.
-              {this.state.selectedEvent.date.month}.
-              {this.state.selectedEvent.date.year}
-            </h3>
+            <EventView />
           </Modal>
         )}
       </div>
