@@ -25,12 +25,8 @@ export class GoButton extends Component {
                 on={this.state.switched}
                 className="switch"
             >
-                {this.state.switched ? (
-                    <MaterialIcon icon="directions_run" />
-                ) : null}
+                {<MaterialIcon icon="directions_run" />}
             </Switch>
         )
     }
 }
-
-// this.props.addMyEvent(this.props.event.id)
