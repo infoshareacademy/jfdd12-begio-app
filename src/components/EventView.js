@@ -15,7 +15,6 @@ function EventView({ event, onClose }) {
       <div className={styles.topView}>
         <EventName name={event.title} />
         <ButtonGo />
-        <ExitButton onClick={onClose} />
       </div>
       <AutoPlayCarousel images={event.images} />
       <div className={styles.bottomView}>
@@ -38,7 +37,10 @@ function EventView({ event, onClose }) {
           />
         </div>
 
-        <EventDescription description={event.description} />
+        <p className={styles.descrition}>
+          {" "}
+          <EventDescription description={event.description} />
+        </p>
       </div>
     </div>
   );
