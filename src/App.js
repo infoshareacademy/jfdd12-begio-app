@@ -12,6 +12,7 @@ import { MapView } from "./components/MapView"
 import events from "./events.json"
 import { Navbar } from "./components/Navbar";
 import users from "./users.json"
+import UserProfile from './components/UserProfile'
 
 function App() {
     const [currentUser, setCurrentUser] = useState(users[0])
@@ -36,7 +37,8 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" render={() => (
-            <div><MapView />
+            <div>
+            <MapView />
             <EventList
                 myEvents={myEvents}
                 setFavourite={setMyEvents}
@@ -48,7 +50,8 @@ function App() {
           </div>
           )} />
           <Route path="/callender" component={App} />
-          <Route path="/userProfile" render={() => (<EventsCalendar events = {events} userEvents = {myEvents}/>)} />
+          <Route path="/userProfile" render={() => (<UserProfile allEvents = {events} oneUserEvents = {myEvents}/>)} />
+          <Route path="/blablablabla" render={() => (<EventsCalendar events = {events} userEvents = {myEvents}/>)} />
           <Redirect from="/home" to="/" />
         </Switch>
       </div>
