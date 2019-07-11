@@ -88,9 +88,9 @@ class Map extends React.Component {
                                     }
                                     <br />
                                     <b>
-                                        {this.state.selectedEvent.date.day}.
-                                        {this.state.selectedEvent.date.month}.
-                                        {this.state.selectedEvent.date.year}
+                                        {this.state.selectedEvent.startDate.day}.
+                                        {this.state.selectedEvent.startDate.month}.
+                                        {this.state.selectedEvent.startDate.year}
                                     </b>
                                 </p>
                                 <button

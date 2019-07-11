@@ -50,7 +50,15 @@ function App() {
           </div>
           )} />
           <Route path="/callender" component={App} />
-          <Route path="/userProfile" render={() => (<UserProfile allEvents = {events} oneUserEvents = {myEvents}/>)} />
+          <Route path="/userProfile" render={() => (<UserProfile 
+                myEvents={myEvents}
+                setFavourite={setMyEvents}
+                events={events}
+                addMyEvent={addMyEvent}
+                removeMyEvent={removeMyEvent}
+                myFuckingEvents= {events.filter(event => myEvents.includes(event.id))}
+                />)} 
+                />
           <Route path="/blablablabla" render={() => (<EventsCalendar events = {events} userEvents = {myEvents}/>)} />
           <Redirect from="/home" to="/" />
         </Switch>
