@@ -6,11 +6,12 @@ import users from "./users.json"
 import { MapView } from "./components/MapView"
 
 function App() {
-    const [currentUser, setCurrentUser] = useState(users[0])
+    const [currentUser] = useState(users[0])
     const [myEvents, setMyEvents] = useState([])
 
     useEffect(() => {
         console.log(myEvents)
+        localStorage.setItem("myEvents", myEvents)
     }, [myEvents])
     const addMyEvent = id => {
         setMyEvents([...myEvents, id])
