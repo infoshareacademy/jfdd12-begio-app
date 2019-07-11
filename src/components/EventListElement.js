@@ -3,7 +3,7 @@ import { GoButton } from "./GoButton"
 import "../EventListElement.css"
 
 export function EventListElement(props) {
-    const { event, addMyEvent, removeMyEvent } = props
+    const { event, addMyEvent, removeMyEvent, myEvents } = props
     const liStyle = {
         margin: "20px",
         display: "block",
