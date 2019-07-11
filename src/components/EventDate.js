@@ -1,6 +1,14 @@
 import React from "react";
-export function EventDate({ event }) {
-    return <>
-        <i style={{ marginBottom: "10px" }}>{event.startDate.day}. {event.startDate.month}. {event.startDate.year}</i>
-    </>
-}
+
+
+export const EventDate = ({ event }) => {
+  return (
+    <div >
+      {event.startDate.year}/ {event.startDate.month}/{event.startDate.day}{" "}
+      godz: {event.startDate.time}
+      <br />
+      {event.endDate.year}/ {event.endDate.month}/{event.endDate.day} godz:{" "}
+      {event.endDate.time}
+    </div>
+  );
+};

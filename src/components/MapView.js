@@ -8,7 +8,8 @@ import {
 } from "react-google-maps";
 import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer";
 import events from "../events.json";
-import { Detal } from "./Detal"
+import EventView from "../components/EventView";
+
 import Modal from "react-modal";
 import { InfoWindowView } from "./InfoWindowView"
 class Map extends React.Component {
@@ -83,9 +84,7 @@ class Map extends React.Component {
             onRequestClose={this.toggleEventDetails}
           >
             <button style={{ padding: "10px", cursor: "pointer", float: "right", borderRadius: "8px", color: "white", border: "none", background: "rgb(68, 66, 105)" }} onClick={this.toggleEventDetails}>x</button>
-
-            <Detal event={this.state.selectedEvent} />
-
+            <EventView event={this.state.selectedEvent} />
           </Modal>
         )}
       </div>

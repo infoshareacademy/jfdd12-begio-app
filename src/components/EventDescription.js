@@ -1,4 +1,15 @@
 import React from "react";
-export function EventDescription({ event }) {
-    return <div style={{ padding: "10px", borderRadius: "10px", fontSize: "12px", border: "1.3px solid grey" }}>{event.description}</div>
-}
+
+export const EventDescription = ({ event }) => {
+  return (
+    <p
+      style={{
+        border: "1px solid grey",
+        borderRadius: "10px",
+        padding: "15px"
+      }}
+    >
+      {event.description}
+    </p>
+  );
+};
