@@ -10,6 +10,7 @@ import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerC
 import events from "../events.json";
 import { Detal } from "./Detal"
 import Modal from "react-modal";
+import { InfoWindowView } from "./InfoWindowView"
 class Map extends React.Component {
   state = {
     selectedEvent: null,
@@ -71,50 +72,7 @@ class Map extends React.Component {
                   this.setSelectedEvent(null);
                 }}
               >
-                <div
-                  style={{
-                    padding: "0",
-                    width: "120px",
-                    height: "140px",
-                    fontSize: "10px"
-                  }}
-                >
-                  <img
-                    alt="sd"
-                    style={{
-                      display: "block",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                      width: "70%"
-                    }}
-                    src={this.state.selectedEvent.images[0]}
-                  />
-                  <p>
-                    <p style={{ color: "blue", cursor: "pointer" }} onClick={this.toggleEventDetails}>
-                      {this.state.selectedEvent.title}
-                    </p>
-                    <br />
-                    {this.state.selectedEvent.address.city},{" "}
-                    {this.state.selectedEvent.address.street}{" "}
-                    {this.state.selectedEvent.address.houseNumber}
-                    <br />
-                    <b>
-                      {this.state.selectedEvent.startDate.day}.
-                      {this.state.selectedEvent.startDate.month}.
-                      {this.state.selectedEvent.startDate.year}
-                    </b>
-                  </p>
-                  <button
-                    style={{
-                      display: "block",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                      fontSize: "10px"
-                    }}
-                  >
-                    GO!
-                  </button>
-                </div>
+                <InfoWindowView event={this.state.selectedEvent} toggleEventDetails={this.toggleEventDetails} />
               </InfoWindow>
             )}
           </MarkerClusterer>
@@ -126,18 +84,7 @@ class Map extends React.Component {
           >
             <button style={{ padding: "10px", cursor: "pointer", float: "right", borderRadius: "8px", color: "white", border: "none", background: "rgb(68, 66, 105)" }} onClick={this.toggleEventDetails}>x</button>
 
-            <Detal title={this.state.selectedEvent.title}
-              city={this.state.selectedEvent.address.city}
-              street={this.state.selectedEvent.address.street}
-              houseNumber={this.state.selectedEvent.address.houseNumber}
-              day={this.state.selectedEvent.startDate.day}
-              month={this.state.selectedEvent.startDate.month}
-              year={this.state.selectedEvent.startDate.year}
-              photoOne={this.state.selectedEvent.images[0]}
-              photoTwo={this.state.selectedEvent.images[1]}
-              photoThree={this.state.selectedEvent.images[2]}
-              description={this.state.selectedEvent.description} />
-
+            <Detal event={this.state.selectedEvent} />
 
           </Modal>
         )}
