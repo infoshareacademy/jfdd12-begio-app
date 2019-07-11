@@ -100,9 +100,9 @@ class Map extends React.Component {
                     {this.state.selectedEvent.address.houseNumber}
                     <br />
                     <b>
-                      {this.state.selectedEvent.date.day}.
-                      {this.state.selectedEvent.date.month}.
-                      {this.state.selectedEvent.date.year}
+                      {this.state.selectedEvent.startDate.day}.
+                      {this.state.selectedEvent.startDate.month}.
+                      {this.state.selectedEvent.startDate.year}
                     </b>
                   </p>
                   <button
@@ -126,7 +126,7 @@ class Map extends React.Component {
             onRequestClose={this.toggleEventDetails}
           >
             <button onClick={this.toggleEventDetails}>close</button>
-            <EventView />
+            <EventView event={this.state.selectedEvent} />
           </Modal>
         )}
       </div>

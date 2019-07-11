@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./EventView.module.css";
 
-export const EventDate = props => {
+export const EventDate = ({ event }) => {
   return (
     <div className={styles.date}>
-      {props.startYear}/ {props.startMonth}/{props.startDay} godz:{" "}
-      {props.startTime}
+      {event.startDate.year}/ {event.startDate.month}/{event.startDate.day}{" "}
+      godz: {event.startDate.time}
       <br />
-      {props.endYear}/ {props.endMonth} /{props.endDay}/ {props.endtTime}
+      {event.endDate.year}/ {event.endDate.month}/{event.endDate.day} godz:{" "}
+      {event.endDate.time}
     </div>
   );
 };

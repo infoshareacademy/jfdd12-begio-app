@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./EventView.module.css";
 
-export const EventPlace = props => {
+export const EventPlace = ({ event }) => {
   return (
     <div className={styles.place}>
-      {props.city}
-      <br /> {props.street} {props.house}
+      {event.address.city}
+      <br /> {event.address.street} {event.address.house}
     </div>
   );
 };
