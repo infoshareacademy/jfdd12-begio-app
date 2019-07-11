@@ -10,7 +10,7 @@ export function PhotoGallery(props) {
     <>
       <div
         style={{
-          width: "400px",
+          width: "700px",
           margin: "0 auto"
         }}
       >
