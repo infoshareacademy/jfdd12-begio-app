@@ -80,6 +80,7 @@ export function EventListElement(props) {
                 addMyEvent={addMyEvent}
                 removeMyEvent={removeMyEvent}
                 event={event}
+                myEvents={myEvents}
             />
         </li>
     )
