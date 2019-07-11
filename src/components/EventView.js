@@ -1,5 +1,5 @@
 import React from "react";
-import AutoPlayCarousel from "./AutoPlayCarousel";
+import { PhotoGallery } from "./Carusel";
 import { EventName } from "./EventName";
 import { EventDescription } from "./EventDescription";
 import { EventDate } from "./EventDate";
@@ -15,7 +15,11 @@ function EventView({ event }) {
         <EventName event={event} />
         <ButtonGo />
       </div>
-      <AutoPlayCarousel images={event.images} />
+      <PhotoGallery
+        one={event.images[0]}
+        two={event.images[1]}
+        three={event.images[2]}
+      />
       <div className={styles.bottomView}>
         <div className={styles.eventTime}>
           <img src={calendar} className={styles.calendar} alt="calendar" />
