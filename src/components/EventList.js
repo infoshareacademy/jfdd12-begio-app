@@ -12,6 +12,7 @@ export class EventList extends Component {
                             addMyEvent={this.props.addMyEvent}
                             removeMyEvent={this.props.removeMyEvent}
                             event={event}
+                            myEvents={this.props.myEvents}
                         />
                     ))}
                 </ul>

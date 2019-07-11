@@ -8,6 +8,14 @@ export class GoButton extends Component {
         switched: false
     }
 
+    componentDidMount() {
+        if (this.props.myEvents.includes(this.props.event.id)) {
+            this.setState({
+                switched: true
+            })
+        }
+    }
+
     toggleSwitch = () => {
         this.setState(prevState => {
             return { switched: !prevState.switched }
