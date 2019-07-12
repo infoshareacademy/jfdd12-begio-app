@@ -1,0 +1,12 @@
+.list {
+    padding: 5px;
+    height: auto;
+    width: 100%;
+    background-color: beige;
+    list-style-type: none;
+}
+
+.eventList {
+    height: 90vh;
+    overflow: auto;
+}
