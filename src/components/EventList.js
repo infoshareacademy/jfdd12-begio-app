@@ -1,9 +1,9 @@
-import React, { Component } from "react"
-import { EventListElement } from "./EventListElement"
-import "../EventList.css"
+import React, { Component } from "react";
+import { EventListElement } from "./EventListElement";
+import "../EventList.css";
 
 export class EventList extends Component {
-    render() {
+  render() {
         return (
             <div>
                 <ul className="list">

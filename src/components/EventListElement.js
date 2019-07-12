@@ -1,6 +1,6 @@
-import React from "react"
-import { GoButton } from "./GoButton"
-import "../EventListElement.css"
+import React from "react";
+import { GoButton } from "./GoButton";
+import "../EventListElement.css";
 
 export function EventListElement(props) {
     const { event, addMyEvent, removeMyEvent, myEvents } = props
