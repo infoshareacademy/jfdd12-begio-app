@@ -4,7 +4,7 @@ import { EventList } from "../EventList"
 
 function UserProfile(props){
     console.log(props.myFuckingEvents)
-return props.myFuckingEvents === [] ? <> <EventList  myEvents={props.myEvents}
+return props.myFuckingEvents ? <> <EventList  myEvents={props.myEvents}
 setFavourite={props.setMyEvents}
 events={props.myFuckingEvents}
 addMyEvent={props.addMyEvent}
