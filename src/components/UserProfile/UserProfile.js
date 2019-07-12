@@ -4,19 +4,17 @@ import { EventList } from "../EventList"
 
 function UserProfile(props){
     console.log(props.myFuckingEvents)
-return <div>{props.myFuckingEvents === [] ? <div> <EventList  myEvents={props.myEvents}
+return props.myFuckingEvents === [] ? <> <EventList  myEvents={props.myEvents}
 setFavourite={props.setMyEvents}
 events={props.myFuckingEvents}
 addMyEvent={props.addMyEvent}
 removeMyEvent={props.removeMyEvent}
 />
 <EventsCalendar events = {props.events} userEvents = {props.myEvents}/> 
-</div>
+</>
 : 
 <EventsCalendar events = {props.events} userEvents = {props.myEvents}/> 
-}
 
-</div>  
 }
 
 export default UserProfile
