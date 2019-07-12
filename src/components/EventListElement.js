@@ -1,15 +1,19 @@
-import React from "react";
-import { GoButton } from "./GoButton";
-import "../EventListElement.css";
+import React from "react"
+import { GoButton } from "./GoButton"
+import "../EventListElement.css"
+import { fontSize } from "@material-ui/system"
 
 export function EventListElement(props) {
     const { event, addMyEvent, removeMyEvent, myEvents } = props
     const liStyle = {
-        margin: "20px",
-        display: "block",
-        overflow: "hidden",
-        borderTop: "2px solid black"
+        margin: "5px",
+        display: "flex",
+        flexBasis: "500px",
+        // overflow: "hidden",
+        borderTop: "2px solid black",
+        fontSize: "13px"
     }
+    // const div
 
     let month = event.startDate.month
 
@@ -57,25 +61,28 @@ export function EventListElement(props) {
     }
 
     return (
-        <li style={liStyle} className="listElement">
-            <p>{event.title}</p>
+        <li style={liStyle}>
             <img style={{ width: "200px" }} src={event.images[0]} alt="" />
-            <p>
-                Gdzie ? : {event.address.street}/{event.address.houseNumber}
-            </p>
-            <p>
-                Kiedy się zaczyna ? : {event.startDate.day}
-                {` ${month} `}
-                {event.startDate.year} o godzinie: {event.startDate.time[0]}:
-                {event.startDate.time[1]}
-            </p>
-            <p>
-                Kiedy się kończy ? : {event.endDate.day}
-                {` ${month} `}
-                {event.endDate.year} o godzinie: {event.endDate.time[0]}:
-                {event.endDate.time[1]}
-            </p>
-            <span>Chcem wziąć udział => </span>
+            <div>
+                <p>{event.title}</p>
+
+                <p>
+                    Gdzie ? : {event.address.street}/{event.address.houseNumber}
+                </p>
+                <p>
+                    Kiedy się zaczyna ? : {event.startDate.day}
+                    {` ${month} `}
+                    {event.startDate.year} o godzinie: {event.startDate.time[0]}
+                    :{event.startDate.time[1]}
+                </p>
+                <p>
+                    Kiedy się kończy ? : {event.endDate.day}
+                    {` ${month} `}
+                    {event.endDate.year} o godzinie: {event.endDate.time[0]}:
+                    {event.endDate.time[1]}
+                </p>
+            </div>
+
             <GoButton
                 addMyEvent={addMyEvent}
                 removeMyEvent={removeMyEvent}
