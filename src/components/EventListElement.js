@@ -59,7 +59,7 @@ export function EventListElement(props) {
     return (
         <li style={liStyle} className="listElement">
             <p>{event.title}</p>
-            <img style={{ width: "100%" }} src={event.images[0]} alt="" />
+            <img style={{ width: "200px" }} src={event.images[0]} alt="" />
             <p>
                 Gdzie ? : {event.address.street}/{event.address.houseNumber}
             </p>
