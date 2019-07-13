@@ -21,12 +21,12 @@ class Map extends React.Component {
   setSelectedEvent = change => {
     change
       ? this.setState({
-          selectedEvent: change
-        })
+        selectedEvent: change
+      })
       : this.setState({
-          selectedEvent: change,
-          showEventDetails: false
-        });
+        selectedEvent: change,
+        showEventDetails: false
+      });
   };
 
   toggleEventDetails = () => {
@@ -112,7 +112,8 @@ class Map extends React.Component {
   }
 }
 const WrappedMap = withScriptjs(withGoogleMap(Map));
-export function MapView() {
+export function MapView(props) {
+
   return (
     <div style={{ width: "50%", height: "90vh" }}>
       <WrappedMap
@@ -122,7 +123,21 @@ export function MapView() {
         loadingElement={<div style={{ height: "100%" }} />}
         containerElement={<div style={{ height: "100%" }} />}
         mapElement={<div style={{ height: "100%" }} />}
+        {...props}
       />
     </div>
   );
+}
+export function DivOnMap(props) {
+  return (
+    <div style={{ width: "50%" }}>
+      <Map
+        //  addMyEvent={props.addMyEvent}
+        //  removeMyEvent={props.removeMyEvent}
+        //  myEvents={props.myEvents}
+        {...props}
+
+      />
+    </div>
+  )
 }

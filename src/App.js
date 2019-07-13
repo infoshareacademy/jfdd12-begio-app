@@ -45,11 +45,13 @@ function App() {
             render={props => (
               <div className="appView">
                 <MapView
+
                   addMyEvent={addMyEvent}
                   removeMyEvent={removeMyEvent}
                   myEvents={myEvents}
                 />
                 <EventList
+                  test="dsdss"
                   myEvents={myEvents}
                   setFavourite={setMyEvents}
                   events={events}
