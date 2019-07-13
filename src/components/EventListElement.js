@@ -2,6 +2,7 @@ import React from "react"
 import { GoButton } from "./GoButton"
 import "../EventListElement.css"
 import { fontSize } from "@material-ui/system"
+import MaterialIcon from "material-icons-react"
 
 export function EventListElement(props) {
     const { event, addMyEvent, removeMyEvent, myEvents } = props
@@ -61,34 +62,41 @@ export function EventListElement(props) {
     }
 
     return (
-        <li style={liStyle}>
-            <img style={{ width: "200px" }} src={event.images[0]} alt="" />
-            <div>
-                <p>{event.title}</p>
+        <li className="listElement">
+            <div className="eventInfo">
+                <img className="imageElement" src={event.images[0]} alt=""      />
+                <div className="eventNameDatePlace">
+                <p className="eventTitle">{event.title}</p>
 
                 <p>
-                    Gdzie ? : {event.address.street}/{event.address.houseNumber}
+                    <MaterialIcon icon="place" />
+                     {event.address.street}  {event.address.houseNumber}
                 </p>
                 <p>
-                    Kiedy się zaczyna ? : {event.startDate.day}
+                <MaterialIcon icon="date_range" />
+                    {event.startDate.day !== event.endDate.day ?
+                    `${event.startDate.day} -  ${event.endDate.day}` :
+                    event.startDate.day}
                     {` ${month} `}
-                    {event.startDate.year} o godzinie: {event.startDate.time[0]}
-                    :{event.startDate.time[1]}
+                    {event.startDate.year}
                 </p>
                 <p>
-                    Kiedy się kończy ? : {event.endDate.day}
-                    {` ${month} `}
-                    {event.endDate.year} o godzinie: {event.endDate.time[0]}:
-                    {event.endDate.time[1]}
+                <MaterialIcon icon="access_time" />
+                   {event.endDate.time[0]}:
+                    {event.endDate.time[1] + "0"} -
+                    {event.startDate.time[0]}
+                    :{event.startDate.time[1] + "0"}
                 </p>
+                </div>
             </div>
-
+            <div className="eventButton">
             <GoButton
                 addMyEvent={addMyEvent}
                 removeMyEvent={removeMyEvent}
                 event={event}
                 myEvents={myEvents}
             />
+            </div>
         </li>
     )
 }

@@ -1,5 +1,49 @@
 .listElement {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 5px;
     width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    border: 0.5px solid #ccc;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
     text-align: left;
-    text-decoration: none;
+}
+
+.imageElement {
+    width: 200px;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+  }
+
+.eventTitle{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 1.44444em !important;
+    color: rgb(72, 72, 72) !important;
+}
+
+.eventButton{
+    margin: 5px;
+}
+
+.eventInfo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+
+.eventNameDatePlace{
+    display: flex;
+    flex-direction: column;
 }
