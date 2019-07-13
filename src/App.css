@@ -8,6 +8,7 @@ body {
     flex-direction: row-reverse;
     padding: 20px;
 }
+
 .eventList {
     flex-grow: 1;
 }

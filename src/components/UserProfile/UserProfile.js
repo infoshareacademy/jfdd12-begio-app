@@ -4,24 +4,31 @@ import { EventList } from '../EventList';
 import './UserProfile.css'
 
 function UserProfile(props){
-const myFuckingEvents = props.events.filter(event =>
+    const myFuckingEvents = props.events.filter(event =>
         props.myEvents.includes(event.id))
 
-
-    console.log(myFuckingEvents)
-return<div className="containterProfile">
-<EventsCalendar events = {props.events} userEvents = {props.myEvents}/> 
-{ props.myEvents.length === 0 ? 
-<section>Brak wydarzeń</section>
-:
- <EventList  myEvents={props.myEvents}
-setFavourite={props.setMyEvents}
-events={myFuckingEvents}
-addMyEvent={props.addMyEvent}
-removeMyEvent={props.removeMyEvent}
-/> 
-}
-</div>
+    return           props.myEvents.length !== 0 
+                    ?
+                         <div className="containterProfile"> 
+                            <div className="eventsList">
+                                <EventList  
+                                    myEvents={props.myEvents}
+                                    setFavourite={props.setMyEvents}
+                                    events={myFuckingEvents}
+                                    addMyEvent={props.addMyEvent}
+                                    removeMyEvent={props.removeMyEvent}
+                                /> 
+                            </div>
+                            <div style={{width:'100%', flexBasis: '50%'}}>
+                                <EventsCalendar events = {props.events} userEvents =                {props.myEvents}/> 
+                            </div>
+                        </div>
+                    :
+                    <div className="containterProfile"> 
+                         <div style={{width:'100%'}}>
+                            <EventsCalendar events = {props.events} userEvents = {props.myEvents}/> 
+                        </div>
+                    </div>          
 }
 
 export default UserProfile

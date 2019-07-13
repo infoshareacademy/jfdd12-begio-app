@@ -1,5 +1,11 @@
 .containterProfile{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    padding: 20px;
+}
+
+.eventsList{
+    flex-grow: 1;
+    flex-basis: 50%;
+    margin-right: 0.5em;
 }

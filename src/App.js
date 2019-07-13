@@ -57,7 +57,7 @@ function App() {
                     <Route
                         path="/userProfile"
                         render={() => (
-                            <div>
+                            
                             <UserProfile
                                 myEvents={myEvents}
                                 setFavourite={setMyEvents}
@@ -65,7 +65,7 @@ function App() {
                                 addMyEvent={addMyEvent}
                                 removeMyEvent={removeMyEvent}
                             />
-                            </div>
+                            
                         )}
                     />
                     <Redirect from="/home" to="/" />
