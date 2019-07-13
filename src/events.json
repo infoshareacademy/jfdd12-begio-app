@@ -44,7 +44,7 @@
             "year": 2019,
             "month": 7,
             "day": 20,
-            "time": [24, 0]
+            "time": [0, 0]
         },
         "address": {
             "city": "Gdańsk",
@@ -201,7 +201,7 @@
             "year": 2019,
             "month": 7,
             "day": 23,
-            "time": [24, 0]
+            "time": [0, 0]
         },
         "address": {
             "city": "Gdańsk",
