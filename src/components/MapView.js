@@ -115,7 +115,7 @@ export function MapView() {
         <div style={{ width: "50%", height: "90vh" }}>
             <WrappedMap
                 googleMapURL={
-                    "https://maps.googleapis.com/maps/api/js?key=AIzaSyCbDcLrfuv3vfFRvaLTfS5OeKdWTSoYzmw&v=3.exp&libraries=geometry,drawing,places"
+                    "https://maps.googleapis.com/maps/api/js"
                 }
                 loadingElement={<div style={{ height: "100%" }} />}
                 containerElement={<div style={{ height: "100%" }} />}
