@@ -1,20 +1,10 @@
 import React from "react"
 import { GoButton } from "./GoButton"
 import "../EventListElement.css"
-import { fontSize } from "@material-ui/system"
 import MaterialIcon from "material-icons-react"
 
 export function EventListElement(props) {
     const { event, addMyEvent, removeMyEvent, myEvents } = props
-    const liStyle = {
-        margin: "5px",
-        display: "flex",
-        flexBasis: "500px",
-        // overflow: "hidden",
-        borderTop: "2px solid black",
-        fontSize: "13px"
-    }
-    // const div
 
     let month = event.startDate.month
 
@@ -74,7 +64,8 @@ export function EventListElement(props) {
                 </p>
                 <p>
                 <MaterialIcon icon="date_range" />
-                    {event.startDate.day !== event.endDate.day ?
+                    {(event.startDate.day !== event.endDate.day &&
+                    event.startDate.month === event.endDate.month) ?
                     `${event.startDate.day} -  ${event.endDate.day}` :
                     event.startDate.day}
                     {` ${month} `}

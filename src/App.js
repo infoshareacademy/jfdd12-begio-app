@@ -11,6 +11,7 @@ import events from "./events.json"
 import { Navbar } from "./components/Navbar"
 import users from "./users.json"
 import UserProfile from "./components/UserProfile"
+import { Footer } from "./components/Footer"
 import "./App.css"
 
 const NoMatch = () => <h1>404</h1>;

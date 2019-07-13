@@ -30,7 +30,7 @@ function EventsCalendar(props){
       month: true,
       day: true
     }}
-    eventPropGetter={() => ({style: {backgroundColor: 'green'}})}
+    eventPropGetter={() => ({style: {backgroundColor: '#aaa6ba'}})}
     messages={{next:">>",previous:"<<",today:"Dziś", month: "Miesiąc", day: "Dzień"}}
   />
 </div>
