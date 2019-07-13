@@ -22,7 +22,7 @@ function EventsCalendar(props){
     event.endDate.time[0], 
     event.endDate.time[1])
    }))
-  return  <div style={{marginLeft:20, marginTop: 50, height: 600, width:1000}}>
+  return  <div style={{marginLeft:20, marginTop: 50, height: 600, width:'50%'}}>
   <Calendar
     localizer={localizer}
     events={currentUserEvents}

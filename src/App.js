@@ -5,7 +5,6 @@ import {
     Switch,
     Redirect
 } from "react-router-dom"
-import EventsCalendar from "./components/Calendar"
 import { EventList } from "./components/EventList"
 import { MapView } from "./components/MapView"
 import events from "./events.json"
@@ -13,6 +12,8 @@ import { Navbar } from "./components/Navbar"
 import users from "./users.json"
 import UserProfile from "./components/UserProfile"
 import "./App.css"
+
+const NoMatch = () => <h1>404</h1>;
 
 function App() {
     const [currentUser, setCurrentUser] = useState(users[0])
@@ -52,32 +53,22 @@ function App() {
                             </div>
                         )}
                     />
-                    <Route path="/callender" component={App} />
                     <Route
                         path="/userProfile"
                         render={() => (
+                            <div>
                             <UserProfile
                                 myEvents={myEvents}
                                 setFavourite={setMyEvents}
                                 events={events}
                                 addMyEvent={addMyEvent}
                                 removeMyEvent={removeMyEvent}
-                                myFuckingEvents={events.filter(event =>
-                                    myEvents.includes(event.id)
-                                )}
                             />
-                        )}
-                    />
-                    <Route
-                        path="/blablablabla"
-                        render={() => (
-                            <EventsCalendar
-                                events={events}
-                                userEvents={myEvents}
-                            />
+                            </div>
                         )}
                     />
                     <Redirect from="/home" to="/" />
+                    <Route component={NoMatch} />
                 </Switch>
             </div>
         </Router>
