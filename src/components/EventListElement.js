@@ -73,10 +73,10 @@ export function EventListElement(props) {
                 </p>
                 <p>
                 <MaterialIcon icon="access_time" />
-                   {event.endDate.time[0]}:
-                    {event.endDate.time[1] + "0"} -
                     {event.startDate.time[0]}
-                    :{event.startDate.time[1] + "0"}
+                    :{event.startDate.time[1] + "0"} - 
+                    {event.endDate.time[0]}:
+                    {event.endDate.time[1] + "0"}
                 </p>
                 </div>
             </div>
