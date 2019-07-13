@@ -104,7 +104,11 @@ class Map extends React.Component {
             >
               x
             </button>
-            <EventView event={this.state.selectedEvent} />
+            <EventView addMyEvent={this.props.addMyEvent}
+                  removeMyEvent={this.props.removeMyEvent}
+                  myEvents={this.props.myEvents}
+                  event={this.state.selectedEvent}
+                  toggleEventDetails={this.toggleEventDetails} />
           </Modal>
         )}
       </div>
