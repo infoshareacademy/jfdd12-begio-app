@@ -16,4 +16,11 @@
   font-size: 15px;
   color: white;
   margin-bottom: 10px;
+  transition: 2s;
+}
+img {
+  width: 20px;
+}
+.userMessage:hover {
+  background: rgb(144, 144, 197);
 }
