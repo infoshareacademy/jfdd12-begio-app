@@ -61,6 +61,7 @@ function App() {
             render={() => (
 
               <UserProfile
+                user={currentUser}
                 myEvents={myEvents}
                 setFavourite={setMyEvents}
                 events={events}
