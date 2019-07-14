@@ -1,6 +1,7 @@
 import React from "react"
 import Switch from "react-toggle-switch"
 import "../../node_modules/react-toggle-switch/dist/css/switch.min.css"
+import "./GoButton.css"
 import MaterialIcon from "material-icons-react"
 
 export function GoButton(props) {
