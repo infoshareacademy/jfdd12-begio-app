@@ -1,10 +1,22 @@
-import React from "react"
+import React, { useState } from "react"
 import { GoButton } from "./GoButton"
 import "../EventListElement.css"
 import MaterialIcon from "material-icons-react"
+import ReactModal from "react-modal"
 
 export function EventListElement(props) {
     const { event, addMyEvent, removeMyEvent, myEvents } = props
+    const [showModal, setShowModal] = useState(false)
+
+    // this.handleOpenModal = this.handleOpenModal.bind(this);
+    // this.handleCloseModal = this.handleCloseModal.bind(this);
+    // const handleOpenModal = toogle => {
+    //     setShowModal(toogle)
+    // }
+
+    const handleModal = toogle => {
+        setShowModal(toogle)
+    }
 
     let month = event.startDate.month
 
@@ -57,7 +69,6 @@ export function EventListElement(props) {
                 <img className="imageElement" src={event.images[0]} alt="" />
                 <div className="eventNameDatePlace">
                     <p className="eventTitle">{event.title}</p>
-
                     <p>
                         <MaterialIcon icon="place" />
                         {event.address.street} {event.address.houseNumber}
@@ -77,9 +88,20 @@ export function EventListElement(props) {
                         {event.startDate.time[1] + "0"} -{event.endDate.time[0]}
                         :{event.endDate.time[1] + "0"}
                     </p>
-                    <button className="learnMore">
+                    <button
+                        className="learnMore"
+                        onClick={() => handleModal(!showModal)}
+                    >
                         Kliknij i dowiedz się więcej...
                     </button>
+                    <ReactModal
+                        isOpen={showModal}
+                        contentLabel="Minimal Modal Example"
+                    >
+                        <button onClick={() => handleModal(!showModal)}>
+                            Close Modal
+                        </button>
+                    </ReactModal>
                 </div>
             </div>
             <div className="eventButton">
