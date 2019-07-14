@@ -8,7 +8,8 @@
     height: 150px;
     border-radius: 5px;
     border: 0.5px solid #ccc;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+        "Helvetica Neue", sans-serif !important;
     text-align: left;
 }
 
@@ -18,23 +19,30 @@
     border-radius: 5px 0 0 5px;
     margin-right: 10px;
     margin-bottom: 0px;
-  }
+}
 
-.eventTitle{
+.eventTitle {
+    cursor: pointer;
     margin-top: 5px;
     margin-bottom: 5px;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+        "Helvetica Neue", sans-serif !important;
     font-size: 18px !important;
     font-weight: 600 !important;
     line-height: 1.44444em !important;
-    color: rgb(72, 72, 72) !important;
+    color: rgb(72, 72, 72);
+    transition: 0.3s;
 }
 
-.eventButton{
+.eventTitle:hover {
+    color: #49406dce;
+}
+
+.eventButton {
     margin: 5px;
 }
 
-.eventInfo{
+.eventInfo {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -42,8 +50,7 @@
     width: 100%;
 }
 
-
-.eventNameDatePlace{
+.eventNameDatePlace {
     display: flex;
     flex-direction: column;
 }
