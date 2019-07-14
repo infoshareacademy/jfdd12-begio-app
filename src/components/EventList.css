@@ -1,13 +1,23 @@
 .list {
-    padding-right: 5px;
-    height: auto;
-    width: 100%;
-    background-color: white;
-    list-style-type: none;
+  padding-right: 5px;
+  height: auto;
+  width: 100%;
+  background-color: white;
+  list-style-type: none;
 }
 
 .eventList {
-    height: 90vh;
-    overflow: auto;
-    flex-basis: 50%;
+  height: 90vh;
+  overflow: auto;
+  flex-basis: 50%;
+}
+
+@media (max-width: 850px) {
+  .list {
+    margin-top: 20px;
+    font-size: 60%;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 175px;
+  }
 }

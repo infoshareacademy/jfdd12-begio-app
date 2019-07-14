@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import info from "./info.png"
+
 export class UserMessage extends Component {
     render() {
 

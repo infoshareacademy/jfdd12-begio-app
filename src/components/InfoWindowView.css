@@ -1,29 +1,50 @@
-.infoWindowCointainer{
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    height: auto;
+.infoWindowCointainer {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height: auto;
 }
 
-.infoWindowImage{
-    cursor: pointer;
-    margin-bottom: 5px;
-    width: 100%;
-    border-radius: 5px;
+.infoWindowImage {
+  cursor: pointer;
+  margin-bottom: 5px;
+  width: 100%;
+  border-radius: 5px;
 }
 
-.infoWindowEventName{
-    font-size: 18px;
-    font-weight: bold;
-    color: rgb(72, 72, 72);
-    cursor: pointer;
-    margin: 0;
+.infoWindowEventName {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(72, 72, 72);
+  cursor: pointer;
+  margin: 0;
 }
 
 .infoWindowEventName:hover {
-    color: #49406dce;
+  color: #49406dce;
 }
 
-.infoWindowGoButton{
-    margin-left: 150px;
+.infoWindowGoButton {
+  margin-left: 150px;
+}
+@media (max-width: 850px) {
+  .infoWindowEventName {
+    font-size: 10px;
+  }
+  .infoWindowCointainer {
+    width: 100px;
+    font-size: 70%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 190px;
+  }
+  .infoWindowImage {
+    margin: 0 auto;
+    width: 70%;
+  }
+  .infoWindowGoButton {
+    margin-top: 15px;
+    padding-right: 50px;
+    float: right;
+  }
 }

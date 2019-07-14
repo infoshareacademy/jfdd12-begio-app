@@ -13,7 +13,7 @@ function UserProfile(props) {
         <div className="containterProfile">
 
             <div className="eventsList">
-                <EventList
+                <EventList style={{ marginTop: "800px" }}
                     myEvents={props.myEvents}
                     setFavourite={props.setMyEvents}
                     events={myFuckingEvents}
