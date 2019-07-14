@@ -22,6 +22,7 @@
 }
 
 .eventTitle {
+    cursor: pointer;
     margin-top: 5px;
     margin-bottom: 5px;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
@@ -29,7 +30,12 @@
     font-size: 18px !important;
     font-weight: 600 !important;
     line-height: 1.44444em !important;
-    color: rgb(72, 72, 72) !important;
+    color: rgb(72, 72, 72);
+    transition: 0.3s;
+}
+
+.eventTitle:hover {
+    color: #49406dce;
 }
 
 .eventButton {
@@ -47,20 +53,4 @@
 .eventNameDatePlace {
     display: flex;
     flex-direction: column;
-}
-
-.learnMore {
-    cursor: pointer;
-    background-color: transparent;
-    margin: 5px 0;
-    width: 180px;
-    height: 20px;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    transition: 0.3s;
-}
-
-.learnMore:hover {
-    background-color: #49406dce;
-    color: white;
 }

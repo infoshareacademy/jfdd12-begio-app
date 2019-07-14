@@ -9,12 +9,6 @@ export function EventListElement(props) {
     const { event, addMyEvent, removeMyEvent, myEvents } = props
     const [showModal, setShowModal] = useState(false)
 
-    // this.handleOpenModal = this.handleOpenModal.bind(this);
-    // this.handleCloseModal = this.handleCloseModal.bind(this);
-    // const handleOpenModal = toogle => {
-    //     setShowModal(toogle)
-    // }
-
     const handleModal = toogle => {
         setShowModal(toogle)
     }
@@ -69,7 +63,12 @@ export function EventListElement(props) {
             <div className="eventInfo">
                 <img className="imageElement" src={event.images[0]} alt="" />
                 <div className="eventNameDatePlace">
-                    <p className="eventTitle">{event.title}</p>
+                    <p
+                        className="eventTitle"
+                        onClick={() => handleModal(!showModal)}
+                    >
+                        {event.title}
+                    </p>
                     <p>
                         <MaterialIcon icon="place" />
                         {event.address.street} {event.address.houseNumber}
@@ -89,13 +88,10 @@ export function EventListElement(props) {
                         {event.startDate.time[1] + "0"} -{event.endDate.time[0]}
                         :{event.endDate.time[1] + "0"}
                     </p>
-                    <button
-                        className="learnMore"
-                        onClick={() => handleModal(!showModal)}
+                    <ReactModal
+                        isOpen={showModal}
+                        onRequestClose={() => handleModal(!showModal)}
                     >
-                        Kliknij i dowiedz się więcej...
-                    </button>
-                    <ReactModal isOpen={showModal}>
                         <button
                             onClick={() => handleModal(!showModal)}
                             style={{
