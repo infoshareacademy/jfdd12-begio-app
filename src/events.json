@@ -335,8 +335,8 @@
             "street": "Szeroka",
             "houseNumber": "10",
             "location": {
-                "lat": 54.35113,
-                "lng": 18.65457
+                "lat": 54.35127,
+                "lng": 18.65467
             }
         },
         "images": [
@@ -492,8 +492,8 @@
             "street": "Ogarna",
             "houseNumber": "22",
             "location": {
-                "lat": 54.34773,
-                "lng": 18.65191
+                "lat": 54.34790,
+                "lng": 18.65196
             }
         },
         "images": [
