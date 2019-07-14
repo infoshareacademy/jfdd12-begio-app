@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { GoButton } from "./GoButton"
-import "../EventListElement.css"
+import "./EventListElement.css"
 import MaterialIcon from "material-icons-react"
 import ReactModal from "react-modal"
 import EventView from "../components/EventView"
@@ -60,7 +60,14 @@ export function EventListElement(props) {
     return (
         <li className="listElement">
             <div className="eventInfo">
-                <img className="imageElement" src={event.images[0]} alt="" />
+                <div className="photoContainer">
+                    <img
+                        className="imageElement"
+                        src={event.images[0]}
+                        alt={event.title}
+                        onClick={() => handleModal(!showModal)}
+                    />
+                </div>
                 <div className="eventNameDatePlace">
                     <p
                         className="eventTitle"

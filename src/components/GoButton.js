@@ -2,6 +2,7 @@ import React from "react"
 import Switch from "react-toggle-switch"
 import "../../node_modules/react-toggle-switch/dist/css/switch.min.css"
 import MaterialIcon from "material-icons-react"
+import "./GoButton.css"
 
 export function GoButton(props) {
     const { myEvents, removeMyEvent, addMyEvent, event } = props

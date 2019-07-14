@@ -1,0 +1,29 @@
+.infoWindowCointainer{
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: auto;
+}
+
+.infoWindowImage{
+    cursor: pointer;
+    margin-bottom: 5px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.infoWindowEventName{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(72, 72, 72);
+    cursor: pointer;
+    margin: 0;
+}
+
+.infoWindowEventName:hover {
+    color: #49406dce;
+}
+
+.infoWindowGoButton{
+    margin-left: 150px;
+}
