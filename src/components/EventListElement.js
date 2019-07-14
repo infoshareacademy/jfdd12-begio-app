@@ -3,6 +3,7 @@ import { GoButton } from "./GoButton"
 import "../EventListElement.css"
 import MaterialIcon from "material-icons-react"
 import ReactModal from "react-modal"
+import EventView from "../components/EventView"
 
 export function EventListElement(props) {
     const { event, addMyEvent, removeMyEvent, myEvents } = props
@@ -94,13 +95,22 @@ export function EventListElement(props) {
                     >
                         Kliknij i dowiedz się więcej...
                     </button>
-                    <ReactModal
-                        isOpen={showModal}
-                        contentLabel="Minimal Modal Example"
-                    >
-                        <button onClick={() => handleModal(!showModal)}>
-                            Close Modal
+                    <ReactModal isOpen={showModal}>
+                        <button
+                            onClick={() => handleModal(!showModal)}
+                            style={{
+                                padding: "10px",
+                                cursor: "pointer",
+                                float: "right",
+                                borderRadius: "8px",
+                                color: "white",
+                                border: "none",
+                                background: "rgb(68, 66, 105)"
+                            }}
+                        >
+                            X
                         </button>
+                        <EventView event={event} />
                     </ReactModal>
                 </div>
             </div>
