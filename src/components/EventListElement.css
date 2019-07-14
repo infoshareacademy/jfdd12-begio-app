@@ -65,6 +65,7 @@
     margin-left: 10px;
     display: flex;
     flex-direction: column;
+    flex-basis: 60%;
 }
 
 @media (max-width: 600px) {
@@ -74,5 +75,8 @@
     .imageElement{
         flex-basis: 50%;
         flex-grow: 1;
+    }
+    .eventNameDatePlace{
+        flex-basis: 50%;
     }
 }
