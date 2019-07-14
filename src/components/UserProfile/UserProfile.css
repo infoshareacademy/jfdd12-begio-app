@@ -27,7 +27,7 @@
   background: rgb(144, 144, 197);
 }
 
-@media (max-width: 499px) {
+@media (max-width: 850px)  {
     .containterProfile {
         flex-direction: column-reverse;
     }

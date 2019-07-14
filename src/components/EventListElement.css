@@ -25,6 +25,8 @@
     margin-bottom: 0px;
     cursor: pointer;
     transition: 0.7s;
+    flex-basis: 40%;
+    flex-grow: 1;
 }
 .imageElement:hover {
     transform: scale(1.1);
@@ -65,8 +67,12 @@
     flex-direction: column;
 }
 
-@media (max-width: 499px) {
+@media (max-width: 600px) {
     .listElement {
         flex-direction: column;
+    }
+    .imageElement{
+        flex-basis: 50%;
+        flex-grow: 1;
     }
 }
