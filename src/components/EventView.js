@@ -4,15 +4,22 @@ import { EventName } from "./EventName";
 import { EventDescription } from "./EventDescription";
 import { EventDate } from "./EventDate";
 import { EventPlace } from "./EventPlace";
-import { ButtonGo } from "./Buttons";
+import { GoButton } from "./GoButton";
 import calendar from "./calendar.png";
 
-function EventView({ event }) {
+function EventView({ myEvents,
+  addMyEvent,
+  removeMyEvent,
+  event,
+  toggleEventDetails }) {
   return (
     <>
       <div style={{ fontFamily: "Lato" }}>
         <h2><EventName event={event} /></h2>
-        <ButtonGo />
+        <GoButton addMyEvent={addMyEvent}
+          removeMyEvent={removeMyEvent}
+          event={event}
+          myEvents={myEvents} />
       </div>
       <PhotoGallery
         one={event.images[0]}

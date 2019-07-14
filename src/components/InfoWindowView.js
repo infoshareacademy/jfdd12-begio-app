@@ -1,54 +1,64 @@
 import React from "react";
-import { EventName } from "./EventName"
+import { EventName } from "./EventName";
 import { EventPlace } from "./EventPlace";
 import { EventDate } from "./EventDate";
-import { flexbox } from "@material-ui/system";
-import './InfoWindowView.css'
-export function InfoWindowView({ event, toggleEventDetails }) {
-    return (
-        
-            <div
-                style={{
-                    width: "80%",
-                    height: "50%",
-                    backgroundColor: 'black',
-                    fontSize: "10px"
-                }}
-            >
-                <img
-                    onClick={toggleEventDetails}
-                    alt="sd"
-                    style={{
-                        cursor: "pointer",
-                        display: "block",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                        width: "100%"
-                    }}
-                    src={event.images[0]}
+import { GoButton } from "./GoButton";
+export function InfoWindowView({
+  myEvents,
+  addMyEvent,
+  removeMyEvent,
+  event,
+  toggleEventDetails
+}) {
+  return (
+    <>
+      <div
+        style={{
+          margin: "0",
+          padding: "0",
+          width: "120px",
+          height: "140px",
+          fontSize: "10px"
+        }}
+      >
+        <img
+          onClick={toggleEventDetails}
+          alt="sd"
+          style={{
+            cursor: "pointer",
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: "76%"
+          }}
+          src={event.images[0]}
+        />
+        <p>
+          <p
+            style={{
+              fontWeight: "bold",
+              color: "rgb(68, 66, 105)",
+              cursor: "pointer",
+              margin: "0"
+            }}
+            onClick={toggleEventDetails}
+          >
+            <EventName event={event} />
+          </p>
 
-                />
-                <p>
-                    <p style={{ fontWeight: "bold", color: "rgb(68, 66, 105)", cursor: "pointer", margin: "0" }} onClick={toggleEventDetails}>
-                        <EventName event={event} />
-                    </p>
-
-                    <EventPlace event={event} />
-                    <br />
-                    <b>
-                        <EventDate event={event} />
-                    </b>
-                </p>
-                <button
-                    style={{
-                        display: "block",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                        fontSize: "10px"
-                    }}
-                >
-                    GO!
-                  </button>
-            </div>
-    )     
+          <EventPlace event={event} />
+          <br />
+          <b>
+            <EventDate event={event} />
+          </b>
+        </p>
+        <GoButton
+          addMyEvent={addMyEvent}
+          removeMyEvent={removeMyEvent}
+          event={event}
+          myEvents={myEvents}
+        />
+      </div>
+    </>
+  );
 }
