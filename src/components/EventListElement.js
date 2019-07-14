@@ -12,7 +12,6 @@ export function EventListElement(props) {
     const handleModal = toogle => {
         setShowModal(toogle)
     }
-
     let month = event.startDate.month
 
     switch (month) {
@@ -91,6 +90,9 @@ export function EventListElement(props) {
                     <ReactModal
                         isOpen={showModal}
                         onRequestClose={() => handleModal(!showModal)}
+                        myEvents={myEvents}
+                        addMyEvent={addMyEvent}
+                        removeMyEvent={removeMyEvent}
                     >
                         <button
                             onClick={() => handleModal(!showModal)}
@@ -106,7 +108,12 @@ export function EventListElement(props) {
                         >
                             X
                         </button>
-                        <EventView event={event} />
+                        <EventView
+                            event={event}
+                            myEvents={myEvents}
+                            addMyEvent={addMyEvent}
+                            removeMyEvent={removeMyEvent}
+                        />
                     </ReactModal>
                 </div>
             </div>
