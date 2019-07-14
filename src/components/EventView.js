@@ -13,8 +13,8 @@ function EventView({ myEvents,
   event,
   toggleEventDetails }) {
   return (
-    <>
-      <div style={{ fontFamily: "Lato" }}>
+    <div >
+      <div style={{ fontFamily: "Lato"}}>
         <h2><EventName event={event} /></h2>
         <GoButton addMyEvent={addMyEvent}
           removeMyEvent={removeMyEvent}
@@ -49,7 +49,7 @@ function EventView({ myEvents,
           <EventDescription event={event} />
         </p>
       </div>
-    </>
+  </div>
   );
 }
 
