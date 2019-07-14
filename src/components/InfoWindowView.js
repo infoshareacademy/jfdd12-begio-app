@@ -3,16 +3,15 @@ import { EventName } from "./EventName"
 import { EventPlace } from "./EventPlace";
 import { EventDate } from "./EventDate";
 import { flexbox } from "@material-ui/system";
-//import './InfoWindowView.css'
+import './InfoWindowView.css'
 export function InfoWindowView({ event, toggleEventDetails }) {
     return (
         
             <div
                 style={{
-                    margin: "0",
-                    padding: "0",
-                    width: "120px",
-                    height: "140px",
+                    width: "80%",
+                    height: "50%",
+                    backgroundColor: 'black',
                     fontSize: "10px"
                 }}
             >
@@ -51,6 +50,5 @@ export function InfoWindowView({ event, toggleEventDetails }) {
                     GO!
                   </button>
             </div>
-        
-    );
+    )     
 }
