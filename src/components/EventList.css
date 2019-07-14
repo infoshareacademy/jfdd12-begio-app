@@ -9,4 +9,5 @@
 .eventList {
     height: 90vh;
     overflow: auto;
+    flex-basis: 50%;
 }

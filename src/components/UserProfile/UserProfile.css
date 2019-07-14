@@ -9,3 +9,9 @@
     flex-basis: 50%;
     margin-right: 0.5em;
 }
+
+@media (max-width: 499px) {
+    .containterProfile {
+        flex-direction: column-reverse;
+    }
+}

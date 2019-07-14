@@ -13,4 +13,9 @@ body {
     flex-grow: 1;
 }
 
+@media (max-width: 499px) {
+    .appView {
+        flex-direction: column;
+    }
+}
 
