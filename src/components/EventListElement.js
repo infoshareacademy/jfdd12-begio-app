@@ -1,6 +1,6 @@
 import React from "react"
 import { GoButton } from "./GoButton"
-import "../EventListElement.css"
+import "./EventListElement.css"
 import MaterialIcon from "material-icons-react"
 
 export function EventListElement(props) {

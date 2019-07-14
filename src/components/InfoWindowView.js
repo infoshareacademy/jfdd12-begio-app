@@ -2,9 +2,11 @@ import React from "react";
 import { EventName } from "./EventName"
 import { EventPlace } from "./EventPlace";
 import { EventDate } from "./EventDate";
+import { flexbox } from "@material-ui/system";
+//import './InfoWindowView.css'
 export function InfoWindowView({ event, toggleEventDetails }) {
     return (
-        <>
+        
             <div
                 style={{
                     margin: "0",
@@ -22,7 +24,7 @@ export function InfoWindowView({ event, toggleEventDetails }) {
                         display: "block",
                         marginLeft: "auto",
                         marginRight: "auto",
-                        width: "76%"
+                        width: "100%"
                     }}
                     src={event.images[0]}
 
@@ -49,6 +51,6 @@ export function InfoWindowView({ event, toggleEventDetails }) {
                     GO!
                   </button>
             </div>
-        </>
+        
     );
 }
