@@ -60,7 +60,14 @@ export function EventListElement(props) {
     return (
         <li className="listElement">
             <div className="eventInfo">
-                <img className="imageElement" src={event.images[0]} alt="" />
+                <div className="photoContainer">
+                    <img
+                        className="imageElement"
+                        src={event.images[0]}
+                        alt={event.title}
+                        onClick={() => handleModal(!showModal)}
+                    />
+                </div>
                 <div className="eventNameDatePlace">
                     <p
                         className="eventTitle"
