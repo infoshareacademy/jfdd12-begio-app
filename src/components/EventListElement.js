@@ -54,39 +54,41 @@ export function EventListElement(props) {
     return (
         <li className="listElement">
             <div className="eventInfo">
-                <img className="imageElement" src={event.images[0]} alt=""      />
+                <img className="imageElement" src={event.images[0]} alt="" />
                 <div className="eventNameDatePlace">
-                <p className="eventTitle">{event.title}</p>
+                    <p className="eventTitle">{event.title}</p>
 
-                <p>
-                    <MaterialIcon icon="place" />
-                     {event.address.street}  {event.address.houseNumber}
-                </p>
-                <p>
-                <MaterialIcon icon="date_range" />
-                    {(event.startDate.day !== event.endDate.day &&
-                    event.startDate.month === event.endDate.month) ?
-                    `${event.startDate.day} -  ${event.endDate.day}` :
-                    event.startDate.day}
-                    {` ${month} `}
-                    {event.startDate.year}
-                </p>
-                <p>
-                <MaterialIcon icon="access_time" />
-                    {event.startDate.time[0]}
-                    :{event.startDate.time[1] + "0"} - 
-                    {event.endDate.time[0]}:
-                    {event.endDate.time[1] + "0"}
-                </p>
+                    <p>
+                        <MaterialIcon icon="place" />
+                        {event.address.street} {event.address.houseNumber}
+                    </p>
+                    <p>
+                        <MaterialIcon icon="date_range" />
+                        {event.startDate.day !== event.endDate.day &&
+                        event.startDate.month === event.endDate.month
+                            ? `${event.startDate.day} -  ${event.endDate.day}`
+                            : event.startDate.day}
+                        {` ${month} `}
+                        {event.startDate.year}
+                    </p>
+                    <p>
+                        <MaterialIcon icon="access_time" />
+                        {event.startDate.time[0]}:
+                        {event.startDate.time[1] + "0"} -{event.endDate.time[0]}
+                        :{event.endDate.time[1] + "0"}
+                    </p>
+                    <button className="learnMore">
+                        Kliknij i dowiedz się więcej...
+                    </button>
                 </div>
             </div>
             <div className="eventButton">
-            <GoButton
-                addMyEvent={addMyEvent}
-                removeMyEvent={removeMyEvent}
-                event={event}
-                myEvents={myEvents}
-            />
+                <GoButton
+                    addMyEvent={addMyEvent}
+                    removeMyEvent={removeMyEvent}
+                    event={event}
+                    myEvents={myEvents}
+                />
             </div>
         </li>
     )
