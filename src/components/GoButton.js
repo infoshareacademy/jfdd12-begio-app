@@ -8,26 +8,8 @@ export class GoButton extends Component {
     switched: false
   };
 
-  componentDidMount() {
-    if (
-      Array.isArray(this.props.myEvents) &&
-      this.props.myEvents.includes(this.props.event.id)
-    ) {
-      this.setState({
-        switched: true
-      });
-    }
-
-    console.log(this.props);
-  }
-
   toggleSwitch = () => {
-    this.setState(prevState => {
-      return { switched: !prevState.switched };
-    });
-    // debugger
-
-    this.state.switched
+    this.props.myEvents.includes(this.props.event.id)
       ? this.props.removeMyEvent(this.props.event.id)
       : this.props.addMyEvent(this.props.event.id);
   };
@@ -36,7 +18,7 @@ export class GoButton extends Component {
     return (
       <Switch
         onClick={this.toggleSwitch}
-        on={this.state.switched}
+        on={this.props.myEvents.includes(this.props.event.id)}
         className="switch"
       >
         {<MaterialIcon icon="directions_run" />}
