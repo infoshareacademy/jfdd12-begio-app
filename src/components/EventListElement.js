@@ -6,6 +6,7 @@ import ReactModal from "react-modal"
 import EventView from "../components/EventView"
 
 export function EventListElement(props) {
+    const modalStyles = {overlay: {zIndex: 10}}
     const { event, addMyEvent, removeMyEvent, myEvents } = props
     const [showModal, setShowModal] = useState(false)
 
@@ -95,6 +96,7 @@ export function EventListElement(props) {
                         :{event.endDate.time[1] + "0"}
                     </p>
                     <ReactModal
+                        style={ modalStyles }
                         isOpen={showModal}
                         onRequestClose={() => handleModal(!showModal)}
                         myEvents={myEvents}
