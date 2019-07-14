@@ -7,7 +7,6 @@ import { Carousel } from "react-responsive-carousel";
 
 export function PhotoGallery(props) {
   return (
-    <>
       <div
         style={{
           width: "700px",
@@ -31,6 +30,5 @@ export function PhotoGallery(props) {
           </div>
         </Carousel>
       </div>
-    </>
   );
 }

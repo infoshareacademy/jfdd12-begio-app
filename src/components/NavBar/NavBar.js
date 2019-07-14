@@ -2,7 +2,8 @@ import React from "react"
 import { NavLink } from "react-router-dom"
 import Logo from "./logo.png"
 import "./NavBar.css"
-export const Navbar = props => {
+
+const NavBar = props => {
 
     return (
         <nav className="navigation">
@@ -11,7 +12,7 @@ export const Navbar = props => {
                 <img alt="hello" className="logoImage" src={Logo} /> 
                 </NavLink>
             </div>
-                <NavLink to="/userProfile">
+                <NavLink to="/user-profile">
                 <div className="userProfile">
                     <img className="userImage"
                          src={props.user.profile_image}
@@ -23,3 +24,5 @@ export const Navbar = props => {
         </nav>
     )
 }
+
+export default NavBar;

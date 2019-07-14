@@ -8,7 +8,7 @@ import {
 import { EventList } from "./components/EventList"
 import { MapView } from "./components/MapView"
 import events from "./events.json"
-import { Navbar } from "./components/Navbar"
+import NavBar  from "./components/NavBar"
 import users from "./users.json"
 import UserProfile from "./components/UserProfile"
 import { Footer } from "./components/Footer"
@@ -23,9 +23,11 @@ function App() {
   useEffect(() => {
     console.log(myEvents)
   }, [myEvents])
+  
   const addMyEvent = id => {
     setMyEvents([...myEvents, id])
   }
+
   const removeMyEvent = id => {
     const eventToDelete = myEvents.find(eventId => eventId === id)
     const eventsWithDeletedEvent = myEvents.filter(
@@ -36,7 +38,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Navbar user={currentUser} />
+        <NavBar user={currentUser} />
         <Switch>
           <Route
             exact
@@ -57,7 +59,7 @@ function App() {
             )}
           />
           <Route
-            path="/userProfile"
+            path="/user-profile"
             render={() => (
 
               <UserProfile
