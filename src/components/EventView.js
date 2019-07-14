@@ -1,11 +1,10 @@
 import React from "react";
 import { PhotoGallery } from "./Carusel";
-import { EventName } from "./EventName";
 import { EventDescription } from "./EventDescription";
 import { EventDate } from "./EventDate";
 import { EventPlace } from "./EventPlace";
 import { GoButton } from "./GoButton";
-import calendar from "./calendar.png";
+import calendar from "../assets/calendar.png";
 
 function EventView({ myEvents,
   addMyEvent,
@@ -15,7 +14,7 @@ function EventView({ myEvents,
   return (
     <div >
       <div style={{ fontFamily: "Lato"}}>
-        <h2><EventName event={event} /></h2>
+        <h2>{event.title}</h2>
         <GoButton addMyEvent={addMyEvent}
           removeMyEvent={removeMyEvent}
           event={event}
