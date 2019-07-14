@@ -3,7 +3,6 @@ import {Calendar, momentLocalizer} from 'react-big-calendar'
 import moment from 'moment'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import 'moment/locale/pl'
-import { width } from '@material-ui/system';
 
 const localizer = momentLocalizer(moment) 
 
@@ -31,7 +30,7 @@ function EventsCalendar(props){
       month: true,
       day: true
     }}
-    eventPropGetter={() => ({style: {backgroundColor: '#49406dce'}})}
+    eventPropGetter={() => ({style: {backgroundColor: '#49406dce', cursor:'auto'}})}
     messages={{next:">>",previous:"<<",today:"Dziś", month: "Miesiąc", day: "Dzień"}}
   />
 </div>

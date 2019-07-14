@@ -1,7 +1,6 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 import Logo from "./logo.png"
-import UserLogo from "./userLogo.png"
 import "./NavBar.css"
 export const Navbar = props => {
 

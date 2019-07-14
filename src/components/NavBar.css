@@ -2,11 +2,12 @@
   padding: 0;
   width: 100%;
   background-color:#49406dce;
-  height: 100px;
+  height: 4.5em;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 1em;
 }
 .logo {
   margin-left: 2em;
@@ -30,7 +31,7 @@
 
 .userImage {
   margin-right: 1em;
-  margin-top: 0.6em;
+  margin-top: 0.7em;
   width: 80px;
   height: 80px;
   border-radius: 50%;  
