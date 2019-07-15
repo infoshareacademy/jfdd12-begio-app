@@ -7,7 +7,7 @@
 }
 
 .eventList {
-    height: 90vh;
+    height: 85vh;
     overflow: auto;
     flex-basis: 50%;
 }

@@ -119,7 +119,7 @@ const WrappedMap = withScriptjs(withGoogleMap(Map));
 export function MapView(props) {
 
   return (
-    <div style={{ flexBasis: '50%', height: "90vh" }}>
+    <div style={{ flexBasis: '50%', height: "85vh" }}>
       <WrappedMap
         googleMapURL={
           "https://maps.googleapis.com/maps/api/js"
