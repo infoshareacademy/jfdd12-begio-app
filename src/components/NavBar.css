@@ -1,0 +1,51 @@
+.navigation {
+  padding: 0;
+  width: 100%;
+  background-color: #49406dce;
+  height: 4.5em;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+.logo {
+  margin-left: 2em;
+  margin-top: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.logoImage {
+  width: 10em;
+  height: 3em;
+}
+
+.userProfile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+
+.userImage {
+  margin-right: 1em;
+  margin-top: 0.7em;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.userName {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+  margin-top: 1.5em;
+  margin-right: 1em;
+}
+
+a:link {
+  text-decoration: none;
+}
