@@ -21,12 +21,12 @@ class Map extends React.Component {
   setSelectedEvent = change => {
     change
       ? this.setState({
-        selectedEvent: change
-      })
+          selectedEvent: change
+        })
       : this.setState({
-        selectedEvent: change,
-        showEventDetails: false
-      });
+          selectedEvent: change,
+          showEventDetails: false
+        });
   };
 
   toggleEventDetails = () => {
@@ -46,9 +46,9 @@ class Map extends React.Component {
             fullscreenControl: false,
             streetViewControl: false,
             showingInfoWindow: true,
-            minZoom: 11
+            minZoom: 12.5
           }}
-          defaultZoom={11}
+          defaultZoom={12.5}
           defaultCenter={{ lat: 54.372158, lng: 18.638306 }}
         >
           <MarkerClusterer enableRetinaIcons gridSize={40}>
@@ -104,11 +104,13 @@ class Map extends React.Component {
             >
               x
             </button>
-            <EventView addMyEvent={this.props.addMyEvent}
+            <EventView
+              addMyEvent={this.props.addMyEvent}
               removeMyEvent={this.props.removeMyEvent}
               myEvents={this.props.myEvents}
               event={this.state.selectedEvent}
-              toggleEventDetails={this.toggleEventDetails} />
+              toggleEventDetails={this.toggleEventDetails}
+            />
           </Modal>
         )}
       </div>
@@ -117,13 +119,10 @@ class Map extends React.Component {
 }
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 export function MapView(props) {
-
   return (
-    <div style={{ flexBasis: '50%', height: "85vh" }}>
+    <div style={{ flexBasis: "50%", height: "85vh" }}>
       <WrappedMap
-        googleMapURL={
-          "https://maps.googleapis.com/maps/api/js"
-        }
+        googleMapURL={"https://maps.googleapis.com/maps/api/js"}
         loadingElement={<div style={{ height: "100%" }} />}
         containerElement={<div style={{ height: "100%" }} />}
         mapElement={<div style={{ height: "100%" }} />}
@@ -140,8 +139,7 @@ export function DivOnMap(props) {
         //  removeMyEvent={props.removeMyEvent}
         //  myEvents={props.myEvents}
         {...props}
-
       />
     </div>
-  )
-} 
+  );
+}
