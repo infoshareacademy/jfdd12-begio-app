@@ -1,14 +1,16 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { GoButton } from "./GoButton"
 import "./EventListElement.css"
 import MaterialIcon from "material-icons-react"
 import ReactModal from "react-modal"
 import EventView from "../components/EventView"
+import { AddressContext } from "../contexts/AddressContext"
 
 export function EventListElement(props) {
-    const modalStyles = {overlay: {zIndex: 10}}
+    const modalStyles = { overlay: { zIndex: 10 } }
     const { event, addMyEvent, removeMyEvent, myEvents } = props
     const [showModal, setShowModal] = useState(false)
+    const { isEventSelected } = useContext(AddressContext)
 
     const handleModal = toogle => {
         setShowModal(toogle)
@@ -76,7 +78,8 @@ export function EventListElement(props) {
                     >
                         {event.title}
                     </p>
-                    <p>
+
+                    <p onClick={isEventSelected}>
                         <MaterialIcon icon="place" />
                         {event.address.street} {event.address.houseNumber}
                     </p>
@@ -96,7 +99,7 @@ export function EventListElement(props) {
                         :{event.endDate.time[1] + "0"}
                     </p>
                     <ReactModal
-                        style={ modalStyles }
+                        style={modalStyles}
                         isOpen={showModal}
                         onRequestClose={() => handleModal(!showModal)}
                         myEvents={myEvents}
