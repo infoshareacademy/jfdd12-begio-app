@@ -68,6 +68,10 @@
     flex-basis: 60%;
 }
 
+.materialIcon{
+    color:red;
+}
+
 @media (max-width: 600px) {
     .listElement {
         flex-direction: column;

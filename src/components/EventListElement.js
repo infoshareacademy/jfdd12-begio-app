@@ -80,14 +80,20 @@ export function EventListElement(props) {
                         <MaterialIcon icon="place" />
                         {event.address.street} {event.address.houseNumber}
                     </p>
-                    <p>
+                    <p> 
+                         <div style={{display:"flex", flexDirection:"row", flexWrap:"nowrap", alignContent:"center"}}>
+                         <p style={{display:"flex", flexDirection:"column", justifyContent:"center"}}>
                         <MaterialIcon icon="date_range" />
+                        </p>
+                        <p style={{display:"flex", flexDirection:"column", justifyContent:"center", marginLeft:"0.5em"}}>
                         {event.startDate.day !== event.endDate.day &&
                         event.startDate.month === event.endDate.month
                             ? `${event.startDate.day} -  ${event.endDate.day}`
                             : event.startDate.day}
                         {` ${month} `}
                         {event.startDate.year}
+                        </p>
+                        </div>
                     </p>
                     <p>
                         <MaterialIcon icon="access_time" />

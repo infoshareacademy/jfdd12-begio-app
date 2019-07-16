@@ -15,7 +15,6 @@ import { Footer } from "./components/Footer"
 import "./App.css"
 
 const NoMatch = () => <h1>404</h1>;
-
 function App() {
   const [currentUser, setCurrentUser] = useState(users[0]);
   const [myEvents, setMyEvents] = useState([]);
