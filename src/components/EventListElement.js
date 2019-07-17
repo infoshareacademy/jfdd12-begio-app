@@ -73,78 +73,100 @@ export function EventListElement(props) {
       break;
   }
 
-  return (
-    <li className="listElement">
-      <div className="eventInfo">
-        <div className="photoContainer">
-          <img
-            className="imageElement"
-            src={event.images[0]}
-            alt={event.title}
-            onClick={() => handleModal(!showModal)}
-          />
-        </div>
-        <div className="eventNameDatePlace">
-          <p className="eventTitle" onClick={() => handleModal(!showModal)}>
-            {event.title}
-          </p>
-          <p>
-            <MaterialIcon icon="place" />
-            {event.address.street} {event.address.houseNumber}
-          </p>
-          <p>
-            <MaterialIcon icon="date_range" />
-            {event.startDate.day !== event.endDate.day &&
-            event.startDate.month === event.endDate.month
-              ? `${event.startDate.day} -  ${event.endDate.day}`
-              : event.startDate.day}
-            {` ${month} `}
-            {event.startDate.year}
-          </p>
-          <p>
-            <MaterialIcon icon="access_time" />
-            {event.startDate.time[0]}:{event.startDate.time[1] + "0"} -
-            {event.endDate.time[0]}:{event.endDate.time[1] + "0"}
-          </p>
-          <ReactModal
-            style={modalStyles}
-            isOpen={showModal}
-            onRequestClose={() => handleModal(!showModal)}
-            myEvents={myEvents}
-            addMyEvent={addMyEvent}
-            removeMyEvent={removeMyEvent}
-          >
-            <button
-              onClick={() => handleModal(!showModal)}
-              style={{
-                padding: "10px",
-                cursor: "pointer",
-                float: "right",
-                borderRadius: "8px",
-                color: "white",
-                border: "none",
-                background: "rgb(68, 66, 105)"
-              }}
-            >
-              X
-            </button>
-            <EventView
-              event={event}
-              myEvents={myEvents}
-              addMyEvent={addMyEvent}
-              removeMyEvent={removeMyEvent}
-            />
-          </ReactModal>
-        </div>
-      </div>
-      <div className="eventButton">
-        <GoButton
-          addMyEvent={addMyEvent}
-          removeMyEvent={removeMyEvent}
-          event={event}
-          myEvents={myEvents}
-        />
-      </div>
-    </li>
-  );
+    return (
+        <li className="listElement">
+            <div className="eventInfo">
+                <div className="photoContainer">
+                    <img
+                        className="imageElement"
+                        src={event.images[0]}
+                        alt={event.title}
+                        onClick={() => handleModal(!showModal)}
+                    />
+                </div>
+                <div className="eventNameDatePlace">
+                    <p
+                        className="eventTitle"
+                        onClick={() => handleModal(!showModal)}
+                    >
+                        {event.title}
+                    </p>
+                    <p>
+                    <div className="placeDateTime">
+                         <p className="materialIcon">
+                        <MaterialIcon icon="place" />
+                        </p>
+                        <p className="placeDateTimeBody">
+                        {event.address.street} {event.address.houseNumber}
+                        </p>
+                    </div>
+                    </p>
+                    <p> 
+                         <div className="placeDateTime">
+                         <p className="materialIcon">
+                        <MaterialIcon icon="date_range" />
+                        </p>
+                        <p className="placeDateTimeBody">
+                        {event.startDate.day !== event.endDate.day &&
+                        event.startDate.month === event.endDate.month
+                            ? `${event.startDate.day} -  ${event.endDate.day}`
+                            : event.startDate.day}
+                        {` ${month} `}
+                        {event.startDate.year}
+                        </p>
+                        </div>
+                    </p>
+                    <p>
+                    <div className="placeDateTime">
+                         <p className="materialIcon">
+                        <MaterialIcon icon="access_time" />
+                        </p>
+                        <p className="placeDateTimeBody">
+                        {event.startDate.time[0]}:
+                        {event.startDate.time[1] + "0"} -{event.endDate.time[0]}
+                        :{event.endDate.time[1] + "0"}
+                        </p>
+                    </div>
+                    </p>
+                    <ReactModal
+                        style={ modalStyles }
+                        isOpen={showModal}
+                        onRequestClose={() => handleModal(!showModal)}
+                        myEvents={myEvents}
+                        addMyEvent={addMyEvent}
+                        removeMyEvent={removeMyEvent}
+                    >
+                        <button
+                            onClick={() => handleModal(!showModal)}
+                            style={{
+                                padding: "10px",
+                                cursor: "pointer",
+                                float: "right",
+                                borderRadius: "8px",
+                                color: "white",
+                                border: "none",
+                                background: "rgb(68, 66, 105)"
+                            }}
+                        >
+                            X
+                        </button>
+                        <EventView
+                            event={event}
+                            myEvents={myEvents}
+                            addMyEvent={addMyEvent}
+                            removeMyEvent={removeMyEvent}
+                        />
+                    </ReactModal>
+                </div>
+            </div>
+            <div className="eventButton">
+                <GoButton
+                    addMyEvent={addMyEvent}
+                    removeMyEvent={removeMyEvent}
+                    event={event}
+                    myEvents={myEvents}
+                />
+            </div>
+        </li>
+    )
 }
