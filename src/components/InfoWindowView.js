@@ -1,5 +1,5 @@
 import React from "react";
-import { EventPlace } from "./EventPlace";
+import { EventPlace } from "./EventView/EventPlace";
 import { EventDate } from "./EventDate";
 import { GoButton } from "./GoButton";
 import './InfoWindowView.css'

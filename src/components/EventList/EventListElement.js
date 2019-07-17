@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { GoButton } from "./GoButton";
+import { GoButton } from "../GoButton";
 import "./EventListElement.css";
 import MaterialIcon from "material-icons-react";
 import ReactModal from "react-modal";
-import EventView from "../components/EventView";
+import EventView from "../EventView";
 
 export function EventListElement(props) {
   const modalStyles = {

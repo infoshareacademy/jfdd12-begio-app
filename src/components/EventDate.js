@@ -1,7 +1,7 @@
 import React from "react";
 import MaterialIcon from "material-icons-react"
-import { EventListElement } from "./EventListElement";
-import './EventListElement.css'
+import { EventListElement } from "./EventList/EventListElement";
+import './EventList/EventListElement.css'
 
 
 export const EventDate = ({ event }) => {

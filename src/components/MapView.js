@@ -8,7 +8,7 @@ import {
 } from "react-google-maps";
 import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer";
 import events from "../events.json";
-import EventView from "../components/EventView";
+import EventView from "./EventView";
 
 import Modal from "react-modal";
 import { InfoWindowView } from "./InfoWindowView";

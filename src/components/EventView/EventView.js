@@ -1,10 +1,10 @@
 import React from "react";
 import { PhotoGallery } from "./Carusel";
 import { EventDescription } from "./EventDescription";
-import { EventDate } from "./EventDate";
+import { EventDate } from "../EventDate";
 import { EventPlace } from "./EventPlace";
-import { GoButton } from "./GoButton";
-import calendar from "../assets/calendar.png";
+import { GoButton } from "../GoButton";
+import calendar from "../../assets/calendar.png";
 
 function EventView({
   myEvents,
