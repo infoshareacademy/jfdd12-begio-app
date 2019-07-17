@@ -13,7 +13,7 @@ import users from "./users.json"
 import UserProfile from "./components/UserProfile"
 import { Footer } from "./components/Footer"
 import "./App.css"
-import { AddressProvider } from "./contexts/AddressContext.js/index.js"
+import { LocationProvider } from "./contexts/LocationContext"
 
 const NoMatch = () => <h1>404</h1>
 
@@ -43,7 +43,7 @@ function App() {
                         exact
                         path="/"
                         render={() => (
-                            <AddressProvider>
+                            <LocationProvider>
                                 <div className="appView">
                                     <MapView
                                         addMyEvent={addMyEvent}
@@ -58,7 +58,7 @@ function App() {
                                         removeMyEvent={removeMyEvent}
                                     />
                                 </div>
-                            </AddressProvider>
+                            </LocationProvider>
                         )}
                     />
                     <Route

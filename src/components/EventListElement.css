@@ -49,6 +49,15 @@
     color: #49406dce;
 }
 
+.eventAdress {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.eventAdress:hover {
+    color: #49406dce;
+}
+
 .eventButton {
     margin: 5px;
 }
@@ -72,11 +81,11 @@
     .listElement {
         flex-direction: column;
     }
-    .imageElement{
+    .imageElement {
         flex-basis: 50%;
         flex-grow: 1;
     }
-    .eventNameDatePlace{
+    .eventNameDatePlace {
         flex-basis: 50%;
     }
     .eventButton {

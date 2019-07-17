@@ -4,13 +4,13 @@ import "./EventListElement.css"
 import MaterialIcon from "material-icons-react"
 import ReactModal from "react-modal"
 import EventView from "../components/EventView"
-import { AddressContext } from "../contexts/AddressContext"
+import { LocationConsumer } from "../contexts/LocationContext"
 
 export function EventListElement(props) {
     const modalStyles = { overlay: { zIndex: 10 } }
     const { event, addMyEvent, removeMyEvent, myEvents } = props
     const [showModal, setShowModal] = useState(false)
-    const { isEventSelected } = useContext(AddressContext)
+    // const { isEventSelected } = useContext(LocationContext)
 
     const handleModal = toogle => {
         setShowModal(toogle)
@@ -78,11 +78,18 @@ export function EventListElement(props) {
                     >
                         {event.title}
                     </p>
-
-                    <p onClick={isEventSelected}>
-                        <MaterialIcon icon="place" />
-                        {event.address.street} {event.address.houseNumber}
-                    </p>
+                    <LocationConsumer>
+                        {value => (
+                            <p
+                                className="eventAdress"
+                                onClick={() => value.setCurrentId(event.id)}
+                            >
+                                <MaterialIcon icon="place" />
+                                {event.address.street}{" "}
+                                {event.address.houseNumber}
+                            </p>
+                        )}
+                    </LocationConsumer>
                     <p>
                         <MaterialIcon icon="date_range" />
                         {event.startDate.day !== event.endDate.day &&
