@@ -77,15 +77,21 @@ export function EventListElement(props) {
                         {event.title}
                     </p>
                     <p>
+                    <div className="placeDateTime">
+                         <p className="materialIcon">
                         <MaterialIcon icon="place" />
+                        </p>
+                        <p className="placeDateTimeBody">
                         {event.address.street} {event.address.houseNumber}
+                        </p>
+                    </div>
                     </p>
                     <p> 
-                         <div style={{display:"flex", flexDirection:"row", flexWrap:"nowrap", alignContent:"center"}}>
-                         <p style={{display:"flex", flexDirection:"column", justifyContent:"center"}}>
+                         <div className="placeDateTime">
+                         <p className="materialIcon">
                         <MaterialIcon icon="date_range" />
                         </p>
-                        <p style={{display:"flex", flexDirection:"column", justifyContent:"center", marginLeft:"0.5em"}}>
+                        <p className="placeDateTimeBody">
                         {event.startDate.day !== event.endDate.day &&
                         event.startDate.month === event.endDate.month
                             ? `${event.startDate.day} -  ${event.endDate.day}`
@@ -96,10 +102,16 @@ export function EventListElement(props) {
                         </div>
                     </p>
                     <p>
+                    <div className="placeDateTime">
+                         <p className="materialIcon">
                         <MaterialIcon icon="access_time" />
+                        </p>
+                        <p className="placeDateTimeBody">
                         {event.startDate.time[0]}:
                         {event.startDate.time[1] + "0"} -{event.endDate.time[0]}
                         :{event.endDate.time[1] + "0"}
+                        </p>
+                    </div>
                     </p>
                     <ReactModal
                         style={ modalStyles }
