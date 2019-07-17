@@ -1,5 +1,7 @@
 import React from "react";
 import MaterialIcon from "material-icons-react"
+import { EventListElement } from "./EventListElement";
+import './EventListElement.css'
 
 
 export const EventDate = ({ event }) => {
@@ -50,8 +52,7 @@ export const EventDate = ({ event }) => {
   }
   return (
     <div >
-       <p>
-                        <MaterialIcon icon="date_range" />
+                    <p>
                         {event.startDate.day !== event.endDate.day &&
                         event.startDate.month === event.endDate.month
                             ? `${event.startDate.day} -  ${event.endDate.day}`
@@ -60,7 +61,6 @@ export const EventDate = ({ event }) => {
                         {event.startDate.year}
                     </p>
                     <p>
-                        <MaterialIcon icon="access_time" />
                         {event.startDate.time[0]}:
                         {event.startDate.time[1] + "0"} -{event.endDate.time[0]}
                         :{event.endDate.time[1] + "0"}
