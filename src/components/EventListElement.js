@@ -82,7 +82,7 @@ export function EventListElement(props) {
                         {value => (
                             <p
                                 className="eventAdress"
-                                onClick={() => value.setCurrentId(event.id)}
+                                onClick={() => value.setSelectedEvent(event)}
                             >
                                 <MaterialIcon icon="place" />
                                 {event.address.street}{" "}

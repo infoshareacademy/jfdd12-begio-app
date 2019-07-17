@@ -3,17 +3,13 @@ import React, { useState } from "react"
 const LocationContext = React.createContext()
 
 export const LocationProvider = props => {
-    const [locationId, setLocationId] = useState("")
-
-    function setCurrentId(eventId) {
-        setLocationId(eventId)
-    }
-    console.log(locationId)
+    const [selectedEvent, setSelectedEvent] = useState(null)
 
     return (
         <LocationContext.Provider
             value={{
-                setCurrentId
+                selectedEvent,
+                setSelectedEvent
             }}
             {...props}
         />

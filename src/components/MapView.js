@@ -12,23 +12,22 @@ import EventView from "../components/EventView"
 
 import Modal from "react-modal"
 import { InfoWindowView } from "./InfoWindowView"
-// import { LocationConsumer } from "../contexts/LocationContext"
+import { LocationConsumer } from "../contexts/LocationContext"
 class Map extends React.Component {
     state = {
-        selectedEvent: null,
         showEventDetails: false
     }
 
-    setSelectedEvent = change => {
-        change
-            ? this.setState({
-                  selectedEvent: change
-              })
-            : this.setState({
-                  selectedEvent: change,
-                  showEventDetails: false
-              })
-    }
+    // setSelectedEvent = change => {
+    //     change
+    //         ? this.setState({
+    //               selectedEvent: change
+    //           })
+    //         : this.setState({
+    //               selectedEvent: change,
+    //               showEventDetails: false
+    //           })
+    // }
 
     toggleEventDetails = () => {
         this.setState({
@@ -36,11 +35,13 @@ class Map extends React.Component {
         })
     }
     render() {
-        // console.log(this.props.addMyEvent)
         return (
             <div>
                 <GoogleMap
-                    onClick={() => this.setSelectedEvent(null)}
+                    onClick={() => {
+                        // TODO: use context consumer here
+                        // this.setSelectedEvent(null)
+                    }}
                     options={{
                         // styles: mapStyles,
                         mapTypeControl: false,
@@ -54,38 +55,57 @@ class Map extends React.Component {
                 >
                     <MarkerClusterer enableRetinaIcons gridSize={40}>
                         {events.map(event => (
-                            <Marker
-                                key={event.id}
-                                position={{
-                                    lat: event.address.location.lat,
-                                    lng: event.address.location.lng
-                                }}
-                                onClick={() => {
-                                    this.setSelectedEvent(event)
-                                }}
-                            />
+                            <LocationConsumer>
+                                {value => (
+                                    <Marker
+                                        key={event.id}
+                                        position={{
+                                            lat: event.address.location.lat,
+                                            lng: event.address.location.lng
+                                        }}
+                                        onClick={() => {
+                                            value.setSelectedEvent(event)
+                                        }}
+                                    />
+                                )}
+                            </LocationConsumer>
                         ))}
-                        {this.state.selectedEvent && (
-                            <InfoWindow
-                                position={{
-                                    lat: this.state.selectedEvent.address
-                                        .location.lat,
-                                    lng: this.state.selectedEvent.address
-                                        .location.lng
-                                }}
-                                onCloseClick={() => {
-                                    this.setSelectedEvent(null)
-                                }}
-                            >
-                                <InfoWindowView
-                                    addMyEvent={this.props.addMyEvent}
-                                    removeMyEvent={this.props.removeMyEvent}
-                                    myEvents={this.props.myEvents}
-                                    event={this.state.selectedEvent}
-                                    toggleEventDetails={this.toggleEventDetails}
-                                />
-                            </InfoWindow>
-                        )}
+
+                        <LocationConsumer>
+                            {value => {
+                                return (
+                                    value.selectedEvent && (
+                                        <InfoWindow
+                                            position={{
+                                                lat:
+                                                    value.selectedEvent.address
+                                                        .location.lat,
+                                                lng:
+                                                    value.selectedEvent.address
+                                                        .location.lng
+                                            }}
+                                            onCloseClick={() => {
+                                                value.setSelectedEvent(null)
+                                            }}
+                                        >
+                                            <InfoWindowView
+                                                addMyEvent={
+                                                    this.props.addMyEvent
+                                                }
+                                                removeMyEvent={
+                                                    this.props.removeMyEvent
+                                                }
+                                                myEvents={this.props.myEvents}
+                                                event={value.selectedEvent}
+                                                toggleEventDetails={
+                                                    this.toggleEventDetails
+                                                }
+                                            />
+                                        </InfoWindow>
+                                    )
+                                )
+                            }}
+                        </LocationConsumer>
                     </MarkerClusterer>
                 </GoogleMap>
                 {this.state.showEventDetails && (
@@ -107,13 +127,21 @@ class Map extends React.Component {
                         >
                             x
                         </button>
-                        <EventView
-                            addMyEvent={this.props.addMyEvent}
-                            removeMyEvent={this.props.removeMyEvent}
-                            myEvents={this.props.myEvents}
-                            event={this.state.selectedEvent}
-                            toggleEventDetails={this.toggleEventDetails}
-                        />
+                        <LocationConsumer>
+                            {value => {
+                                return (
+                                    <EventView
+                                        addMyEvent={this.props.addMyEvent}
+                                        removeMyEvent={this.props.removeMyEvent}
+                                        myEvents={this.props.myEvents}
+                                        event={value.selectedEvent}
+                                        toggleEventDetails={
+                                            this.toggleEventDetails
+                                        }
+                                    />
+                                )
+                            }}
+                        </LocationConsumer>
                     </Modal>
                 )}
             </div>
