@@ -14,15 +14,26 @@ import UserProfile from "./components/UserProfile"
 import "./App.css"
 import { LocationProvider } from "./contexts/LocationContext"
 import firebaseInit from "./firebase"
+import { Login } from "./components/Login";
+import ReactDOM from "react-dom";
 const NoMatch = () => <h1>404</h1>
 
 function App() {
     const [currentUser, setCurrentUser] = useState(users[0])
     const [myEvents, setMyEvents] = useState([])
+    const [LoggedUser, setUser] = useState({})
 
     useEffect(() => {
-        console.log(myEvents)
-    }, [myEvents])
+        firebaseInit.auth().onAuthStateChanged((LoggedUser) => {
+            if (LoggedUser) {
+                setUser(LoggedUser)
+            } else {
+                setUser(null)
+            }
+        })
+    }, [LoggedUser])
+
+
     const addMyEvent = id => {
         setMyEvents([...myEvents, id])
     }
@@ -36,13 +47,17 @@ function App() {
 
     const logOut = () => {
         firebaseInit.auth().signOut()
+    }
 
-
+    const logIn = () => {
+        ReactDOM.render(<Login />, document.getElementById("root"));
     }
     return (
+
         <Router>
             <div>
-                <Navbar user={currentUser} logOut={logOut} />
+                <Navbar logIn={logIn} user={currentUser} logOut={logOut} LoggedUser={LoggedUser} />
+
                 <Switch>
                     <Route
                         exact
@@ -51,12 +66,13 @@ function App() {
                             <LocationProvider>
                                 <div className="appView">
                                     <MapView
-
+                                        LoggedUser={LoggedUser}
                                         addMyEvent={addMyEvent}
                                         removeMyEvent={removeMyEvent}
                                         myEvents={myEvents}
                                     />
                                     <EventList
+                                        LoggedUser={LoggedUser}
                                         myEvents={myEvents}
                                         setFavourite={setMyEvents}
                                         events={events}
@@ -71,6 +87,7 @@ function App() {
                         path="/user-profile"
                         render={() => (
                             <UserProfile
+                                LoggedUser={LoggedUser}
                                 user={currentUser}
                                 myEvents={myEvents}
                                 setFavourite={setMyEvents}

@@ -13,6 +13,7 @@ function UserProfile(props) {
         <div className="containterProfile">
             <div className="eventsList">
                 <EventList
+                    LoggedUser={props.LoggedUser}
                     isOnUserProfile={true}
                     myEvents={props.myEvents}
                     setFavourite={props.setMyEvents}
@@ -35,22 +36,22 @@ function UserProfile(props) {
             </div>
         </div>
     ) : (
-        <div className="containterProfile">
-            <div style={{ width: "100%" }}>
-                <p className="userMessage">
-                    <UserMessage
-                        userName={props.user.name}
+            <div className="containterProfile">
+                <div style={{ width: "100%" }}>
+                    <p className="userMessage">
+                        <UserMessage
+                            userName={props.user.name}
+                            myEvents={props.myEvents}
+                        />
+                    </p>
+                    <EventsCalendar
                         myEvents={props.myEvents}
+                        events={props.events}
+                        userEvents={props.myEvents}
                     />
-                </p>
-                <EventsCalendar
-                    myEvents={props.myEvents}
-                    events={props.events}
-                    userEvents={props.myEvents}
-                />
+                </div>
             </div>
-        </div>
-    )
+        )
 }
 
 export default UserProfile

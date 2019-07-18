@@ -13,13 +13,13 @@ const Navbar = props => {
       </div>
       <NavLink to="/user-profile">
         <div className="userProfile">
-          <img
+          {props.LoggedUser ? <img
             className="userImage"
             src={props.user.profile_image}
             alt="user logo"
-          />
-          <p className="userName">{props.user.name} <button className="logoutStyle"
-            onClick={props.logOut}>Wyloguj</button></p>
+          /> : null}
+          <p className="userName">{props.LoggedUser ? props.user.name : null} <button className="logoutStyle"
+            onClick={props.LoggedUser ? props.logOut : props.logIn}>{props.LoggedUser ? "Wyloguj" : "Zaloguj się"}</button></p>
         </div>
       </NavLink>
     </nav>

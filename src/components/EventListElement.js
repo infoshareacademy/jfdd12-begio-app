@@ -110,17 +110,17 @@ export function EventListElement(props) {
                                             {event.address.houseNumber}
                                         </p>
                                     ) : (
-                                        <p
-                                            className="eventAdress"
-                                            onClick={() =>
-                                                value.setSelectedEvent(event)
-                                            }
-                                        >
-                                            <MaterialIcon icon="place" />
-                                            {event.address.street}{" "}
-                                            {event.address.houseNumber}
-                                        </p>
-                                    )
+                                            <p
+                                                className="eventAdress"
+                                                onClick={() =>
+                                                    value.setSelectedEvent(event)
+                                                }
+                                            >
+                                                <MaterialIcon icon="place" />
+                                                {event.address.street}{" "}
+                                                {event.address.houseNumber}
+                                            </p>
+                                        )
                                 }}
                             </LocationConsumer>
                         </div>
@@ -132,10 +132,10 @@ export function EventListElement(props) {
                             </p>
                             <p className="placeDateTimeBody">
                                 {event.startDate.day !== event.endDate.day &&
-                                event.startDate.month === event.endDate.month
+                                    event.startDate.month === event.endDate.month
                                     ? `${event.startDate.day} -  ${
-                                          event.endDate.day
-                                      }`
+                                    event.endDate.day
+                                    }`
                                     : event.startDate.day}
                                 {` ${month} `}
                                 {event.startDate.year}
@@ -187,12 +187,14 @@ export function EventListElement(props) {
                 </div>
             </div>
             <div className="eventButton">
-                <GoButton
+
+                {props.LoggedUser ? <GoButton
                     addMyEvent={addMyEvent}
                     removeMyEvent={removeMyEvent}
                     event={event}
                     myEvents={myEvents}
-                />
+                /> :
+                    null}
             </div>
         </li>
     )

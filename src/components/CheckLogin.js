@@ -4,21 +4,21 @@ import App from "../App"
 import { Login } from "./Login"
 
 export function CheckLogin() {
-    const [user, setUser] = useState({})
+    const [LoggedUser, setUser] = useState({})
 
     useEffect(() => {
-        firebaseInit.auth().onAuthStateChanged((user) => {
-            if (user) {
-                setUser(user)
+        firebaseInit.auth().onAuthStateChanged((LoggedUser) => {
+            if (LoggedUser) {
+                setUser(LoggedUser)
             } else {
                 setUser(null)
             }
         })
-    }, [user])
+    }, [LoggedUser])
 
 
 
-    return user ? (<App />) : (<Login />)
+    return LoggedUser ? (<App />) : (<Login />)
 }
 
 

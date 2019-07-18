@@ -75,6 +75,7 @@ class Map extends React.Component {
                                         return (
                                             value.selectedEvent && (
                                                 <InfoWindow
+
                                                     position={{
                                                         lat:
                                                             value.selectedEvent
@@ -92,6 +93,7 @@ class Map extends React.Component {
                                                     }}
                                                 >
                                                     <InfoWindowView
+                                                        LoggedUser={this.props.LoggedUser}
                                                         addMyEvent={
                                                             this.props
                                                                 .addMyEvent
@@ -165,7 +167,16 @@ export function MapView(props) {
 
     return (
         <div style={{ flexBasis: "50%", height: "85vh" }}>
-
+            {props.LoggedUser ? null : <div style={{
+                marginLeft: "10px",
+                padding: "10px",
+                background: "rgb(214, 67, 67)",
+                borderRadius: "0 15px 15px 15px",
+                width: "400px",
+                fontSize: "13px",
+                color: "white",
+                marginBottom: "10px"
+            }}>Aby dodać wydarzenia do Twojej listy, zaloguj się!</div>}
             <WrappedMap
                 googleMapURL={"https://maps.googleapis.com/maps/api/js"}
                 loadingElement={<div style={{ height: "100%" }} />}

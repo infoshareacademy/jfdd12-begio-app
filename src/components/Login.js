@@ -8,9 +8,9 @@ import {
   Message,
   Segment
 } from "semantic-ui-react";
-
+import App from "../App"
 import firebaseInit from "../firebase";
-
+import ReactDOM from "react-dom";
 export class Login extends React.Component {
   state = {
     email: "",
@@ -27,6 +27,7 @@ export class Login extends React.Component {
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .catch(error => console.log(error));
+    ReactDOM.render(<App />, document.getElementById("root"));
   };
   render() {
     return (

@@ -15,6 +15,7 @@ export class EventList extends Component {
                             removeMyEvent={this.props.removeMyEvent}
                             event={event}
                             myEvents={this.props.myEvents}
+                            LoggedUser={this.props.LoggedUser}
                         />
                     ))}
                 </ul>

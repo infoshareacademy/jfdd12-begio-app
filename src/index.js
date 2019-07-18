@@ -6,6 +6,6 @@ import { CheckLogin } from "./components/CheckLogin";
 import App from "./App"
 import "semantic-ui-css/semantic.min.css";
 
-ReactDOM.render(<CheckLogin />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 serviceWorker.unregister();
