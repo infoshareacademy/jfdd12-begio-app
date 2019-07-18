@@ -130,6 +130,22 @@ class Map extends React.Component {
                 </LocationConsumer>
                 {this.state.showEventDetails && (
                     <Modal
+                        style={{
+                            overlay: { zIndex: 10, backgroundColor: "rgba(192,192,192, 0.75)" },
+                            content: {
+                                width: "80%",
+                                height: "80%",
+                                position: "absolute",
+                                margin: "auto",
+                                border: "1px solid #ccc",
+                                background: "#fff",
+                                overflow: "auto",
+                                WebkitOverflowScrolling: "touch",
+                                borderRadius: "4px",
+                                outline: "none",
+                                padding: "20px"
+                            }
+                        }}
                         isOpen={this.state.showEventDetails}
                         onRequestClose={this.toggleEventDetails}
                     >
