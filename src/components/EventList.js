@@ -9,6 +9,7 @@ export class EventList extends Component {
                 <ul className="list">
                     {this.props.events.map(event => (
                         <EventListElement
+                            isOnUserProfile={this.props.isOnUserProfile}
                             key={event.id}
                             addMyEvent={this.props.addMyEvent}
                             removeMyEvent={this.props.removeMyEvent}

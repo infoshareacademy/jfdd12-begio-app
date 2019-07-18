@@ -1,77 +1,85 @@
-import React, { useState } from "react";
-import { GoButton } from "./GoButton";
-import "./EventListElement.css";
-import MaterialIcon from "material-icons-react";
-import ReactModal from "react-modal";
-import EventView from "../components/EventView";
+import React, { useState, useContext } from "react"
+import { GoButton } from "./GoButton"
+import "./EventListElement.css"
+import MaterialIcon from "material-icons-react"
+import ReactModal from "react-modal"
+import EventView from "../components/EventView"
+import { LocationConsumer } from "../contexts/LocationContext"
 
 export function EventListElement(props) {
-  const modalStyles = {
-    overlay: { zIndex: 10, backgroundColor: "rgba(192,192,192, 0.75)" },
-    content: {
-      width: "80%",
-      height: "80%",
-      position: "absolute",
-      margin: "auto",
-      border: "1px solid #ccc",
-      background: "#fff",
-      overflow: "auto",
-      WebkitOverflowScrolling: "touch",
-      borderRadius: "4px",
-      outline: "none",
-      padding: "20px"
+    const modalStyles = {
+        overlay: { zIndex: 10, backgroundColor: "rgba(192,192,192, 0.75)" },
+        content: {
+            width: "80%",
+            height: "80%",
+            position: "absolute",
+            margin: "auto",
+            border: "1px solid #ccc",
+            background: "#fff",
+            overflow: "auto",
+            WebkitOverflowScrolling: "touch",
+            borderRadius: "4px",
+            outline: "none",
+            padding: "20px"
+        }
     }
-  };
-  const { event, addMyEvent, removeMyEvent, myEvents } = props;
-  const [showModal, setShowModal] = useState(false);
 
-  const handleModal = toogle => {
-    setShowModal(toogle);
-  };
-  let month = event.startDate.month;
+    const {
+        event,
+        addMyEvent,
+        removeMyEvent,
+        myEvents,
+        isOnUserProfile
+    } = props
+    const [showModal, setShowModal] = useState(false)
 
-  switch (month) {
-    case 1:
-      month = "stycznia";
-      break;
-    case 2:
-      month = "lutego";
-      break;
-    case 3:
-      month = "marca";
-      break;
-    case 4:
-      month = "kwietnia";
-      break;
-    case 5:
-      month = "maja";
-      break;
-    case 6:
-      month = "czerwca";
-      break;
-    case 7:
-      month = "lipca";
-      break;
-    case 8:
-      month = "sierpnia";
-      break;
-    case 9:
-      month = "września";
-      break;
-    case 10:
-      month = "października";
-      break;
-    case 11:
-      month = "listopada";
-      break;
-    case 12:
-      month = "grudnia";
-      break;
+    const handleModal = toogle => {
+        setShowModal(toogle)
+    }
+    let month = event.startDate.month
 
-    default:
-      month = "Err: Brak nazwy miesiąca";
-      break;
-  }
+    switch (month) {
+        case 1:
+            month = "stycznia"
+            break
+        case 2:
+            month = "lutego"
+            break
+        case 3:
+            month = "marca"
+            break
+        case 4:
+            month = "kwietnia"
+            break
+        case 5:
+            month = "maja"
+            break
+        case 6:
+            month = "czerwca"
+            break
+        case 7:
+            month = "lipca"
+            break
+        case 8:
+            month = "sierpnia"
+            break
+        case 9:
+            month = "września"
+            break
+        case 10:
+            month = "października"
+            break
+        case 11:
+            month = "listopada"
+            break
+        case 12:
+            month = "grudnia"
+            break
+
+        default:
+            month = "Err: Brak nazwy miesiąca"
+            break
+    }
 
     return (
         <li className="listElement">
@@ -92,44 +100,63 @@ export function EventListElement(props) {
                         {event.title}
                     </p>
                     <p>
-                    <div className="placeDateTime">
-                         <p className="materialIcon">
-                        <MaterialIcon icon="place" />
-                        </p>
-                        <p className="placeDateTimeBody">
-                        {event.address.street} {event.address.houseNumber}
-                        </p>
-                    </div>
-                    </p>
-                    <p> 
-                         <div className="placeDateTime">
-                         <p className="materialIcon">
-                        <MaterialIcon icon="date_range" />
-                        </p>
-                        <p className="placeDateTimeBody">
-                        {event.startDate.day !== event.endDate.day &&
-                        event.startDate.month === event.endDate.month
-                            ? `${event.startDate.day} -  ${event.endDate.day}`
-                            : event.startDate.day}
-                        {` ${month} `}
-                        {event.startDate.year}
-                        </p>
+                        <div className="placeDateTime">
+                            <LocationConsumer>
+                                {value => {
+                                    return isOnUserProfile ? (
+                                        <p>
+                                            <MaterialIcon icon="place" />
+                                            {event.address.street}{" "}
+                                            {event.address.houseNumber}
+                                        </p>
+                                    ) : (
+                                        <p
+                                            className="eventAdress"
+                                            onClick={() =>
+                                                value.setSelectedEvent(event)
+                                            }
+                                        >
+                                            <MaterialIcon icon="place" />
+                                            {event.address.street}{" "}
+                                            {event.address.houseNumber}
+                                        </p>
+                                    )
+                                }}
+                            </LocationConsumer>
                         </div>
                     </p>
                     <p>
-                    <div className="placeDateTime">
-                         <p className="materialIcon">
-                        <MaterialIcon icon="access_time" />
-                        </p>
-                        <p className="placeDateTimeBody">
-                        {event.startDate.time[0]}:
-                        {event.startDate.time[1] + "0"} -{event.endDate.time[0]}
-                        :{event.endDate.time[1] + "0"}
-                        </p>
-                    </div>
+                        <div className="placeDateTime">
+                            <p className="materialIcon">
+                                <MaterialIcon icon="date_range" />
+                            </p>
+                            <p className="placeDateTimeBody">
+                                {event.startDate.day !== event.endDate.day &&
+                                event.startDate.month === event.endDate.month
+                                    ? `${event.startDate.day} -  ${
+                                          event.endDate.day
+                                      }`
+                                    : event.startDate.day}
+                                {` ${month} `}
+                                {event.startDate.year}
+                            </p>
+                        </div>
+                    </p>
+                    <p>
+                        <div className="placeDateTime">
+                            <p className="materialIcon">
+                                <MaterialIcon icon="access_time" />
+                            </p>
+                            <p className="placeDateTimeBody">
+                                {event.startDate.time[0]}:
+                                {event.startDate.time[1] + "0"} -
+                                {event.endDate.time[0]}:
+                                {event.endDate.time[1] + "0"}
+                            </p>
+                        </div>
                     </p>
                     <ReactModal
-                        style={ modalStyles }
+                        style={modalStyles}
                         isOpen={showModal}
                         onRequestClose={() => handleModal(!showModal)}
                         myEvents={myEvents}
