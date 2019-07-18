@@ -8,10 +8,9 @@ import {
 import { EventList } from "./components/EventList"
 import { MapView } from "./components/MapView"
 import events from "./events.json"
-import { Navbar } from "./components/Navbar"
+import Navbar from "./components/Navbar"
 import users from "./users.json"
 import UserProfile from "./components/UserProfile"
-import { Footer } from "./components/Footer"
 import "./App.css"
 import { LocationProvider } from "./contexts/LocationContext"
 
@@ -62,7 +61,7 @@ function App() {
                         )}
                     />
                     <Route
-                        path="/userProfile"
+                        path="/user-profile"
                         render={() => (
                             <UserProfile
                                 user={currentUser}

@@ -7,10 +7,31 @@ import EventView from "../components/EventView"
 import { LocationConsumer } from "../contexts/LocationContext"
 
 export function EventListElement(props) {
-    const modalStyles = { overlay: { zIndex: 10 } }
-    const { event, addMyEvent, removeMyEvent, myEvents } = props
+    const modalStyles = {
+        overlay: { zIndex: 10, backgroundColor: "rgba(192,192,192, 0.75)" },
+        content: {
+            width: "80%",
+            height: "80%",
+            position: "absolute",
+            margin: "auto",
+            border: "1px solid #ccc",
+            background: "#fff",
+            overflow: "auto",
+            WebkitOverflowScrolling: "touch",
+            borderRadius: "4px",
+            outline: "none",
+            padding: "20px"
+        }
+    }
+
+    const {
+        event,
+        addMyEvent,
+        removeMyEvent,
+        myEvents,
+        isOnUserProfile
+    } = props
     const [showModal, setShowModal] = useState(false)
-    // const { isEventSelected } = useContext(LocationContext)
 
     const handleModal = toogle => {
         setShowModal(toogle)
@@ -78,32 +99,61 @@ export function EventListElement(props) {
                     >
                         {event.title}
                     </p>
-                    <LocationConsumer>
-                        {value => (
-                            <p
-                                className="eventAdress"
-                                onClick={() => value.setSelectedEvent(event)}
-                            >
-                                <MaterialIcon icon="place" />
-                                {event.address.street}{" "}
-                                {event.address.houseNumber}
-                            </p>
-                        )}
-                    </LocationConsumer>
                     <p>
-                        <MaterialIcon icon="date_range" />
-                        {event.startDate.day !== event.endDate.day &&
-                        event.startDate.month === event.endDate.month
-                            ? `${event.startDate.day} -  ${event.endDate.day}`
-                            : event.startDate.day}
-                        {` ${month} `}
-                        {event.startDate.year}
+                        <div className="placeDateTime">
+                            <LocationConsumer>
+                                {value => {
+                                    return isOnUserProfile ? (
+                                        <p>
+                                            <MaterialIcon icon="place" />
+                                            {event.address.street}{" "}
+                                            {event.address.houseNumber}
+                                        </p>
+                                    ) : (
+                                        <p
+                                            className="eventAdress"
+                                            onClick={() =>
+                                                value.setSelectedEvent(event)
+                                            }
+                                        >
+                                            <MaterialIcon icon="place" />
+                                            {event.address.street}{" "}
+                                            {event.address.houseNumber}
+                                        </p>
+                                    )
+                                }}
+                            </LocationConsumer>
+                        </div>
                     </p>
                     <p>
-                        <MaterialIcon icon="access_time" />
-                        {event.startDate.time[0]}:
-                        {event.startDate.time[1] + "0"} -{event.endDate.time[0]}
-                        :{event.endDate.time[1] + "0"}
+                        <div className="placeDateTime">
+                            <p className="materialIcon">
+                                <MaterialIcon icon="date_range" />
+                            </p>
+                            <p className="placeDateTimeBody">
+                                {event.startDate.day !== event.endDate.day &&
+                                event.startDate.month === event.endDate.month
+                                    ? `${event.startDate.day} -  ${
+                                          event.endDate.day
+                                      }`
+                                    : event.startDate.day}
+                                {` ${month} `}
+                                {event.startDate.year}
+                            </p>
+                        </div>
+                    </p>
+                    <p>
+                        <div className="placeDateTime">
+                            <p className="materialIcon">
+                                <MaterialIcon icon="access_time" />
+                            </p>
+                            <p className="placeDateTimeBody">
+                                {event.startDate.time[0]}:
+                                {event.startDate.time[1] + "0"} -
+                                {event.endDate.time[0]}:
+                                {event.endDate.time[1] + "0"}
+                            </p>
+                        </div>
                     </p>
                     <ReactModal
                         style={modalStyles}

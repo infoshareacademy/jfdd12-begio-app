@@ -1,5 +1,4 @@
 import React from "react";
-import { EventName } from "./EventName";
 import { EventPlace } from "./EventPlace";
 import { EventDate } from "./EventDate";
 import { GoButton } from "./GoButton";
@@ -23,7 +22,7 @@ export function InfoWindowView({
             <p>
               <h1 className="infoWindowEventName"
                    onClick={toggleEventDetails} >
-                  <EventName event={event} />
+                  {event.title}/>
               </h1>
               <p>
                   <EventPlace event={event} />

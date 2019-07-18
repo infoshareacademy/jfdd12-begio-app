@@ -1,25 +1,28 @@
 import React from "react";
 import { PhotoGallery } from "./Carusel";
-import { EventName } from "./EventName";
 import { EventDescription } from "./EventDescription";
 import { EventDate } from "./EventDate";
 import { EventPlace } from "./EventPlace";
 import { GoButton } from "./GoButton";
-import calendar from "./calendar.png";
+import calendar from "../assets/calendar.png";
 
-function EventView({ myEvents,
+function EventView({
+  myEvents,
   addMyEvent,
   removeMyEvent,
   event,
-  toggleEventDetails }) {
+  toggleEventDetails
+}) {
   return (
-    <div >
-      <div style={{ fontFamily: "Lato"}}>
-        <h2><EventName event={event} /></h2>
-        <GoButton addMyEvent={addMyEvent}
+    <div>
+      <div style={{ fontFamily: "Lato" }}>
+        <h2>{event.title}</h2>
+        <GoButton
+          addMyEvent={addMyEvent}
           removeMyEvent={removeMyEvent}
           event={event}
-          myEvents={myEvents} />
+          myEvents={myEvents}
+        />
       </div>
       <PhotoGallery
         one={event.images[0]}
@@ -41,7 +44,16 @@ function EventView({ myEvents,
             />
             <EventDate event={event} />
           </div>
-          <p style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "10px" }}> <EventPlace event={event} /></p>
+          <p
+            style={{
+              fontSize: "20px",
+              fontWeight: "bold",
+              marginBottom: "10px"
+            }}
+          >
+            {" "}
+            <EventPlace event={event} />
+          </p>
         </div>
 
         <p>
@@ -49,7 +61,7 @@ function EventView({ myEvents,
           <EventDescription event={event} />
         </p>
       </div>
-  </div>
+    </div>
   );
 }
 

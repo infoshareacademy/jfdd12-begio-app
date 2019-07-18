@@ -1,9 +1,10 @@
 import React from "react";
 
 export const EventPlace = ({ event }) => {
+  const { city, street, houseNumber } = event.address;
   return (
     <>
-      {event.address.city}, {event.address.street} {event.address.houseNumber}
+      {city}, {street} {houseNumber}
     </>
   );
 };
