@@ -18,16 +18,6 @@ class Map extends React.Component {
         showEventDetails: false
     }
 
-    // setSelectedEvent = change => {
-    //     change
-    //         ? this.setState({
-    //               selectedEvent: change
-    //           })
-    //         : this.setState({
-    //               selectedEvent: change,
-    //               showEventDetails: false
-    //           })
-    // }
 
     toggleEventDetails = () => {
         this.setState({
@@ -35,8 +25,10 @@ class Map extends React.Component {
         })
     }
     render() {
-        return (
+        return (<>
+
             <div>
+
                 <LocationConsumer>
                     {value => (
                         <GoogleMap
@@ -165,13 +157,15 @@ class Map extends React.Component {
                     </Modal>
                 )}
             </div>
-        )
+        </>)
     }
 }
 const WrappedMap = withScriptjs(withGoogleMap(Map))
 export function MapView(props) {
+
     return (
         <div style={{ flexBasis: "50%", height: "85vh" }}>
+
             <WrappedMap
                 googleMapURL={"https://maps.googleapis.com/maps/api/js"}
                 loadingElement={<div style={{ height: "100%" }} />}

@@ -18,7 +18,8 @@ const Navbar = props => {
             src={props.user.profile_image}
             alt="user logo"
           />
-          <p className="userName">{props.user.name}</p>
+          <p className="userName">{props.user.name} <button className="logoutStyle"
+            onClick={props.logOut}>Wyloguj</button></p>
         </div>
       </NavLink>
     </nav>

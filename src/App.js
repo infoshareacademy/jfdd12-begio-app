@@ -13,7 +13,7 @@ import users from "./users.json"
 import UserProfile from "./components/UserProfile"
 import "./App.css"
 import { LocationProvider } from "./contexts/LocationContext"
-
+import firebaseInit from "./firebase"
 const NoMatch = () => <h1>404</h1>
 
 function App() {
@@ -33,10 +33,15 @@ function App() {
         )
         setMyEvents([...eventsWithDeletedEvent])
     }
+
+    const logOut = () => {
+        firebaseInit.auth().signOut()
+
+    }
     return (
         <Router>
             <div>
-                <Navbar user={currentUser} />
+                <Navbar user={currentUser} logOut={logOut} />
                 <Switch>
                     <Route
                         exact
@@ -45,6 +50,7 @@ function App() {
                             <LocationProvider>
                                 <div className="appView">
                                     <MapView
+
                                         addMyEvent={addMyEvent}
                                         removeMyEvent={removeMyEvent}
                                         myEvents={myEvents}
