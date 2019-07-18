@@ -93,44 +93,52 @@ export function EventListElement(props) {
                     />
                 </div>
                 <div className="eventNameDatePlace">
-                    <p
+                    <div
                         className="eventTitle"
                         onClick={() => handleModal(!showModal)}
                     >
                         {event.title}
-                    </p>
-                    <p>
+                    </div>
+                    <div>
                         <div className="placeDateTime">
                             <LocationConsumer>
                                 {value => {
                                     return isOnUserProfile ? (
-                                        <p>
-                                            <MaterialIcon icon="place" />
-                                            {event.address.street}{" "}
-                                            {event.address.houseNumber}
-                                        </p>
+                                        <div className="placeDateTime">
+                                            <div className="materialIcon">
+                                                <MaterialIcon icon="place" />
+                                            </div>
+                                            <div className="placeDateTimeBody">
+                                                {event.address.street}{" "}
+                                                {event.address.houseNumber}
+                                            </div>
+                                        </div>
                                     ) : (
-                                        <p
-                                            className="eventAdress"
+                                        <div
+                                            className="placeDateTime"
                                             onClick={() =>
                                                 value.setSelectedEvent(event)
                                             }
                                         >
-                                            <MaterialIcon icon="place" />
-                                            {event.address.street}{" "}
-                                            {event.address.houseNumber}
-                                        </p>
+                                            <div className="materialIcon">
+                                                <MaterialIcon icon="place" />
+                                            </div>
+                                            <div className="placeDateTimeBody">
+                                                {event.address.street}{" "}
+                                                {event.address.houseNumber}
+                                            </div>
+                                        </div>
                                     )
                                 }}
                             </LocationConsumer>
                         </div>
-                    </p>
-                    <p>
+                    </div>
+                    <div>
                         <div className="placeDateTime">
-                            <p className="materialIcon">
+                            <div className="materialIcon">
                                 <MaterialIcon icon="date_range" />
-                            </p>
-                            <p className="placeDateTimeBody">
+                            </div>
+                            <div className="placeDateTimeBody">
                                 {event.startDate.day !== event.endDate.day &&
                                 event.startDate.month === event.endDate.month
                                     ? `${event.startDate.day} -  ${
@@ -139,22 +147,22 @@ export function EventListElement(props) {
                                     : event.startDate.day}
                                 {` ${month} `}
                                 {event.startDate.year}
-                            </p>
+                            </div>
                         </div>
-                    </p>
-                    <p>
+                    </div>
+                    <div>
                         <div className="placeDateTime">
-                            <p className="materialIcon">
+                            <div className="materialIcon">
                                 <MaterialIcon icon="access_time" />
-                            </p>
-                            <p className="placeDateTimeBody">
+                            </div>
+                            <div className="placeDateTimeBody">
                                 {event.startDate.time[0]}:
                                 {event.startDate.time[1] + "0"} -
                                 {event.endDate.time[0]}:
                                 {event.endDate.time[1] + "0"}
-                            </p>
+                            </div>
                         </div>
-                    </p>
+                    </div>
                     <ReactModal
                         style={modalStyles}
                         isOpen={showModal}
