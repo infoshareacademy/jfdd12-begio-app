@@ -1,5 +1,6 @@
- // Your web app's Firebase configuration
- var firebaseConfig = {
+import firebase from "firebase"
+// Your web app's Firebase configuration
+var firebaseConfig = {
     apiKey: "AIzaSyCk4uXi8WwSHqWFc_SvfdEjyn3CBsqyiMw",
     authDomain: "gogdansk-begio-app.firebaseapp.com",
     databaseURL: "https://gogdansk-begio-app.firebaseio.com",
@@ -7,6 +8,6 @@
     storageBucket: "",
     messagingSenderId: "919816780208",
     appId: "1:919816780208:web:510def1b7a38baf0"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+}
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig)
