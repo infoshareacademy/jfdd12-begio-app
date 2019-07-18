@@ -9,7 +9,25 @@ import {
   Segment
 } from "semantic-ui-react";
 
-class LoginForm extends React.Component {
+import firebaseInit from "../firebase";
+
+export class Login extends React.Component {
+  state = {
+    email: "",
+    password: ""
+  };
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+  login = e => {
+    e.preventDefault();
+    firebaseInit
+      .auth()
+      .signInWithEmailAndPassword(this.state.email, this.state.password)
+      .catch(error => console.log(error));
+  };
   render() {
     return (
       <Grid
@@ -26,6 +44,8 @@ class LoginForm extends React.Component {
                 icon="user"
                 iconPosition="left"
                 placeholder="E-mail address"
+                onChange={this.handleChange}
+                name="email"
               />
               <Form.Input
                 fluid
@@ -33,9 +53,11 @@ class LoginForm extends React.Component {
                 iconPosition="left"
                 placeholder="Password"
                 type="password"
+                name="password"
+                onChange={this.handleChange}
               />
 
-              <Button color="teal" fluid size="large">
+              <Button onClick={this.login} color="teal" fluid size="large">
                 Login
               </Button>
             </Segment>
@@ -48,5 +70,3 @@ class LoginForm extends React.Component {
     );
   }
 }
-
-export default LoginForm;
