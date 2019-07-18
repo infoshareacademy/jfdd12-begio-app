@@ -37,6 +37,7 @@ function App() {
     const logOut = () => {
         firebaseInit.auth().signOut()
 
+
     }
     return (
         <Router>

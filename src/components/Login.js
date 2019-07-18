@@ -21,7 +21,7 @@ export class Login extends React.Component {
       [e.target.name]: e.target.value
     });
   };
-  login = e => {
+  login = (e, props) => {
     e.preventDefault();
     firebaseInit
       .auth()
