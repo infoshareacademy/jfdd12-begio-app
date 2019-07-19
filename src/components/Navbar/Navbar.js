@@ -12,25 +12,34 @@ const Navbar = props => {
         </NavLink>
       </div>
 
-      {props.LoggedUser ? <><NavLink to="/user-profile">
+      {props.LoggedUser ? (
+        <>
+          <NavLink to="/user-profile">
+            <div className="userProfile">
+              <img
+                className="userImage"
+                src={props.user.profile_image}
+                alt="user logo"
+              />
+            </div>
+          </NavLink>
+          <p className="userName">
+            {props.user.name}{" "}
+            <button className="logoutStyle" onClick={props.logOut}>
+              Wyloguj
+            </button>
+          </p>
+        </>
+      ) : (
         <div className="userProfile">
-          <img
-            className="userImage"
-            src={props.user.profile_image}
-            alt="user logo"
-          />
-
+          <p className="userName">
+            {" "}
+            <button className="logoutStyle" onClick={props.logIn}>
+              Zaloguj się
+            </button>
+          </p>
         </div>
-      </NavLink>
-        <p className="userName">{props.user.name} <button className="logoutStyle"
-          onClick={props.logOut}>Wyloguj</button></p>
-      </> :
-        <NavLink to="/">
-          <div className="userProfile">
-            <p className="userName"> <button className="logoutStyle"
-              onClick={props.logIn}>Zaloguj się</button></p>
-          </div>
-        </NavLink>}
+      )}
     </nav>
   );
 };

@@ -10,6 +10,7 @@ import {
 import App from "../App";
 import firebaseInit from "../firebase";
 import ReactDOM from "react-dom";
+import AppLogo from "../assets/logoOfApp.png";
 export class Login extends React.Component {
   state = {
     email: "",
@@ -42,7 +43,14 @@ export class Login extends React.Component {
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h2" color="teal" textAlign="center" />
+          <img src={AppLogo} />
+          <Header as="h2" color="grey" textAlign="center">
+            Witaj w Go!Gdańsk
+          </Header>
+          <Button color="#49406dce" fluid size="large" onClick={this.goToApp}>
+            Przejdź do strony startowej
+          </Button>
+          <Header>lub zaloguj się</Header>
           <Form size="large">
             <Segment stacked>
               <Form.Input
@@ -63,15 +71,14 @@ export class Login extends React.Component {
                 onChange={this.handleChange}
               />
 
-              <Button onClick={this.login} color="teal" fluid size="large">
+              <Button onClick={this.login} color="#49406dce" fluid size="large">
                 Login
               </Button>
             </Segment>
           </Form>
           <Message>
-            New to us? <a href="#">Sign Up</a>
+            Jesteś nowy? <a href="#">Zarejestruj się!</a>
           </Message>
-          <button onClick={this.goToApp}>Wróć do strony startowej</button>
         </Grid.Column>
       </Grid>
     );
