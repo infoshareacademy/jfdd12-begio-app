@@ -100,6 +100,7 @@ function App() {
               />
             )}
           />
+          <Route path="/login" component={Login} />
           <Redirect from="/home" to="/" />
           <Route component={NoMatch} />
         </Switch>
