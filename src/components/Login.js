@@ -43,7 +43,7 @@ export class Login extends React.Component {
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <img src={AppLogo} />
+          <img alt="GoLogo" src={AppLogo} />
           <Header as="h2" color="grey" textAlign="center">
             Witaj w Go!Gdańsk
           </Header>

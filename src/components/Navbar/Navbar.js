@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import "./Navbar.css";
 
@@ -21,13 +21,15 @@ const Navbar = props => {
                 src={props.user.profile_image}
                 alt="user logo"
               />
+              <p className="userName">{props.user.name} </p>
             </div>
           </NavLink>
           <p className="userName">
-            {props.user.name}{" "}
-            <button className="logoutStyle" onClick={props.logOut}>
-              Wyloguj
-            </button>
+            <NavLink to="/" exact>
+              <button className="logoutStyle" onClick={props.logOut}>
+                Wyloguj
+              </button>
+            </NavLink>
           </p>
         </>
       ) : (
