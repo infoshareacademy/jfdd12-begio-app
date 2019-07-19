@@ -2,8 +2,10 @@ import React from "react";
 import { NavLink, Redirect } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import "./Navbar.css";
+import { useAuth } from "../../hooks/useAuth";
 
 const Navbar = props => {
+  const loggedUser = useAuth();
   return (
     <nav className="navigation">
       <div className="logo">
@@ -12,7 +14,7 @@ const Navbar = props => {
         </NavLink>
       </div>
 
-      {props.LoggedUser ? (
+      {loggedUser ? (
         <>
           <NavLink to="/user-profile">
             <div className="userProfile">
@@ -35,10 +37,9 @@ const Navbar = props => {
       ) : (
         <div className="userProfile">
           <p className="userName">
-            {" "}
-            <button className="logoutStyle" onClick={props.logIn}>
-              Zaloguj się
-            </button>
+            <NavLink to="/login" exact>
+              <button className="logoutStyle">Zaloguj</button>
+            </NavLink>
           </p>
         </div>
       )}

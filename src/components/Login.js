@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import {
   Button,
   Form,
@@ -11,11 +12,13 @@ import App from "../App";
 import firebaseInit from "../firebase";
 import ReactDOM from "react-dom";
 import AppLogo from "../assets/logoOfApp.png";
+import { AuthConsumer } from "../contexts/AuthContext";
 export class Login extends React.Component {
   state = {
     email: "",
     password: ""
   };
+
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -26,61 +29,68 @@ export class Login extends React.Component {
     e.preventDefault();
     firebaseInit
       .auth()
-      .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(ReactDOM.render(<App />, document.getElementById("root")))
-      .catch(error => {
-        ReactDOM.render(<Login />, document.getElementById("root"));
-        alert("Błędny login lub hasło");
-      });
+      .signInWithEmailAndPassword(this.state.email, this.state.password);
   };
 
-  goToApp = () => ReactDOM.render(<App />, document.getElementById("root"));
   render() {
     return (
-      <Grid
-        textAlign="center"
-        style={{ height: "100vh" }}
-        verticalAlign="middle"
-      >
-        <Grid.Column style={{ maxWidth: 450 }}>
-          <img alt="GoLogo" src={AppLogo} />
-          <Header as="h2" color="grey" textAlign="center">
-            Witaj w Go!Gdańsk
-          </Header>
-          <Button color="#49406dce" fluid size="large" onClick={this.goToApp}>
-            Przejdź do strony startowej
-          </Button>
-          <Header>lub zaloguj się</Header>
-          <Form size="large">
-            <Segment stacked>
-              <Form.Input
-                fluid
-                icon="user"
-                iconPosition="left"
-                placeholder="E-mail address"
-                onChange={this.handleChange}
-                name="email"
-              />
-              <Form.Input
-                fluid
-                icon="lock"
-                iconPosition="left"
-                placeholder="Password"
-                type="password"
-                name="password"
-                onChange={this.handleChange}
-              />
+      <AuthConsumer>
+        {loggedUser => {
+          if (loggedUser) {
+            return <Redirect to="/" />;
+          }
 
-              <Button onClick={this.login} color="#49406dce" fluid size="large">
-                Login
-              </Button>
-            </Segment>
-          </Form>
-          <Message>
-            Jesteś nowy? <a href="#">Zarejestruj się!</a>
-          </Message>
-        </Grid.Column>
-      </Grid>
+          return (
+            <Grid
+              textAlign="center"
+              style={{ height: "100vh" }}
+              verticalAlign="middle"
+            >
+              <Grid.Column style={{ maxWidth: 450 }}>
+                <img alt="GoLogo" src={AppLogo} />
+                <Header as="h2" color="grey" textAlign="center">
+                  Witaj w Go!Gdańsk
+                </Header>
+
+                <Header>zaloguj się</Header>
+                <Form size="large">
+                  <Segment stacked>
+                    <Form.Input
+                      fluid
+                      icon="user"
+                      iconPosition="left"
+                      placeholder="E-mail address"
+                      onChange={this.handleChange}
+                      name="email"
+                    />
+                    <Form.Input
+                      fluid
+                      icon="lock"
+                      iconPosition="left"
+                      placeholder="Password"
+                      type="password"
+                      name="password"
+                      onChange={this.handleChange}
+                    />
+
+                    <Button
+                      onClick={this.login}
+                      color="#49406dce"
+                      fluid
+                      size="large"
+                    >
+                      Login
+                    </Button>
+                  </Segment>
+                </Form>
+                <Message>
+                  Jesteś nowy? <a href="#">Zarejestruj się!</a>
+                </Message>
+              </Grid.Column>
+            </Grid>
+          );
+        }}
+      </AuthConsumer>
     );
   }
 }

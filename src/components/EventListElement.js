@@ -171,14 +171,12 @@ export function EventListElement(props) {
         </div>
       </div>
       <div className="eventButton">
-        {props.LoggedUser ? (
-          <GoButton
-            addMyEvent={addMyEvent}
-            removeMyEvent={removeMyEvent}
-            event={event}
-            myEvents={myEvents}
-          />
-        ) : null}
+        <GoButton
+          addMyEvent={addMyEvent}
+          removeMyEvent={removeMyEvent}
+          event={event}
+          myEvents={myEvents}
+        />
       </div>
     </li>
   );

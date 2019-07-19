@@ -13,6 +13,7 @@ import EventView from "../components/EventView";
 import Modal from "react-modal";
 import { InfoWindowView } from "./InfoWindowView";
 import { LocationConsumer } from "../contexts/LocationContext";
+import { useAuth } from "../hooks/useAuth.js";
 class Map extends React.Component {
   state = {
     showEventDetails: false
@@ -76,7 +77,6 @@ class Map extends React.Component {
                             }}
                           >
                             <InfoWindowView
-                              LoggedUser={this.props.LoggedUser}
                               addMyEvent={this.props.addMyEvent}
                               removeMyEvent={this.props.removeMyEvent}
                               myEvents={this.props.myEvents}
@@ -115,7 +115,6 @@ class Map extends React.Component {
                 {value => {
                   return (
                     <EventView
-                      LoggedUser={this.props.LoggedUser}
                       addMyEvent={this.props.addMyEvent}
                       removeMyEvent={this.props.removeMyEvent}
                       myEvents={this.props.myEvents}
@@ -134,9 +133,10 @@ class Map extends React.Component {
 }
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 export function MapView(props) {
+  const loggedUser = useAuth();
   return (
     <div style={{ flexBasis: "50%", height: "85vh" }}>
-      {props.LoggedUser ? null : (
+      {loggedUser ? null : (
         <div
           style={{
             marginLeft: "10px",
