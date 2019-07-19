@@ -15,6 +15,7 @@ import "./App.css";
 import { LocationProvider } from "./contexts/LocationContext";
 import firebaseInit from "./firebase";
 import { Login } from "./components/Login";
+import { SignUp } from "./components/SignUp";
 
 const NoMatch = () => <h1>404</h1>;
 
@@ -79,6 +80,8 @@ function App() {
             )}
           />
           <Route path="/login" component={Login} />
+          <Redirect from="/home" to="/" />
+          <Route path="/sign-up" component={SignUp} />
           <Redirect from="/home" to="/" />
           <Route component={NoMatch} />
         </Switch>

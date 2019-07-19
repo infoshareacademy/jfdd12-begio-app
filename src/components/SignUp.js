@@ -13,23 +13,24 @@ import firebaseInit from "../firebase";
 import ReactDOM from "react-dom";
 import AppLogo from "../assets/logoOfApp.png";
 import { AuthConsumer } from "../contexts/AuthContext";
-export class Login extends React.Component {
+
+export class SignUp extends React.Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    name: ""
   };
-
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
-  login = (e, props) => {
+  signUp = (e, props) => {
     e.preventDefault();
     firebaseInit
       .auth()
-      .signInWithEmailAndPassword(this.state.email, this.state.password);
+      .createUserWithEmailAndPassword(this.state.email, this.state.password);
   };
 
   render() {
@@ -51,8 +52,15 @@ export class Login extends React.Component {
                 <Header as="h2" color="grey" textAlign="center">
                   Witaj w Go!Gdańsk
                 </Header>
-
-                <Header>zaloguj się</Header>
+                <Button
+                  color="#49406dce"
+                  fluid
+                  size="large"
+                  onClick={this.goToApp}
+                >
+                  Przejdź do strony startowej
+                </Button>
+                <Header>Zarejestruj się</Header>
                 <Form size="large">
                   <Segment stacked>
                     <Form.Input
@@ -72,19 +80,27 @@ export class Login extends React.Component {
                       name="password"
                       onChange={this.handleChange}
                     />
+                    <Form.Input
+                      fluid
+                      icon="user"
+                      iconPosition="left"
+                      placeholder="userName"
+                      onChange={this.handleChange}
+                      name="name"
+                    />
 
                     <Button
-                      onClick={this.login}
+                      onClick={this.signUp}
                       color="#49406dce"
                       fluid
                       size="large"
                     >
-                      Login
+                      Zarejestruj się!
                     </Button>
                   </Segment>
                 </Form>
                 <Message>
-                  Jesteś nowy? <a href="/sign-up">Zarejestruj się!</a>
+                  Masz już konto? <a href="/Login">Zaloguj się!</a>
                 </Message>
               </Grid.Column>
             </Grid>
