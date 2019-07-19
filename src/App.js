@@ -50,6 +50,7 @@ function App() {
                                         addMyEvent={addMyEvent}
                                         removeMyEvent={removeMyEvent}
                                         myEvents={myEvents}
+                                        events={events}
                                     />
                                     <EventList
                                         myEvents={myEvents}

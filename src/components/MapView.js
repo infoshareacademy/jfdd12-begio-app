@@ -7,12 +7,12 @@ import {
     InfoWindow
 } from "react-google-maps"
 import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer"
-import events from "../events.json"
 import EventView from "../components/EventView"
 
 import Modal from "react-modal"
 import { InfoWindowView } from "./InfoWindowView"
 import { LocationConsumer } from "../contexts/LocationContext"
+
 class Map extends React.Component {
     state = {
         showEventDetails: false
@@ -55,7 +55,7 @@ class Map extends React.Component {
                             defaultCenter={{ lat: 54.372158, lng: 18.638306 }}
                         >
                             <MarkerClusterer enableRetinaIcons gridSize={40}>
-                                {events.map(event => (
+                                {this.props.events.map(event => (
                                     <LocationConsumer>
                                         {value => (
                                             <Marker
