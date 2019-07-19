@@ -28,11 +28,7 @@ export class SignUp extends React.Component {
     e.preventDefault();
     firebaseInit
       .auth()
-      .createUserWithEmailAndPassword(
-        this.state.email,
-        this.state.password,
-        this.state.name
-      )
+      .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then(ReactDOM.render(<App />, document.getElementById("root")));
   };
 
@@ -72,14 +68,14 @@ export class SignUp extends React.Component {
                 name="password"
                 onChange={this.handleChange}
               />
-              {/* <Form.Input
+              <Form.Input
                 fluid
                 icon="user"
                 iconPosition="left"
                 placeholder="userName"
                 onChange={this.handleChange}
                 name="name"
-              /> */}
+              />
 
               <Button
                 onClick={this.signUp}
