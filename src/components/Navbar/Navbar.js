@@ -7,11 +7,11 @@ const Navbar = props => {
   return (
     <nav className="navigation">
       <div className="logo">
-        <NavLink to="/" exact>
+        <NavLink exact activeClassName="activeNavlink" to="/">
           <img alt="hello" className="logoImage" src={Logo} />
         </NavLink>
       </div>
-      <NavLink to="/user-profile">
+      <NavLink activeClassName="activeNavlink" to="/user-profile">
         <div className="userProfile">
           <img
             className="userImage"

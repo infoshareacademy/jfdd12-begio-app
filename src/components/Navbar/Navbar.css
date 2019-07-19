@@ -49,3 +49,7 @@
 a:link {
   text-decoration: none;
 }
+ 
+.activeNavlink{
+  font-weight: bold;
+}
