@@ -7,7 +7,7 @@ export const fetchEvents = callback => {
     EventsRef.on("value", snapshot => {
         const value = snapshot.val()
         const events = mapObjectToArray(value)
-        debugger
+
         callback(events)
     })
 
