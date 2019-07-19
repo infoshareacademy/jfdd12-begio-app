@@ -7,7 +7,6 @@ import {
 } from "react-router-dom"
 import { EventList } from "./components/EventList"
 import { MapView } from "./components/MapView"
-// import events from "./events.json"
 import Navbar from "./components/Navbar"
 import users from "./users.json"
 import UserProfile from "./components/UserProfile"
