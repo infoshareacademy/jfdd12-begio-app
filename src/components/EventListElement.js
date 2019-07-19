@@ -156,10 +156,11 @@ export function EventListElement(props) {
                                 <MaterialIcon icon="access_time" />
                             </div>
                             <div className="placeDateTimeBody">
-                                {event.startDate.time[0]}:
-                                {event.startDate.time[1] + "0"} -
-                                {event.endDate.time[0]}:
-                                {event.endDate.time[1] + "0"}
+                                {event.startDate.time.hour}:
+                                {event.startDate.time.minute}
+                                {" - "}
+                                {event.endDate.time.hour}:
+                                {event.endDate.time.minute}
                             </div>
                         </div>
                     </div>

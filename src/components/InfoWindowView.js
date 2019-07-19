@@ -22,7 +22,7 @@ export function InfoWindowView({
             <p>
               <h1 className="infoWindowEventName"
                    onClick={toggleEventDetails} >
-                  {event.title}/>
+                  {event.title}
               </h1>
               <p>
                   <EventPlace event={event} />
