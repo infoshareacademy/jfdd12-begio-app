@@ -4,11 +4,10 @@ import {
   Form,
   Grid,
   Header,
-  Image,
   Message,
   Segment
 } from "semantic-ui-react";
-import App from "../App"
+import App from "../App";
 import firebaseInit from "../firebase";
 import ReactDOM from "react-dom";
 export class Login extends React.Component {
@@ -21,14 +20,20 @@ export class Login extends React.Component {
       [e.target.name]: e.target.value
     });
   };
+
   login = (e, props) => {
     e.preventDefault();
     firebaseInit
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .catch(error => console.log(error));
-    ReactDOM.render(<App />, document.getElementById("root"));
+      .then(ReactDOM.render(<App />, document.getElementById("root")))
+      .catch(error => {
+        ReactDOM.render(<Login />, document.getElementById("root"));
+        alert("Błędny login lub hasło");
+      });
   };
+
+  goToApp = () => ReactDOM.render(<App />, document.getElementById("root"));
   render() {
     return (
       <Grid
@@ -66,6 +71,7 @@ export class Login extends React.Component {
           <Message>
             New to us? <a href="#">Sign Up</a>
           </Message>
+          <button onClick={this.goToApp}>Wróć do strony startowej</button>
         </Grid.Column>
       </Grid>
     );

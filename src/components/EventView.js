@@ -11,18 +11,21 @@ function EventView({
   addMyEvent,
   removeMyEvent,
   event,
-  toggleEventDetails
+  toggleEventDetails,
+  LoggedUser
 }) {
   return (
     <div>
       <div style={{ fontFamily: "Lato" }}>
         <h2>{event.title}</h2>
-        <GoButton
-          addMyEvent={addMyEvent}
-          removeMyEvent={removeMyEvent}
-          event={event}
-          myEvents={myEvents}
-        />
+        {LoggedUser ? (
+          <GoButton
+            addMyEvent={addMyEvent}
+            removeMyEvent={removeMyEvent}
+            event={event}
+            myEvents={myEvents}
+          />
+        ) : null}
       </div>
       <PhotoGallery
         one={event.images[0]}
