@@ -7,22 +7,24 @@ import {
 } from "react-router-dom"
 import { EventList } from "./components/EventList"
 import { MapView } from "./components/MapView"
-import events from "./events.json"
 import Navbar from "./components/Navbar"
 import users from "./users.json"
 import UserProfile from "./components/UserProfile"
 import "./App.css"
 import { LocationProvider } from "./contexts/LocationContext"
+import { useEvents } from "./hooks/useEvents"
 
 const NoMatch = () => <h1>404</h1>
 
 function App() {
+    const events = useEvents()
+
     const [currentUser, setCurrentUser] = useState(users[0])
     const [myEvents, setMyEvents] = useState([])
 
     useEffect(() => {
-        console.log(myEvents)
-    }, [myEvents])
+        console.log(events)
+    }, [events])
     const addMyEvent = id => {
         setMyEvents([...myEvents, id])
     }
