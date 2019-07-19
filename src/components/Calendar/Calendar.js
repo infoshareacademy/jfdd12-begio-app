@@ -19,15 +19,15 @@ function EventsCalendar(props) {
             event.startDate.year,
             event.startDate.month - 1,
             event.startDate.day,
-            event.startDate.time[0],
-            event.startDate.time[1]
+            event.startDate.time.hour,
+            event.startDate.time.minute
           ),
           end: new Date(
             event.endDate.year,
             event.endDate.month - 1,
             event.endDate.day,
-            event.endDate.time[0],
-            event.endDate.time[1]
+            event.endDate.time.hour,
+            event.endDate.time.minute
           )
         }
       )
