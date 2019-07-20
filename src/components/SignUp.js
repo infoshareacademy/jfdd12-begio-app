@@ -52,17 +52,18 @@ export class SignUp extends React.Component {
                 <Header as="h2" color="grey" textAlign="center">
                   Witaj w Go!Gdańsk
                 </Header>
-                <Button
-                  color="#49406dce"
-                  fluid
-                  size="large"
-                  onClick={this.goToApp}
-                >
-                  Przejdź do strony startowej
-                </Button>
+
                 <Header>Zarejestruj się</Header>
                 <Form size="large">
                   <Segment stacked>
+                    <Form.Input
+                      fluid
+                      icon="user"
+                      iconPosition="left"
+                      placeholder="userName"
+                      onChange={this.handleChange}
+                      name="name"
+                    />
                     <Form.Input
                       fluid
                       icon="user"
@@ -80,14 +81,7 @@ export class SignUp extends React.Component {
                       name="password"
                       onChange={this.handleChange}
                     />
-                    <Form.Input
-                      fluid
-                      icon="user"
-                      iconPosition="left"
-                      placeholder="userName"
-                      onChange={this.handleChange}
-                      name="name"
-                    />
+
 
                     <Button
                       onClick={this.signUp}
