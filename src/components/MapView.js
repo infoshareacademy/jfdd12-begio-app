@@ -140,7 +140,7 @@ export function MapView(props) {
         <div
           style={{
             marginLeft: "10px",
-            padding: "10px",
+            padding: "18px",
             background: "rgb(214, 67, 67)",
             borderRadius: "0 15px 15px 15px",
             width: "400px",
