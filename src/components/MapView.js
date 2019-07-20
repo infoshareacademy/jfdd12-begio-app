@@ -8,8 +8,9 @@ import {
 } from "react-google-maps";
 import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer";
 import events from "../events.json";
+import { NavLink } from "react-router-dom";
 import EventView from "../components/EventView";
-
+import deny from "../assets/deny.png";
 import Modal from "react-modal";
 import { InfoWindowView } from "./InfoWindowView";
 import { LocationConsumer } from "../contexts/LocationContext";
@@ -147,10 +148,13 @@ export function MapView(props) {
             fontSize: "16px",
             color: "white",
             marginBottom: "10px",
-            fontWeight: "bold"
+
           }}
         >
-          Aby dodać wydarzenia do Twojej listy, zaloguj się!
+          <img alt="deny" style={{ width: "8%" }} src={deny} />
+          Aby dodawać wydarzenia do Twojej listy,  <NavLink style={{ color: "white", fontWeight: "bold" }} to="/login" exact>
+            zaloguj się
+            </NavLink>
         </div>
       )}
       <WrappedMap

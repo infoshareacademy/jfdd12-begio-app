@@ -29,20 +29,20 @@ const Navbar = props => {
           <p className="userName">
             <NavLink to="/" exact>
               <button className="logoutStyle" onClick={props.logOut}>
-                Wyloguj
+                Wyloguj się
               </button>
             </NavLink>
           </p>
         </>
       ) : (
-        <div className="userProfile">
-          <p className="userName">
-            <NavLink to="/login" exact>
-              <button className="logoutStyle">Zaloguj</button>
-            </NavLink>
-          </p>
-        </div>
-      )}
+          <div className="userProfile">
+            <p className="userName">
+              <NavLink to="/login" exact>
+                <button className="loginStyle">Zaloguj się</button>
+              </NavLink>
+            </p>
+          </div>
+        )}
     </nav>
   );
 };

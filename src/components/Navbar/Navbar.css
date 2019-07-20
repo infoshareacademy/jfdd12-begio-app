@@ -3,8 +3,7 @@
   width: 100%;
   background-color: rgba(73, 64, 109, 0.808);
   height: 4.5em;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -39,8 +38,7 @@
 }
 
 .userName {
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
   color: white;
   font-size: 1.5em;
   text-decoration: none;
@@ -58,12 +56,29 @@ a:link {
   border: 2px white solid;
   border-radius: 30px;
   font-size: 0.72em;
-  padding: 5px;
-
+  padding: 10px;
+  margin-top: 10px;
   border-style: none;
   cursor: pointer;
   transition: 0.5s;
 }
 .logoutStyle:hover {
+  background: rgb(126, 28, 28);
+}
+
+.loginStyle {
+  margin-top: 40px;
+  background: rgb(214, 67, 67);
+  color: #ffffff;
+  border: 2px white solid;
+  border-radius: 30px;
+  font-size: 0.72em;
+  padding: 10px;
+
+  border-style: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.loginStyle:hover {
   background: rgb(126, 28, 28);
 }
