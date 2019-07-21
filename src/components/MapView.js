@@ -1,6 +1,5 @@
 import React from "react"
-import {
-    GoogleMap,
+import {GoogleMap,
     withScriptjs,
     withGoogleMap,
     Marker,
