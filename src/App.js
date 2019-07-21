@@ -17,10 +17,14 @@ import firebaseInit from "./firebase";
 import { Login } from "./components/Login";
 import { SignUp } from "./components/SignUp";
 import { useEvents } from "./hooks/useEvents"
-
+import { useAuth } from "./hooks/useAuth.js";
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
+import AppLogo from "./assets/logoOfApp.png";
 const NoMatch = () => <h1>404</h1>;
 
 function App() {
+
+    const loggedUser = useAuth();
     const events = useEvents()
     const [currentUser] = useState(users[0]);
     const [myEvents, setMyEvents] = useState([]);
@@ -40,6 +44,17 @@ function App() {
         firebaseInit.auth().signOut();
     };
 
+    const LoaderExampleSizesInverted = () => (
+        <div style={{ width: "400px", margin: "30px auto" }}>
+            <Segment>
+                <Dimmer active inverted>
+                    <Loader size='massive'>Wczytywanie...</Loader>
+                </Dimmer>
+                <Image src={AppLogo} />
+            </Segment>
+        </div>
+    )
+
     return (
         <Router>
             <div>
@@ -52,19 +67,22 @@ function App() {
                         render={() => (
                             <LocationProvider>
                                 <div className="appView">
-                                    <MapView
-                                        addMyEvent={addMyEvent}
-                                        removeMyEvent={removeMyEvent}
-                                        myEvents={myEvents}
-                                        events={events}
-                                    />
-                                    <EventList
-                                        myEvents={myEvents}
-                                        setFavourite={setMyEvents}
-                                        events={events}
-                                        addMyEvent={addMyEvent}
-                                        removeMyEvent={removeMyEvent}
-                                    />
+
+                                    {loggedUser == null ?
+                                        LoaderExampleSizesInverted() : <> <MapView
+                                            addMyEvent={addMyEvent}
+                                            removeMyEvent={removeMyEvent}
+                                            myEvents={myEvents}
+                                            events={events}
+                                        />
+                                            <EventList
+                                                myEvents={myEvents}
+                                                setFavourite={setMyEvents}
+                                                events={events}
+                                                addMyEvent={addMyEvent}
+                                                removeMyEvent={removeMyEvent}
+                                            />
+                                        </>}
                                 </div>
                             </LocationProvider>
                         )}
