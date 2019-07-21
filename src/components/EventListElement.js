@@ -98,16 +98,28 @@ export function EventListElement(props) {
                     <p>
                       <MaterialIcon icon="place" />
                       {event.address.street} {event.address.houseNumber}
+                      <div className="placeDateTime">
+                        <p className="materialIcon">
+                          <MaterialIcon icon="access_time" />
+                        </p>
+                        <p className="placeDateTimeBody">
+                          {event.startDate.time.hour}:
+                                {event.startDate.time.minute}
+                          {" - "}
+                          {event.endDate.time.hour}:
+                                {event.endDate.time.minute}
+                        </p>
+                      </div>
                     </p>
                   ) : (
-                    <p
-                      className="eventAdress"
-                      onClick={() => value.setSelectedEvent(event)}
-                    >
-                      <MaterialIcon icon="place" />
-                      {event.address.street} {event.address.houseNumber}
-                    </p>
-                  );
+                      <p
+                        className="eventAdress"
+                        onClick={() => value.setSelectedEvent(event)}
+                      >
+                        <MaterialIcon icon="place" />
+                        {event.address.street} {event.address.houseNumber}
+                      </p>
+                    );
                 }}
               </LocationConsumer>
             </div>
@@ -119,7 +131,7 @@ export function EventListElement(props) {
               </p>
               <p className="placeDateTimeBody">
                 {event.startDate.day !== event.endDate.day &&
-                event.startDate.month === event.endDate.month
+                  event.startDate.month === event.endDate.month
                   ? `${event.startDate.day} -  ${event.endDate.day}`
                   : event.startDate.day}
                 {` ${month} `}
