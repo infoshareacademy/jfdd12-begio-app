@@ -1,33 +1,23 @@
-import React from "react"
+import React from "react";
 import {
     GoogleMap,
     withScriptjs,
     withGoogleMap,
     Marker,
     InfoWindow
-} from "react-google-maps"
-import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer"
-import EventView from "../components/EventView"
-
-import Modal from "react-modal"
-import { InfoWindowView } from "./InfoWindowView"
-import { LocationConsumer } from "../contexts/LocationContext"
-
+} from "react-google-maps";
+import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer";
+import { NavLink } from "react-router-dom";
+import EventView from "../components/EventView";
+import deny from "../assets/deny.png";
+import Modal from "react-modal";
+import { InfoWindowView } from "./InfoWindowView";
+import { LocationConsumer } from "../contexts/LocationContext";
+import { useAuth } from "../hooks/useAuth.js";
 class Map extends React.Component {
     state = {
         showEventDetails: false
-    }
-
-    // setSelectedEvent = change => {
-    //     change
-    //         ? this.setState({
-    //               selectedEvent: change
-    //           })
-    //         : this.setState({
-    //               selectedEvent: change,
-    //               showEventDetails: false
-    //           })
-    // }
+    };
 
     toggleEventDetails = () => {
         this.setState({
@@ -84,44 +74,23 @@ class Map extends React.Component {
                                             value.selectedEvent && (
                                                 <InfoWindow
                                                     position={{
-                                                        lat:
-                                                            value.selectedEvent
-                                                                .address
-                                                                .location.lat,
-                                                        lng:
-                                                            value.selectedEvent
-                                                                .address
-                                                                .location.lng
+                                                        lat: value.selectedEvent.address.location.lat,
+                                                        lng: value.selectedEvent.address.location.lng
                                                     }}
                                                     onCloseClick={() => {
-                                                        value.setSelectedEvent(
-                                                            null
-                                                        )
+                                                        value.setSelectedEvent(null);
                                                     }}
                                                 >
                                                     <InfoWindowView
-                                                        addMyEvent={
-                                                            this.props
-                                                                .addMyEvent
-                                                        }
-                                                        removeMyEvent={
-                                                            this.props
-                                                                .removeMyEvent
-                                                        }
-                                                        myEvents={
-                                                            this.props.myEvents
-                                                        }
-                                                        event={
-                                                            value.selectedEvent
-                                                        }
-                                                        toggleEventDetails={
-                                                            this
-                                                                .toggleEventDetails
-                                                        }
+                                                        addMyEvent={this.props.addMyEvent}
+                                                        removeMyEvent={this.props.removeMyEvent}
+                                                        myEvents={this.props.myEvents}
+                                                        event={value.selectedEvent}
+                                                        toggleEventDetails={this.toggleEventDetails}
                                                     />
                                                 </InfoWindow>
                                             )
-                                        )
+                                        );
                                     }}
                                 </LocationConsumer>
                             </MarkerClusterer>
@@ -162,7 +131,7 @@ class Map extends React.Component {
                             onClick={this.toggleEventDetails}
                         >
                             x
-                        </button>
+              </button>
                         <LocationConsumer>
                             {value => {
                                 return (
@@ -171,23 +140,43 @@ class Map extends React.Component {
                                         removeMyEvent={this.props.removeMyEvent}
                                         myEvents={this.props.myEvents}
                                         event={value.selectedEvent}
-                                        toggleEventDetails={
-                                            this.toggleEventDetails
-                                        }
+                                        toggleEventDetails={this.toggleEventDetails}
                                     />
-                                )
+                                );
                             }}
                         </LocationConsumer>
                     </Modal>
                 )}
             </div>
-        )
+
+        );
     }
 }
-const WrappedMap = withScriptjs(withGoogleMap(Map))
+const WrappedMap = withScriptjs(withGoogleMap(Map));
 export function MapView(props) {
+    const loggedUser = useAuth();
     return (
         <div style={{ flexBasis: "50%", height: "85vh" }}>
+            {loggedUser ? null : (
+                <div
+                    style={{
+                        marginLeft: "10px",
+                        padding: "18px",
+                        background: "rgb(214, 67, 67)",
+                        borderRadius: "0 15px 15px 15px",
+                        width: "400px",
+                        fontSize: "16px",
+                        color: "white",
+                        marginBottom: "10px",
+
+                    }}
+                >
+                    <img alt="deny" style={{ width: "8%" }} src={deny} />
+                    Aby dodawać wydarzenia do Twojej listy,  <NavLink style={{ color: "white", fontWeight: "bold" }} to="/login" exact>
+                        zaloguj się
+            </NavLink>
+                </div>
+            )}
             <WrappedMap
                 googleMapURL={"https://maps.googleapis.com/maps/api/js"}
                 loadingElement={<div style={{ height: "100%" }} />}
@@ -196,7 +185,7 @@ export function MapView(props) {
                 {...props}
             />
         </div>
-    )
+    );
 }
 export function DivOnMap(props) {
     return (
@@ -208,5 +197,8 @@ export function DivOnMap(props) {
                 {...props}
             />
         </div>
-    )
+    );
 }
+
+
+

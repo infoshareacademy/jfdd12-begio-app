@@ -1,26 +1,48 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import "./Navbar.css";
+import { useAuth } from "../../hooks/useAuth";
 
 const Navbar = props => {
+  const loggedUser = useAuth();
   return (
     <nav className="navigation">
       <div className="logo">
-        <NavLink exact activeClassName="activeNavlink" to="/">
+        <NavLink activeClassName="activeNavlink" exact to="/">
           <img alt="hello" className="logoImage" src={Logo} />
         </NavLink>
       </div>
-      <NavLink activeClassName="activeNavlink" to="/user-profile">
-        <div className="userProfile">
-          <img
-            className="userImage"
-            src={props.user.profile_image}
-            alt="user logo"
-          />
-          <p className="userName">{props.user.name}</p>
-        </div>
-      </NavLink>
+
+      {loggedUser ? (
+        <>
+          <NavLink activeClassName="activeNavlink" to="/user-profile">
+            <div className="userProfile">
+              <img
+                className="userImage"
+                src={props.user.profile_image}
+                alt="user logo"
+              />
+              <p className="userName">{props.user.name} </p>
+            </div>
+          </NavLink>
+          <p className="userName">
+            <NavLink activeClassName="activeNavlink" to="/" exact>
+              <button className="logoutStyle" onClick={props.logOut}>
+                Wyloguj się
+              </button>
+            </NavLink>
+          </p>
+        </>
+      ) : (
+          <div className="userProfile">
+            <p className="userName">
+              <NavLink to="/login" exact>
+                <button className="loginStyle">Zaloguj się</button>
+              </NavLink>
+            </p>
+          </div>
+        )}
     </nav>
   );
 };
