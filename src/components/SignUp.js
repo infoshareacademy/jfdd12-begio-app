@@ -8,10 +8,8 @@ import {
   Message,
   Segment
 } from "semantic-ui-react";
-import App from "../App";
 import firebase from "firebase";
 import firebaseInit from "../firebase";
-import ReactDOM from "react-dom";
 import AppLogo from "../assets/logoOfApp.png";
 import { AuthConsumer } from "../contexts/AuthContext";
 

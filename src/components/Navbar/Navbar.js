@@ -20,7 +20,7 @@ const Navbar = props => {
             <div className="userProfile">
               <img
                 className="userImage"
-                src={props.user.profile_image}
+                src= {`https://api.adorable.io/avatars/285/${props.user.name}.png`}
                 alt="user logo"
               />
               <p className="userName">{props.user.name} </p>
