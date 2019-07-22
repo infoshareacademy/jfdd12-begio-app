@@ -13,28 +13,29 @@ import UserProfile from "./components/UserProfile"
 import "./App.css"
 import { LocationProvider } from "./contexts/LocationContext"
 import { useEvents } from "./hooks/useEvents"
-
+import { useMyEvents } from "./hooks/useMyEvents"
 const NoMatch = () => <h1>404</h1>
 
 function App() {
     const events = useEvents()
+    const myEvents = useMyEvents()
 
     const [currentUser, setCurrentUser] = useState(users[0])
-    const [myEvents, setMyEvents] = useState([])
+    // const [myEvents, setMyEvents] = useState([])
 
     useEffect(() => {
-        console.log(events)
-    }, [events])
-    const addMyEvent = id => {
-        setMyEvents([...myEvents, id])
-    }
-    const removeMyEvent = id => {
-        const eventToDelete = myEvents.find(eventId => eventId === id)
-        const eventsWithDeletedEvent = myEvents.filter(
-            eventId => eventId !== eventToDelete
-        )
-        setMyEvents([...eventsWithDeletedEvent])
-    }
+        console.log(myEvents)
+    }, [myEvents])
+    // const addMyEvent = id => {
+    //     setMyEvents([...myEvents, id])
+    // }
+    // const removeMyEvent = id => {
+    //     const eventToDelete = myEvents.find(eventId => eventId === id)
+    //     const eventsWithDeletedEvent = myEvents.filter(
+    //         eventId => eventId !== eventToDelete
+    //     )
+    //     setMyEvents([...eventsWithDeletedEvent])
+    // }
     return (
         <Router>
             <div>
@@ -47,17 +48,17 @@ function App() {
                             <LocationProvider>
                                 <div className="appView">
                                     <MapView
-                                        addMyEvent={addMyEvent}
-                                        removeMyEvent={removeMyEvent}
+                                        // addMyEvent={addMyEvent}
+                                        // removeMyEvent={removeMyEvent}
                                         myEvents={myEvents}
                                         events={events}
                                     />
                                     <EventList
                                         myEvents={myEvents}
-                                        setFavourite={setMyEvents}
+                                        // setFavourite={setMyEvents}
                                         events={events}
-                                        addMyEvent={addMyEvent}
-                                        removeMyEvent={removeMyEvent}
+                                        // addMyEvent={addMyEvent}
+                                        // removeMyEvent={removeMyEvent}
                                     />
                                 </div>
                             </LocationProvider>
@@ -69,10 +70,10 @@ function App() {
                             <UserProfile
                                 user={currentUser}
                                 myEvents={myEvents}
-                                setFavourite={setMyEvents}
+                                // setFavourite={setMyEvents}
                                 events={events}
-                                addMyEvent={addMyEvent}
-                                removeMyEvent={removeMyEvent}
+                                // addMyEvent={addMyEvent}
+                                // removeMyEvent={removeMyEvent}
                             />
                         )}
                     />
