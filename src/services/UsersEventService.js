@@ -9,7 +9,6 @@ export const fetchMyEvents = callback => {
     myEventsRef.on("value", snapshot => {
         const value = snapshot.val()
         const myEventsIds = Object.values(value)
-        // const myEvents = mapObjectToArray(value)
 
         callback(myEventsIds)
     })
@@ -20,14 +19,22 @@ export const fetchMyEvents = callback => {
 export const addEvents = eventId => {
     const uid = "28b919ba-7570-477a-9fe1-67d7729d5bb5"
     const userEventsReference = `users/${uid}/events`
+    const myEventsRef = firebase.database().ref(userEventsReference)
 
     const eventsUpdate = eventId
     // const eventsUpdate = [1, 2]
-
-    firebase
-        .database()
-        .ref(userEventsReference)
-        .push(eventsUpdate)
+    myEventsRef.once("value").then(snapshot => {
+        const value = snapshot.val()
+        const myEventsIds = Object.values(value)
+        if (myEventsIds.includes(eventId)) {
+            return
+        } else {
+            firebase
+                .database()
+                .ref(userEventsReference)
+                .push(eventsUpdate)
+        }
+    })
 
     //   const userId = firebase.auth().currentUser.uid
 }
