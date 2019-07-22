@@ -9,6 +9,7 @@ import {
   Segment
 } from "semantic-ui-react";
 import App from "../App";
+import firebase from "firebase";
 import firebaseInit from "../firebase";
 import ReactDOM from "react-dom";
 import AppLogo from "../assets/logoOfApp.png";
@@ -30,7 +31,16 @@ export class SignUp extends React.Component {
     e.preventDefault();
     firebaseInit
       .auth()
-      .createUserWithEmailAndPassword(this.state.email, this.state.password);
+      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then(value => {
+        firebase
+          .database()
+          .ref("users")
+          .child(value.user.uid)
+          .set({
+            name: this.state.name,
+          });
+      });
   };
 
   render() {
