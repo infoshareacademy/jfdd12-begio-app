@@ -15,7 +15,7 @@ const Navbar = props => {
       </div>
 
       {loggedUser ? (
-        <>
+        <div className="userNav">
           <NavLink activeClassName="activeNavlink" to="/user-profile">
             <div className="userProfile">
               <img
@@ -26,23 +26,22 @@ const Navbar = props => {
               <p className="userName">{props.user.name} </p>
             </div>
           </NavLink>
-          <p className="userName">
-            <NavLink activeClassName="activeNavlink" to="/" exact>
-              <button className="logoutStyle" onClick={props.logOut}>
-                Wyloguj się
-              </button>
-            </NavLink>
-          </p>
-        </>
+          <NavLink activeClassName="activeNavlink" to="/" exact>
+            <span className="logoutStyle" onClick={props.logOut}>
+              Wyloguj się
+            </span>
+          </NavLink>
+        </div>
       ) : (
-          <div className="userProfile">
-            <p className="userName">
-              <NavLink to="/login" exact>
-                <button className="loginStyle">Zaloguj się</button>
-              </NavLink>
-            </p>
-          </div>
-        )}
+        <div className="userProfileLogOut">
+          <NavLink to="/sign-up" exact>
+            <span className="signUpStyle">Utwórz konto</span>
+          </NavLink>
+          <NavLink to="/login" exact>
+            <span className="loginStyle">Zaloguj się</span>
+          </NavLink>
+        </div>
+      )}
     </nav>
   );
 };
