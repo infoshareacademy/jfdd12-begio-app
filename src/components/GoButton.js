@@ -1,22 +1,27 @@
-import React from "react"
+import React, { useContext } from "react"
 import Switch from "react-toggle-switch"
 import "../../node_modules/react-toggle-switch/dist/css/switch.min.css"
 import MaterialIcon from "material-icons-react"
 import "./GoButton.css"
-import { addEvents } from "../services/UsersEventService"
+import { addEvents, removeEvents } from "../services/UsersEventService"
+import { LocationProvider, LocationContext } from "../contexts/LocationContext"
 
 export function GoButton(props) {
-    const { myEvents, removeMyEvent, addMyEvent, event } = props
+    const { event } = props
+    const { myEvents } = useContext(LocationContext)
+    // console.log(myEvents)
+    const myEventsIds = myEvents.map(event => event.id)
+    console.log(myEventsIds)
 
     const toggleSwitch = () => {
-        myEvents.includes(event.id)
-            ? removeMyEvent(event.id)
+        myEventsIds.includes(event.id)
+            ? removeEvents(event.id)
             : addEvents(event.id)
     }
     return (
         <Switch
             onClick={() => toggleSwitch()}
-            on={myEvents.includes(event.id)}
+            on={myEventsIds.includes(event.id)}
             className="switch"
         >
             {<MaterialIcon icon="directions_run" />}

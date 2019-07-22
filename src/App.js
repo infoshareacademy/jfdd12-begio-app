@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useContext } from "react"
 import {
     BrowserRouter as Router,
     Route,
@@ -11,21 +11,17 @@ import Navbar from "./components/Navbar"
 import users from "./users.json"
 import UserProfile from "./components/UserProfile"
 import "./App.css"
-import { LocationProvider } from "./contexts/LocationContext"
+import { LocationContext } from "./contexts/LocationContext"
 import { useEvents } from "./hooks/useEvents"
-import { useMyEvents } from "./hooks/useMyEvents"
 const NoMatch = () => <h1>404</h1>
 
 function App() {
     const events = useEvents()
-    const myEvents = useMyEvents()
+    const { myEvents } = useContext(LocationContext)
 
     const [currentUser, setCurrentUser] = useState(users[0])
     // const [myEvents, setMyEvents] = useState([])
 
-    useEffect(() => {
-        console.log(myEvents)
-    }, [myEvents])
     // const addMyEvent = id => {
     //     setMyEvents([...myEvents, id])
     // }
@@ -45,23 +41,21 @@ function App() {
                         exact
                         path="/"
                         render={() => (
-                            <LocationProvider>
-                                <div className="appView">
-                                    <MapView
-                                        // addMyEvent={addMyEvent}
-                                        // removeMyEvent={removeMyEvent}
-                                        myEvents={myEvents}
-                                        events={events}
-                                    />
-                                    <EventList
-                                        myEvents={myEvents}
-                                        // setFavourite={setMyEvents}
-                                        events={events}
-                                        // addMyEvent={addMyEvent}
-                                        // removeMyEvent={removeMyEvent}
-                                    />
-                                </div>
-                            </LocationProvider>
+                            <div className="appView">
+                                <MapView
+                                    // addMyEvent={addMyEvent}
+                                    // removeMyEvent={removeMyEvent}
+                                    myEvents={myEvents}
+                                    events={events}
+                                />
+                                <EventList
+                                    myEvents={myEvents}
+                                    // setFavourite={setMyEvents}
+                                    events={events}
+                                    // addMyEvent={addMyEvent}
+                                    // removeMyEvent={removeMyEvent}
+                                />
+                            </div>
                         )}
                     />
                     <Route
