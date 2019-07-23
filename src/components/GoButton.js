@@ -4,15 +4,16 @@ import "../../node_modules/react-toggle-switch/dist/css/switch.min.css"
 import MaterialIcon from "material-icons-react"
 import "./GoButton.css"
 import { addEvents, removeEvents } from "../services/UsersEventService"
-import { LocationProvider, LocationContext } from "../contexts/LocationContext"
+import { LocationContext } from "../contexts/LocationContext"
 
 export function GoButton(props) {
     const { event } = props
     const { myEvents } = useContext(LocationContext)
     // console.log(myEvents)
     const myEventsIds = myEvents.map(event => event.id)
-    console.log(myEventsIds)
+    console.log(myEvents)
 
+    console.log(myEventsIds)
     const toggleSwitch = () => {
         myEventsIds.includes(event.id)
             ? removeEvents(event.id)
