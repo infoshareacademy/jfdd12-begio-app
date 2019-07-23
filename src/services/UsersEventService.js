@@ -55,6 +55,12 @@ export const removeEvents = eventId => {
         const eventToRemoveRef = firebase
             .database()
             .ref(`users/${uid}/events/${firebaseId}`)
+        if (myEventsIds.length === 1) {
+            firebase
+                .database()
+                .ref(`users/${uid}/events`)
+                .set(0)
+        }
         if (myEventsIds.includes(eventId)) {
             eventToRemoveRef.remove()
         } else {
