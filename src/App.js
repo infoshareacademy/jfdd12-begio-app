@@ -20,7 +20,10 @@ import { useEvents } from "./hooks/useEvents";
 import { useAuth } from "./hooks/useAuth.js";
 import { Dimmer, Loader, Image, Segment } from "semantic-ui-react";
 import AppLogo from "./assets/logoOfApp.png";
-const NoMatch = () => <h1>404</h1>;
+const NoMatch = () => (
+<div className="noMatchContener">
+<img className="noMatchImage" src="https://cdn12.picryl.com/photo/2016/12/31/page-not-found-404-error-bc6717-1024.png"/>
+</div>);
 
 function App() {
   const loggedUser = useAuth();
