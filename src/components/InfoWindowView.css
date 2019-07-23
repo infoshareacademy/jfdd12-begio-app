@@ -36,10 +36,24 @@
     width: auto;
   }
 
-  .infoWindowImage {
-    display: none;
-  }
   .infoWindowGoButton {
     margin-left: -0.5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .infoWindowCointainer {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+  }
+
+  .infoWindowEventName {
+    font-size: 14px;
+  }
+}
+@media (max-height: 400px) {
+  .infoWindowImage {
+    display: none;
   }
 }

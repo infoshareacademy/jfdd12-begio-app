@@ -17,6 +17,7 @@ body {
 @media (max-width: 850px) {
   .appView {
     flex-direction: column;
+    padding: 0;
   }
 }
 
