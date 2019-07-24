@@ -61,9 +61,9 @@ export const EventDate = ({ event }) => {
                         {event.startDate.year}
                     </p>
                     <p>
-                        {event.startDate.time[0]}:
-                        {event.startDate.time[1] + "0"} -{event.endDate.time[0]}
-                        :{event.endDate.time[1] + "0"}
+                        {event.startDate.time.hour}:
+                        {event.startDate.time.minute} -{event.endDate.time.hour}
+                        :{event.endDate.time.minute}
                     </p>
     </div>
   );

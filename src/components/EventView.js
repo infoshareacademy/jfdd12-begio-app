@@ -11,12 +11,14 @@ function EventView({
   addMyEvent,
   removeMyEvent,
   event,
-  toggleEventDetails
+  toggleEventDetails,
+  LoggedUser
 }) {
   return (
     <div>
       <div style={{ fontFamily: "Lato" }}>
         <h2>{event.title}</h2>
+
         <GoButton
           addMyEvent={addMyEvent}
           removeMyEvent={removeMyEvent}

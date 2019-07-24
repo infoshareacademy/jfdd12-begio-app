@@ -5,8 +5,10 @@ import MaterialIcon from "material-icons-react"
 import "./GoButton.css"
 import { addEvents, removeEvents } from "../services/UsersEventService"
 import { LocationContext } from "../contexts/LocationContext"
+import { useAuth } from "../hooks/useAuth"
 
 export function GoButton(props) {
+    const loggedUser = useAuth()
     const { event } = props
     const { myEvents } = useContext(LocationContext)
     // console.log(myEvents)
@@ -21,6 +23,7 @@ export function GoButton(props) {
     }
     return (
         <Switch
+            enabled={loggedUser}
             onClick={() => toggleSwitch()}
             on={myEventsIds.includes(event.id)}
             className="switch"

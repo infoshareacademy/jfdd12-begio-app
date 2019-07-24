@@ -55,10 +55,6 @@
     transition: 0.3s;
 }
 
-.eventAdress:hover {
-    color: #49406dce;
-}
-
 .eventButton {
     margin: 5px;
 }
@@ -91,6 +87,11 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
+    margin-bottom: 0.1em;
+}
+
+.placeDateTime:hover {
+    color: #49406dce;
 }
 
 .placeDateTimeBody {
@@ -99,10 +100,17 @@
     justify-content: center;
     margin-left: 0.3em;
 }
+@media (max-width: 850px) {
+    .listElement {
+        padding-right: 10px;
+        font-size: 13px;
+    }
+}
 
 @media (max-width: 600px) {
     .listElement {
         flex-direction: column;
+        flex-wrap: wrap;
     }
     .imageElement {
         flex-basis: 50%;
@@ -114,6 +122,7 @@
     .eventButton {
         margin: 5px;
         display: flex;
+        flex-direction: row;
         justify-content: flex-end;
     }
 }

@@ -32,7 +32,7 @@ function EventsCalendar(props) {
       )
     );
   return (
-    <div style={{ height: 600, width: "100%" }}>
+    <div style={{ height: 600, width: "100%", marginBottom: "40px" }}>
       <Calendar
         localizer={localizer}
         events={currentUserEvents}
