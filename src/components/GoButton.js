@@ -1,28 +1,34 @@
-import React from "react";
-import Switch from "react-toggle-switch";
-import "../../node_modules/react-toggle-switch/dist/css/switch.min.css";
-import MaterialIcon from "material-icons-react";
-import "./GoButton.css";
-import { useAuth } from "../hooks/useAuth";
+import React, { useContext } from "react"
+import Switch from "react-toggle-switch"
+import "../../node_modules/react-toggle-switch/dist/css/switch.min.css"
+import MaterialIcon from "material-icons-react"
+import "./GoButton.css"
+import { addEvents, removeEvents } from "../services/UsersEventService"
+import { LocationContext } from "../contexts/LocationContext"
+import { useAuth } from "../hooks/useAuth"
 
 export function GoButton(props) {
-  const loggedUser = useAuth();
+    const loggedUser = useAuth()
+    const { event } = props
+    const { myEvents } = useContext(LocationContext)
+    // console.log(myEvents)
+    const myEventsIds = myEvents.map(event => event.id)
+    console.log(myEvents)
 
-  const { myEvents, removeMyEvent, addMyEvent, event } = props;
-
-  const toggleSwitch = () => {
-    myEvents.includes(event.id)
-      ? removeMyEvent(event.id)
-      : addMyEvent(event.id);
-  };
-  return (
-    <Switch
-      enabled={loggedUser}
-      onClick={() => toggleSwitch()}
-      on={myEvents.includes(event.id)}
-      className="switch"
-    >
-      {<MaterialIcon icon="directions_run" />}
-    </Switch>
-  );
+    console.log(myEventsIds)
+    const toggleSwitch = () => {
+        myEventsIds.includes(event.id)
+            ? removeEvents(event.id)
+            : addEvents(event.id)
+    }
+    return (
+        <Switch
+            enabled={loggedUser}
+            onClick={() => toggleSwitch()}
+            on={myEventsIds.includes(event.id)}
+            className="switch"
+        >
+            {<MaterialIcon icon="directions_run" />}
+        </Switch>
+    )
 }

@@ -1,127 +1,128 @@
 .listElement {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  border: 0.5px solid #ccc;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif !important;
-  text-align: left;
-  overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 0.5px solid #ccc;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+        "Helvetica Neue", sans-serif !important;
+    text-align: left;
+    overflow: hidden;
 }
 
 .photoContainer {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .imageElement {
-  width: 200px;
-  height: 100%;
-  border-radius: 5px 0 0 5px;
-  margin-bottom: 0px;
-  cursor: pointer;
-  transition: 0.7s;
-  flex-basis: 40%;
-  flex-grow: 1;
+    width: 200px;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    transition: 0.7s;
+    flex-basis: 40%;
+    flex-grow: 1;
+    user-select: none;
 }
 .imageElement:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .eventTitle {
-  cursor: pointer;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif !important;
-  font-size: 18px !important;
-  font-weight: 600 !important;
-  line-height: 1.44444em !important;
-  color: rgb(72, 72, 72);
-  transition: 0.3s;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+        "Helvetica Neue", sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 1.44444em !important;
+    color: rgb(72, 72, 72);
+    transition: 0.3s;
 }
 
 .eventTitle:hover {
-  color: #49406dce;
+    color: #49406dce;
 }
 
 .eventAdress {
-  cursor: pointer;
-  transition: 0.3s;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .eventButton {
-  margin: 5px;
+    margin: 5px;
 }
 
 .eventInfo {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 .eventNameDatePlace {
-  margin-left: 10px;
-  margin-top: 0.3em;
-  margin-bottom: 0.5em;
-  display: flex;
-  flex-direction: column;
-  flex-basis: 60%;
+    margin-left: 10px;
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 60%;
 }
 
 .materialIcon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .placeDateTime {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: center;
-  margin-bottom: 0.1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    margin-bottom: 0.1em;
 }
 
 .placeDateTime:hover {
-  color: #49406dce;
+    color: #49406dce;
 }
 
 .placeDateTimeBody {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 0.3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0.3em;
 }
 @media (max-width: 850px) {
-  .listElement {
-    padding-right: 10px;
-    font-size: 13px;
-  }
+    .listElement {
+        padding-right: 10px;
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 600px) {
-  .listElement {
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-  .imageElement {
-    flex-basis: 50%;
-    flex-grow: 1;
-  }
-  .eventNameDatePlace {
-    flex-basis: 50%;
-  }
-  .eventButton {
-    margin: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
+    .listElement {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .imageElement {
+        flex-basis: 50%;
+        flex-grow: 1;
+    }
+    .eventNameDatePlace {
+        flex-basis: 50%;
+    }
+    .eventButton {
+        margin: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
 }
