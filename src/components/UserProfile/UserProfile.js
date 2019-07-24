@@ -1,36 +1,31 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext } from "react"
 import EventsCalendar from "../Calendar"
 import { EventList } from "../EventList"
 import "./UserProfile.css"
 import { UserMessage } from "./UserMessage"
+import { LocationContext } from "../../contexts/LocationContext"
 
 function UserProfile(props) {
-    const userEvents = props.events.filter(event =>
-        props.myEvents.includes(event.id)
-    )
+    const { myEvents } = useContext(LocationContext)
 
     return props.myEvents.length !== 0 ? (
         <div className="containterProfile">
             <div className="eventsList">
                 <EventList
                     isOnUserProfile={true}
-                    myEvents={props.myEvents}
-                    setFavourite={props.setMyEvents}
-                    events={userEvents}
-                    addMyEvent={props.addMyEvent}
-                    removeMyEvent={props.removeMyEvent}
+                    myEvents={myEvents}
+                    events={myEvents}
                 />
             </div>
             <div style={{ width: "100%", flexBasis: "50%" }}>
                 <p className="userMessage">
                     <UserMessage
-                        userName={props.user.name}
-                        myEvents={props.myEvents}
+                        userName={"janek"}
+                        myEvents={myEvents}
                     />
                 </p>
                 <EventsCalendar
-                    events={props.events}
-                    userEvents={props.myEvents}
+                    myEvents={myEvents}
                 />
             </div>
         </div>
@@ -40,13 +35,11 @@ function UserProfile(props) {
                 <p className="userMessage">
                     <UserMessage
                         userName={props.user.name}
-                        myEvents={props.myEvents}
+                        myEvents={myEvents}
                     />
                 </p>
                 <EventsCalendar
-                    myEvents={props.myEvents}
-                    events={props.events}
-                    userEvents={props.myEvents}
+                    myEvents={myEvents}
                 />
             </div>
         </div>
