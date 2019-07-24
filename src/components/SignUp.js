@@ -37,6 +37,7 @@ export class SignUp extends React.Component {
           .child(value.user.uid)
           .set({
             name: this.state.name,
+            events: 0
           });
       });
   };
