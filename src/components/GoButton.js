@@ -27,7 +27,7 @@ export function GoButton(props) {
         <Switch
             enabled={loggedUser}
             onClick={() => toggleSwitch()}
-            on={myEventsIds.includes(event.id)}
+            on={loggedUser ? myEventsIds.includes(event.id) : false}
             className="switch"
         >
             {<MaterialIcon icon="directions_run" />}
