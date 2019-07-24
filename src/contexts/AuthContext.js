@@ -1,22 +1,22 @@
-import React, { useState, useEffect, createContext } from "react";
-import firebase from "firebase";
+import React, { useState, useEffect, createContext } from "react"
+import firebase from "firebase"
 
-export const AuthContext = createContext();
+export const AuthContext = createContext()
 
 export const AuthProvider = props => {
-  const [loggedUser, setLoggedUser] = useState(null);
+    const [loggedUser, setLoggedUser] = useState(null)
 
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        setLoggedUser(user);
-      } else {
-        setLoggedUser(false);
-      }
-    });
-  }, []);
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                setLoggedUser(user)
+            } else {
+                setLoggedUser(false)
+            }
+        })
+    }, [])
 
-  return <AuthContext.Provider value={loggedUser} {...props} />;
-};
+    return <AuthContext.Provider value={loggedUser} {...props} />
+}
 
-export const AuthConsumer = AuthContext.Consumer;
+export const AuthConsumer = AuthContext.Consumer
