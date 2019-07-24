@@ -16,13 +16,13 @@ export function PhotoGallery(props) {
         interval={3000}
       >
         <div>
-          <img alt="d" src={props.one} />
+          <img className={styles["img_container"]} alt="d" src={props.one} />
         </div>
         <div>
-          <img alt="sd" src={props.two} />
+          <img className={styles["img_container"]} alt="sd" src={props.two} />
         </div>
         <div>
-          <img alt="sd" src={props.three} />
+          <img className={styles["img_container"]} alt="sd" src={props.three} />
         </div>
       </Carousel>
     </div>

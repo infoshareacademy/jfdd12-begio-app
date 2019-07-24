@@ -36,10 +36,9 @@ function EventView({
           <div style={{ display: "flex", flexFlow: "row" }}>
             <img
               style={{
-                width: "50px",
-                height: "50px",
-                marginRight: "8px",
-                marginBottom: "10px"
+                width: "40px",
+                height: "40px",
+                marginRight: "8px"
               }}
               src={calendar}
               alt="calendar"
@@ -48,9 +47,9 @@ function EventView({
           </div>
           <p
             style={{
-              fontSize: "20px",
+              fontSize: "18px",
               fontWeight: "bold",
-              marginBottom: "10px"
+              marginBottom: "8px"
             }}
           >
             {" "}
