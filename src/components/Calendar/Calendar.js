@@ -7,9 +7,8 @@ import "moment/locale/pl";
 const localizer = momentLocalizer(moment);
 
 function EventsCalendar(props) {
-  const { events, userEvents } = props;
-  const currentUserEvents = events
-    .filter(event => userEvents.includes(event.id))
+  const { myEvents } = props;
+  const currentUserEvents = myEvents
     .map(event =>
       Object.assign(
         {},
