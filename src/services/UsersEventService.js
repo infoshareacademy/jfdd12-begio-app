@@ -1,8 +1,6 @@
 import firebase from "firebase"
-import { mapObjectToArray } from "../utils/mapObjectToArray"
 
-export const fetchMyEvents = callback => {
-    const uid = "28b919ba-7570-477a-9fe1-67d7729d5bb5"
+export const fetchMyEvents = (callback, uid) => {
     const userEventsReference = `users/${uid}/events`
     const myEventsRef = firebase.database().ref(userEventsReference)
 
@@ -16,8 +14,7 @@ export const fetchMyEvents = callback => {
     return myEventsRef
 }
 
-export const addEvents = eventId => {
-    const uid = "28b919ba-7570-477a-9fe1-67d7729d5bb5"
+export const addEvents = (eventId, uid) => {
     const userEventsReference = `users/${uid}/events`
     const myEventsRef = firebase.database().ref(userEventsReference)
 
@@ -39,8 +36,7 @@ export const addEvents = eventId => {
     //   const userId = firebase.auth().currentUser.uid
 }
 
-export const removeEvents = eventId => {
-    const uid = "28b919ba-7570-477a-9fe1-67d7729d5bb5"
+export const removeEvents = (eventId, uid) => {
     const userEventsReference = `users/${uid}/events`
     const myEventsRef = firebase.database().ref(userEventsReference)
 

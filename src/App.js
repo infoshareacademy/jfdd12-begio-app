@@ -35,6 +35,7 @@ function App() {
     const loggedUser = useAuth()
     const events = useEvents()
     const [currentUser] = useState(users[0])
+    console.log(loggedUser)
 
     const logOut = () => {
         firebaseInit.auth().signOut()
