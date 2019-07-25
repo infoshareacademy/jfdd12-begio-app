@@ -123,7 +123,10 @@ export function EventListElement(props) {
                                             <div className="materialIcon">
                                                 <MaterialIcon icon="place" />
                                             </div>
-                                            <div className="placeDateTimeBody">
+                                            <div
+                                                style={{ cursor: "pointer" }}
+                                                className="placeDateTimeBody"
+                                            >
                                                 {event.address.street}{" "}
                                                 {event.address.houseNumber}
                                             </div>
