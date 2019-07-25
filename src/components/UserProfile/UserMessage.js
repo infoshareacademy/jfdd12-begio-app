@@ -7,8 +7,8 @@ export class UserMessage extends Component {
         <p>
           {" "}
           <img className="infoImg" src={info} /> Witaj{" "}
-          <b>{this.props.userName}</b>, jesteś zapisany na{" "}
-          <b>{this.props.myEvents.length}</b> wydarzenie.{" "}
+          <b>{this.props.userName}</b>, masz <b>{this.props.myEvents.length}</b>{" "}
+          wydarzenie w kalendarz.{" "}
         </p>
       );
     } else if (
@@ -18,8 +18,8 @@ export class UserMessage extends Component {
       return (
         <p>
           <img className="infoImg" src={info} /> Witaj{" "}
-          <b>{this.props.userName}</b>, jesteś zapisany na{" "}
-          <b>{this.props.myEvents.length}</b> wydarzenia.{" "}
+          <b>{this.props.userName}</b>, masz <b>{this.props.myEvents.length}</b>{" "}
+          wydarzenia w kalendarzu.{" "}
         </p>
       );
     } else if (this.props.myEvents.length === 0)
@@ -27,8 +27,8 @@ export class UserMessage extends Component {
         <p>
           {" "}
           <img className="infoImg" src={info} /> Witaj{" "}
-          <b>{this.props.userName}</b>, nie jesteś jeszcze zapisany na żadne
-          wydarzenie.{" "}
+          <b>{this.props.userName}</b>, nie masz jeszcze żadnych wydarzeń w
+          kalendarzu.{" "}
         </p>
       );
     else {
@@ -36,8 +36,8 @@ export class UserMessage extends Component {
         <p>
           {" "}
           <img className="infoImg" src={info} /> Witaj{" "}
-          <b>{this.props.userName}</b>, jesteś zapisany na{" "}
-          <b>{this.props.myEvents.length}</b> wydarzeń.{" "}
+          <b>{this.props.userName}</b>, masz <b>{this.props.myEvents.length}</b>{" "}
+          wydarzeń w kalendarzu.{" "}
         </p>
       );
     }
