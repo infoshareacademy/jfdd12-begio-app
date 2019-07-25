@@ -97,22 +97,42 @@ a:link {
   .navigation {
     position: fixed;
     z-index: 20;
-    font-size: 10px;
   }
-
+  .userName {
+    font-size: 15px;
+    margin-left: 5px;
+  }
   .userImage {
     width: 60px;
     height: 60px;
   }
   .loginStyle {
     padding-bottom: 20px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 400px) {
+  .logoImage {
+    width: 130px;
+  }
   .userImage {
+    margin-top: 3px;
     width: 45px;
     height: 45px;
+  }
+  .userProfile {
+    flex-flow: column;
+  }
+  .userName {
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .loginStyle {
+    font-size: 13px;
+  }
+  .signUpStyle {
+    font-size: 13px;
   }
   .logoutStyle {
     font-size: 13px;
