@@ -18,8 +18,10 @@ import { Login } from "./components/Login"
 import { SignUp } from "./components/SignUp"
 import { useEvents } from "./hooks/useEvents"
 import { useAuth } from "./hooks/useAuth.js"
+import { useUserName } from "./hooks/useUserName"
 import { Dimmer, Loader, Image, Segment } from "semantic-ui-react"
 import AppLogo from "./assets/logoOfApp.png"
+import { fetchUserName } from "./services/UsersEventService"
 const NoMatch = () => (
     <div className="noMatchContener">
         <img
@@ -33,9 +35,11 @@ const NoMatch = () => (
 function App() {
     const { myEvents } = useContext(LocationContext)
     const loggedUser = useAuth()
+    const uid = loggedUser && loggedUser.uid
+    const name = useUserName()
+    console.log(name)
     const events = useEvents()
     const [currentUser] = useState(users[0])
-    console.log(loggedUser)
 
     const logOut = () => {
         firebaseInit.auth().signOut()
