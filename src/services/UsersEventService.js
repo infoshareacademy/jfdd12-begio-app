@@ -65,11 +65,11 @@ export const removeEvents = (eventId, uid) => {
     })
 }
 
-export const fetchUserName = (uid) => {
-    const userNameRef = `users/${uid}/name`
-    const userName = firebase.database().ref(userNameRef)
+export const fetchUserName = uid => {
+    const userName = `users/${uid}/name`
+    const userNameRef = firebase.database().ref(userName)
 
-    userName.once("value").then(snapshot =>{
-         return snapshot.val()
-         })
+    return userNameRef.once("value").then(snapshot => {
+        return snapshot.val()
+    })
 }
