@@ -8,7 +8,7 @@ export class UserMessage extends Component {
           {" "}
           <img className="infoImg" src={info} /> Witaj{" "}
           <b>{this.props.userName}</b>, masz <b>{this.props.myEvents.length}</b>{" "}
-          wydarzenie w kalendarz.{" "}
+          wydarzenie w kalendarzu.{" "}
         </p>
       );
     } else if (
