@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useContext } from "react"
 import {
     BrowserRouter as Router,
     Route,
@@ -87,7 +87,7 @@ function App() {
                             <UserProfile
                                 myEvents={myEvents}
                                 events={events}
-                                userName = {name}
+                                userName={name}
                             />
                         )}
                     />
