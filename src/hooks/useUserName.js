@@ -6,19 +6,15 @@ import firebase from "firebase"
 
 
 export const useUserName = () => {
-    const [userName, setUserName] = useState([])
+    const [userName, setUserName] = useState('')
     const loggedUser = useAuth()
     const uid = loggedUser && loggedUser.uid
 
     useEffect(() => {
         if (uid) {
-            const userNameR = fetchUserName(uid)
-            setUserName(userNameR)
-            return () => {
-                userNameR.off("value")
-            }
-        }
-    }, [uid])
+            fetchUserName(uid).then(name => setUserName(name))
+        }}, [uid])
+    
 
     return userName
 }
