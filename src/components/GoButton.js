@@ -9,6 +9,8 @@ import { useAuth } from "../hooks/useAuth"
 
 export function GoButton(props) {
     const loggedUser = useAuth()
+    const uid = loggedUser && loggedUser.uid
+
     const { event } = props
     const { myEvents } = useContext(LocationContext)
     // console.log(myEvents)
@@ -18,14 +20,14 @@ export function GoButton(props) {
     console.log(myEventsIds)
     const toggleSwitch = () => {
         myEventsIds.includes(event.id)
-            ? removeEvents(event.id)
-            : addEvents(event.id)
+            ? removeEvents(event.id, uid)
+            : addEvents(event.id, uid)
     }
     return (
         <Switch
             enabled={loggedUser}
             onClick={() => toggleSwitch()}
-            on={myEventsIds.includes(event.id)}
+            on={loggedUser ? myEventsIds.includes(event.id) : false}
             className="switch"
         >
             {<MaterialIcon icon="directions_run" />}
