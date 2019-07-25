@@ -104,6 +104,9 @@ a:link {
     width: 60px;
     height: 60px;
   }
+  .loginStyle {
+    padding-bottom: 20px;
+  }
 }
 
 @media (max-width: 400px) {

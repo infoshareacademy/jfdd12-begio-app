@@ -156,6 +156,9 @@ export function MapView(props) {
       {loggedUser ? null : (
         <div
           style={{
+            position: "fixed",
+            marginTop: "10px",
+            zIndex: 2,
             marginLeft: "10px",
             padding: "18px",
             background: "rgb(177, 177, 241)",
