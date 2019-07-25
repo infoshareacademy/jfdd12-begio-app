@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState } from "react"
 import { GoButton } from "./GoButton"
 import "./EventListElement.css"
 import MaterialIcon from "material-icons-react"
