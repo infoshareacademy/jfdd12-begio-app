@@ -1,0 +1,18 @@
+.photo {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.img_container {
+  display: block;
+  max-height: 340px;
+  width: auto;
+  height: auto;
+}
+
+@media (max-width: 850px) {
+  .photo {
+    margin: 0 auto;
+    width: 70%;
+  }
+}
