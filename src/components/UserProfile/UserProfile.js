@@ -1,47 +1,42 @@
-import React, { useEffect, useState } from "react";
-import EventsCalendar from "../Calendar";
-import { EventList } from "../EventList";
-import "./UserProfile.css";
-import { UserMessage } from "./UserMessage";
+import React, { useContext } from "react"
+import EventsCalendar from "../Calendar"
+import { EventList } from "../EventList"
+import "./UserProfile.css"
+import { UserMessage } from "./UserMessage"
+import { LocationContext } from "../../contexts/LocationContext"
 
 function UserProfile(props) {
-  const userEvents = props.events.filter(event =>
-    props.myEvents.includes(event.id)
-  );
+    const { myEvents } = useContext(LocationContext)
 
-  return props.myEvents.length !== 0 ? (
-    <div className="containterProfile">
-      <div className="eventsList">
-        <EventList
-          isOnUserProfile={true}
-          myEvents={props.myEvents}
-          setFavourite={props.setMyEvents}
-          events={userEvents}
-          addMyEvent={props.addMyEvent}
-          removeMyEvent={props.removeMyEvent}
-        />
-      </div>
-      <div style={{ width: "100%", flexBasis: "50%" }}>
-        <p className="userMessage">
-          <UserMessage userName={props.user.name} myEvents={props.myEvents} />
-        </p>
-        <EventsCalendar events={props.events} userEvents={props.myEvents} />
-      </div>
-    </div>
-  ) : (
-    <div className="containterProfile">
-      <div style={{ width: "100%" }}>
-        <p className="userMessage">
-          <UserMessage userName={props.user.name} myEvents={props.myEvents} />
-        </p>
-        <EventsCalendar
-          myEvents={props.myEvents}
-          events={props.events}
-          userEvents={props.myEvents}
-        />
-      </div>
-    </div>
-  );
+    return props.myEvents.length !== 0 ? (
+        <div className="containterProfile">
+            <div className="eventsList">
+                <EventList
+                    isOnUserProfile={true}
+                    myEvents={myEvents}
+                    events={myEvents}
+                />
+            </div>
+            <div style={{ width: "100%", flexBasis: "50%" }}>
+                <p className="userMessage">
+                    <UserMessage userName={props.userName} myEvents={myEvents} />
+                </p>
+                <EventsCalendar myEvents={myEvents} />
+            </div>
+        </div>
+    ) : (
+        <div className="containterProfile">
+            <div style={{ width: "100%" }}>
+                <p className="userMessage">
+                    <UserMessage
+                        userName={props.userName}
+                        myEvents={myEvents}
+                    />
+                </p>
+                <EventsCalendar myEvents={myEvents} />
+            </div>
+        </div>
+    )
 }
 
-export default UserProfile;
+export default UserProfile

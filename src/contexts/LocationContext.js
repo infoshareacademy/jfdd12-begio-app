@@ -1,15 +1,18 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import { useMyEvents } from "../hooks/useMyEvents"
 
-const LocationContext = React.createContext()
+export const LocationContext = React.createContext()
 
 export const LocationProvider = props => {
+    const myEvents = useMyEvents()
     const [selectedEvent, setSelectedEvent] = useState(null)
 
     return (
         <LocationContext.Provider
             value={{
                 selectedEvent,
-                setSelectedEvent
+                setSelectedEvent,
+                myEvents
             }}
             {...props}
         />

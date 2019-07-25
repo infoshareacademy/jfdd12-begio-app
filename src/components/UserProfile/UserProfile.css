@@ -4,10 +4,10 @@
   padding: 20px;
 }
 
-.eventsList{
-    flex-grow: 1;
-    flex-basis: 50%;
-    margin-right: 0.5em;
+.eventsList {
+  flex-grow: 1;
+  flex-basis: 50%;
+  margin-right: 0.5em;
 }
 
 .userMessage {
@@ -27,8 +27,18 @@
   background: rgb(144, 144, 197);
 }
 
-@media (max-width: 850px)  {
-    .containterProfile {
-        flex-direction: column-reverse;
-    }
+@media (max-width: 850px) {
+  .containterProfile {
+    flex-direction: column-reverse;
+  }
+  .userMessage {
+    width: 70%;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 665px) {
+  .containterProfile {
+    padding-top: 50px;
+  }
 }

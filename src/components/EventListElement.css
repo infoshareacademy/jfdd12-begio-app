@@ -27,6 +27,7 @@
     transition: 0.7s;
     flex-basis: 40%;
     flex-grow: 1;
+    user-select: none;
 }
 .imageElement:hover {
     transform: scale(1.1);
@@ -75,16 +76,16 @@
     flex-basis: 60%;
 }
 
-.materialIcon{
+.materialIcon {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.placeDateTime{
+.placeDateTime {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
     align-content: center;
     margin-bottom: 0.1em;
 }
@@ -93,11 +94,17 @@
     color: #49406dce;
 }
 
-.placeDateTimeBody{
+.placeDateTimeBody {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 0.3em;
+}
+@media (max-width: 850px) {
+    .listElement {
+        padding-right: 10px;
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 600px) {

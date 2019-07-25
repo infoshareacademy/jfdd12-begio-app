@@ -1,21 +1,40 @@
 body {
-    background-color:white;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  background-color: white;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif !important;
 }
 
 .appView {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 20px;
 }
 
 .eventList {
-    flex-grow: 1;
+  flex-grow: 1;
+}
+
+.noMatchContener {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.noMatchImage {
+  width: 80%;
+  height: 80%;
 }
 
 @media (max-width: 850px) {
-    .appView {
-        flex-direction: column;
-    }
+  .appView {
+    flex-direction: column;
+    padding: 0;
+  }
 }
 
+@media (max-width: 665px) {
+  .appView {
+    padding-top: 63px;
+  }
+}
