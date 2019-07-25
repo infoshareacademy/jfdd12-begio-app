@@ -9,7 +9,6 @@ import { EventList } from "./components/EventList"
 import { MapView } from "./components/MapView"
 
 import Navbar from "./components/Navbar"
-import users from "./users.json"
 import UserProfile from "./components/UserProfile"
 import "./App.css"
 import { LocationContext } from "./contexts/LocationContext"
@@ -21,7 +20,6 @@ import { useAuth } from "./hooks/useAuth.js"
 import { useUserName } from "./hooks/useUserName"
 import { Dimmer, Loader, Image, Segment } from "semantic-ui-react"
 import AppLogo from "./assets/logoOfApp.png"
-import { fetchUserName } from "./services/UsersEventService"
 const NoMatch = () => (
     <div className="noMatchContener">
         <img
@@ -35,11 +33,9 @@ const NoMatch = () => (
 function App() {
     const { myEvents } = useContext(LocationContext)
     const loggedUser = useAuth()
-    const uid = loggedUser && loggedUser.uid
     const name = useUserName()
     console.log(name)
     const events = useEvents()
-    const [currentUser] = useState(users[0])
 
     const logOut = () => {
         firebaseInit.auth().signOut()
@@ -59,7 +55,7 @@ function App() {
     return (
         <Router>
             <div>
-                <Navbar user={currentUser} logOut={logOut} />
+                <Navbar user={name} logOut={logOut} />
 
                 <Switch>
                     <Route
@@ -89,9 +85,9 @@ function App() {
                         path="/user-profile"
                         render={() => (
                             <UserProfile
-                                user={currentUser}
                                 myEvents={myEvents}
                                 events={events}
+                                userName = {name}
                             />
                         )}
                     />

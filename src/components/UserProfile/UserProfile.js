@@ -19,7 +19,7 @@ function UserProfile(props) {
             </div>
             <div style={{ width: "100%", flexBasis: "50%" }}>
                 <p className="userMessage">
-                    <UserMessage userName={"janek"} myEvents={myEvents} />
+                    <UserMessage userName={props.userName} myEvents={myEvents} />
                 </p>
                 <EventsCalendar myEvents={myEvents} />
             </div>
@@ -29,7 +29,7 @@ function UserProfile(props) {
             <div style={{ width: "100%" }}>
                 <p className="userMessage">
                     <UserMessage
-                        userName={props.user.name}
+                        userName={props.userName}
                         myEvents={myEvents}
                     />
                 </p>

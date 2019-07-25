@@ -21,11 +21,11 @@ const Navbar = props => {
               <img
                 className="userImage"
                 src={`https://api.adorable.io/avatars/285/${
-                  props.user.name
+                  props.name
                 }.png`}
                 alt="user logo"
               />
-              <p className="userName">{props.user.name} </p>
+              <p className="userName">{props.name} </p>
             </div>
           </NavLink>
           <NavLink activeClassName="activeNavlink" to="/" exact>
