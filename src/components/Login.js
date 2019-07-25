@@ -30,7 +30,7 @@ export class Login extends React.Component {
     firebaseInit
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .catch(error => alert(error));
+      .catch(error => alert("Nieprawidłowy e-mail lub hasło!"));
   };
 
   render() {
