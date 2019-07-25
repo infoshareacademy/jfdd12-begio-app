@@ -29,7 +29,8 @@ export class Login extends React.Component {
     e.preventDefault();
     firebaseInit
       .auth()
-      .signInWithEmailAndPassword(this.state.email, this.state.password);
+      .signInWithEmailAndPassword(this.state.email, this.state.password)
+      .catch(error => alert(error));
   };
 
   render() {
