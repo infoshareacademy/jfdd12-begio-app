@@ -55,7 +55,7 @@ function App() {
     return (
         <Router>
             <div>
-                <Navbar user={name} logOut={logOut} />
+                <Navbar name={name} logOut={logOut} />
 
                 <Switch>
                     <Route
