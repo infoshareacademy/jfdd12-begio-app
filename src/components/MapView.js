@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   GoogleMap,
   withScriptjs,
@@ -150,10 +150,15 @@ class Map extends React.Component {
 }
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 export function MapView(props) {
+  const [message, setMessage] = useState("open");
+
+  const closeLogOutMessage = () => {
+    setMessage("closed");
+  };
   const loggedUser = useAuth();
   return (
     <div style={{ flexBasis: "50%", height: "85vh" }}>
-      {loggedUser ? null : (
+      {loggedUser || message === "closed" ? null : (
         <div
           style={{
             position: "fixed",
@@ -169,6 +174,20 @@ export function MapView(props) {
             marginBottom: "10px"
           }}
         >
+          <button
+            onClick={closeLogOutMessage}
+            style={{
+              borderRadius: "5px",
+              color: "rgb(73, 64, 109)",
+              float: "right",
+              background: "white",
+              border: "none",
+              padding: "3px 7px",
+              cursor: "pointer"
+            }}
+          >
+            x
+          </button>
           <img alt="deny" style={{ width: "8%" }} src={deny} />
           Aby dodawać wydarzenia do Twojej listy,{" "}
           <NavLink
