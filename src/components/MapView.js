@@ -15,6 +15,7 @@ import { InfoWindowView } from "./InfoWindowView"
 import { LocationConsumer } from "../contexts/LocationContext"
 import { useAuth } from "../hooks/useAuth.js"
 import mapstyles from "./mapstyles"
+Modal.setAppElement("#root")
 class Map extends React.Component {
     state = {
         showEventDetails: false

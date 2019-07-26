@@ -5,7 +5,7 @@ import MaterialIcon from "material-icons-react"
 import ReactModal from "react-modal"
 import EventView from "../components/EventView"
 import { LocationConsumer } from "../contexts/LocationContext"
-
+ReactModal.setAppElement("#root")
 export function EventListElement(props) {
     const modalStyles = {
         overlay: { zIndex: 10, backgroundColor: "rgba(192,192,192, 0.75)" },

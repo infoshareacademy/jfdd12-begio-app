@@ -18,21 +18,24 @@ function UserProfile(props) {
                 />
             </div>
             <div style={{ width: "100%", flexBasis: "50%" }}>
-                <p className="userMessage">
-                    <UserMessage userName={props.userName} myEvents={myEvents} />
-                </p>
+                <div className="userMessage">
+                    <UserMessage
+                        userName={props.userName}
+                        myEvents={myEvents}
+                    />
+                </div>
                 <EventsCalendar myEvents={myEvents} />
             </div>
         </div>
     ) : (
         <div className="containterProfile">
             <div style={{ width: "100%" }}>
-                <p className="userMessage">
+                <div className="userMessage">
                     <UserMessage
                         userName={props.userName}
                         myEvents={myEvents}
                     />
-                </p>
+                </div>
                 <EventsCalendar myEvents={myEvents} />
             </div>
         </div>
