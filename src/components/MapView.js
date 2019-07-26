@@ -45,8 +45,8 @@ class Map extends React.Component {
                             defaultCenter={{ lat: 54.372158, lng: 18.638306 }}
                         >
                             <MarkerClusterer enableRetinaIcons gridSize={40}>
-                                {this.props.events.map(event => (
-                                    <LocationConsumer>
+                                {this.props.events.map((event, index) => (
+                                    <LocationConsumer key={index}>
                                         {value => (
                                             <Marker
                                                 key={event.id}

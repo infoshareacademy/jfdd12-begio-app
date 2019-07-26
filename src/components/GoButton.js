@@ -13,11 +13,7 @@ export function GoButton(props) {
 
     const { event } = props
     const { myEvents } = useContext(LocationContext)
-    // console.log(myEvents)
     const myEventsIds = myEvents.map(event => event.id)
-    console.log(myEvents)
-
-    console.log(myEventsIds)
     const toggleSwitch = () => {
         myEventsIds.includes(event.id)
             ? removeEvents(event.id, uid)
@@ -25,7 +21,7 @@ export function GoButton(props) {
     }
     return (
         <Switch
-            enabled={loggedUser}
+            enabled={Boolean(loggedUser)}
             onClick={() => toggleSwitch()}
             on={loggedUser ? myEventsIds.includes(event.id) : false}
             className="switch"
