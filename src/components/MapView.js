@@ -45,7 +45,7 @@ class Map extends React.Component {
                                 styles: mapstyles
                             }}
                             defaultZoom={13}
-                            defaultCenter={{ lat: 54.372158, lng: 18.638306 }}
+                            defaultCenter={{ lat: 54.369398, lng: 18.594568 }}
                         >
                             <MarkerClusterer enableRetinaIcons gridSize={40}>
                                 {this.props.events.map((event, index) => (
@@ -200,7 +200,7 @@ export function MapView(props) {
                         padding: "18px",
                         background: "rgb(177, 177, 241)",
                         borderRadius: "0 15px 15px 15px",
-                        width: "400px",
+                        width: "300px",
                         fontSize: "16px",
                         color: "white",
                         marginBottom: "10px"

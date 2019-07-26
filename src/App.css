@@ -1,7 +1,6 @@
 body {
   background-color: white;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
 }
 
 .appView {
@@ -29,7 +28,10 @@ body {
 @media (max-width: 850px) {
   .appView {
     flex-direction: column;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 63px;
+    padding-bottom: 0;
   }
 }
 
