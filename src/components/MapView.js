@@ -14,6 +14,7 @@ import Modal from "react-modal"
 import { InfoWindowView } from "./InfoWindowView"
 import { LocationConsumer } from "../contexts/LocationContext"
 import { useAuth } from "../hooks/useAuth.js"
+import mapstyles from "./mapstyles"
 class Map extends React.Component {
     state = {
         showEventDetails: false
@@ -39,9 +40,10 @@ class Map extends React.Component {
                                 fullscreenControl: false,
                                 streetViewControl: false,
                                 showingInfoWindow: true,
-                                minZoom: 12.5
+                                minZoom: 13,
+                                styles: mapstyles
                             }}
-                            defaultZoom={12.5}
+                            defaultZoom={13}
                             defaultCenter={{ lat: 54.372158, lng: 18.638306 }}
                         >
                             <MarkerClusterer enableRetinaIcons gridSize={40}>

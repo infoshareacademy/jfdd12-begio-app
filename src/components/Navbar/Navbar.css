@@ -98,6 +98,9 @@ a:link {
 }
 
 @media (max-width: 850px) {
+  .logo {
+    margin-left: 0.5em;
+  }
   .navigation {
     position: fixed;
     z-index: 20;
@@ -150,7 +153,4 @@ a:link {
   }
 }
 @media (max-width: 330px) {
-  .logoImage {
-    margin-left: -20px;
-  }
 }
