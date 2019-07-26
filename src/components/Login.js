@@ -67,7 +67,7 @@ export class Login extends React.Component {
 
                                         <Button
                                             onClick={this.login}
-                                            color="#49406dce"
+                                            style={{ color: "#49406dce" }}
                                             fluid
                                             size="large"
                                         >

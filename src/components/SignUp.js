@@ -91,7 +91,7 @@ export class SignUp extends React.Component {
 
                                         <Button
                                             onClick={this.signUp}
-                                            color="#49406dce"
+                                            style={{ color: "#49406dce" }}
                                             fluid
                                             size="large"
                                         >
