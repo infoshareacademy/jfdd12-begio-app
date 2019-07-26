@@ -34,7 +34,6 @@ function App() {
     const { myEvents } = useContext(LocationContext)
     const loggedUser = useAuth()
     const name = useUserName()
-    console.log(name)
     const events = useEvents()
 
     const logOut = () => {
