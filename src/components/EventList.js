@@ -3,9 +3,21 @@ import { EventListElement } from "./EventListElement"
 import "./EventList.css"
 
 export class EventList extends Component {
+    state = {
+        listUp: false
+    };
+    showList = () => {
+        this.setState({ listUp: !this.state.listUp });
+    };
     render() {
         return (
-            <div className="eventList">
+            <div
+                className={this.state.listUp === false ? "eventList" : "eventListUp"}
+            >
+                <button onClick={this.showList} className="showListButton">
+
+                    {this.state.listUp === false ? "▲" : "▼"}
+                </button>
                 <ul className="list">
                     {this.props.events.map(event => (
                         <EventListElement

@@ -11,11 +11,90 @@
   flex-basis: 50%;
 }
 
+.showListButton {
+  display: none;
+}
+
+.eventListUp {
+  width: 50%;
+}
+
 @media (max-width: 850px) {
   .eventList {
-    margin-top: 44px;
+    transition: 0.5s;
+
     height: 85vh;
     overflow: auto;
     flex-basis: 50%;
+    z-index: 0;
+  }
+
+  .showListButton {
+    display: block;
+    border: none;
+    background: rgb(73, 64, 109);
+    margin: 0 auto;
+    width: 300px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .eventListUp {
+    transition: 0.5s;
+    z-index: 0;
+    margin-top: -600px;
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .eventListUp {
+    margin-top: -470px;
+  }
+}
+
+@media (max-width: 400px) {
+  .eventListUp {
+    margin-top: -470px;
+  }
+}
+
+/* @media (min-height: 660px) {
+  .eventListUp {
+    margin-top: -550px;
+  }
+}
+
+@media (min-height: 730px) {
+  .eventListUp {
+    margin-top: -610px;
+  }
+}
+
+@media (min-height: 810px) {
+  .eventListUp {
+    margin-top: -670px;
+  }
+}
+@media (min-height: 1024px) {
+  .eventListUp {
+    margin-top: -830px;
+  }
+} */
+@media (height: 812px) {
+  .eventListUp {
+    margin-top: -630px;
+  }
+}
+@media (height: 1024px) {
+  .eventListUp {
+    margin-top: -830px;
+  }
+}
+@media (height: 667px) {
+  .eventListUp {
+    margin-top: -550px;
   }
 }
