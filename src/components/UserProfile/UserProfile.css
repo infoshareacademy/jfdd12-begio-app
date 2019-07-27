@@ -30,8 +30,15 @@
 }
 
 @media (max-width: 850px) {
+  .userMessage {
+    margin-left: 10px;
+    width: 300px;
+  }
+  .containterProfile {
+    padding: 0;
+  }
   .marginDiv {
-    margin-top: 35px;
+    margin-top: 10px;
     z-index: 10;
     background: rgb(255, 255, 255);
     height: 17px;
@@ -44,13 +51,15 @@
     padding-top: 70px;
     flex-direction: column-reverse;
   }
-  .userMessage {
-    width: 70%;
-    font-size: 13px;
-  }
 }
 
 @media (max-width: 665px) {
+  .userMessage {
+    width: 250px;
+  }
+  .marginDiv {
+    margin-top: 30px;
+  }
   .containterProfile {
     padding-top: 70px;
   }
