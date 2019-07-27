@@ -61,28 +61,6 @@
   }
 }
 
-/* @media (min-height: 660px) {
-  .eventListUp {
-    margin-top: -550px;
-  }
-}
-
-@media (min-height: 730px) {
-  .eventListUp {
-    margin-top: -610px;
-  }
-}
-
-@media (min-height: 810px) {
-  .eventListUp {
-    margin-top: -670px;
-  }
-}
-@media (min-height: 1024px) {
-  .eventListUp {
-    margin-top: -830px;
-  }
-} */
 @media (height: 812px) {
   .eventListUp {
     margin-top: -630px;
