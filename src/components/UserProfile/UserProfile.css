@@ -30,9 +30,15 @@
 }
 
 @media (max-width: 850px) {
+  .marginDiv {
+    margin-top: 35px;
+    z-index: 10;
+    background: rgb(255, 255, 255);
+    height: 17px;
+    margin-bottom: 4px;
+  }
   .eventsList {
-    padding-top: 40px;
-    overflow: unset;
+    margin-top: -20px;
   }
   .containterProfile {
     padding-top: 70px;
