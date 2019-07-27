@@ -28,18 +28,18 @@ function UserProfile(props) {
             </div>
         </div>
     ) : (
-        <div className="containterProfile">
-            <div style={{ width: "100%" }}>
-                <div className="userMessage">
-                    <UserMessage
-                        userName={props.userName}
-                        myEvents={myEvents}
-                    />
+            <div className="containterProfile">
+                <div style={{ width: "100%" }}>
+                    <div className="userMessage">
+                        <UserMessage
+                            userName={props.userName}
+                            myEvents={myEvents}
+                        />
+                    </div>
+                    <EventsCalendar myEvents={myEvents} />
                 </div>
-                <EventsCalendar myEvents={myEvents} />
             </div>
-        </div>
-    )
+        )
 }
 
 export default UserProfile

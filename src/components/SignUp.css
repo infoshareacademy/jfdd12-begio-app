@@ -1,0 +1,23 @@
+@media (max-width: 850px) {
+  .all {
+    margin: 0 10%;
+  }
+}
+
+@media (max-width: 851px) {
+  .logoBig {
+    margin-top: 60px;
+  }
+  .logoBigSignUp {
+    margin-top: 110px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logoBig {
+    margin-top: 55px;
+  }
+  .logoBigImg {
+    width: 50%;
+  }
+}

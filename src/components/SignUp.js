@@ -7,7 +7,7 @@ import "firebase/auth"
 import firebaseInit from "../firebase"
 import AppLogo from "../assets/logoOfApp.png"
 import { AuthConsumer } from "../contexts/AuthContext"
-
+import "./SignUp.css"
 export class SignUp extends React.Component {
     state = {
         email: "",
@@ -49,62 +49,64 @@ export class SignUp extends React.Component {
                     }
 
                     return (
-                        <Grid
-                            textAlign="center"
-                            style={{ height: "100vh" }}
-                            verticalAlign="middle"
-                        >
-                            <Grid.Column style={{ maxWidth: 450 }}>
-                                <img alt="GoLogo" src={AppLogo} />
-                                <Header as="h2" color="grey" textAlign="center">
-                                    Witaj w Go!Gdańsk
+                        <div className="all">
+                            <Grid
+                                textAlign="center"
+                                style={{ height: "80vh" }}
+                                verticalAlign="middle"
+                            >
+                                <Grid.Column style={{ maxWidth: 450 }}>
+                                    <div className="logoBigSignUp"><img className="logoBigImg" alt="GoLogo" src={AppLogo} /></div>
+                                    <Header as="h2" color="grey" textAlign="center">
+                                        Witaj w Go!Gdańsk
                                 </Header>
 
-                                <Header>Zarejestruj się</Header>
-                                <Form size="large">
-                                    <Segment stacked>
-                                        <Form.Input
-                                            fluid
-                                            icon="user"
-                                            iconPosition="left"
-                                            placeholder="userName"
-                                            onChange={this.handleChange}
-                                            name="name"
-                                        />
-                                        <Form.Input
-                                            fluid
-                                            icon="user"
-                                            iconPosition="left"
-                                            placeholder="E-mail address"
-                                            onChange={this.handleChange}
-                                            name="email"
-                                        />
-                                        <Form.Input
-                                            fluid
-                                            icon="lock"
-                                            iconPosition="left"
-                                            placeholder="Password"
-                                            type="password"
-                                            name="password"
-                                            onChange={this.handleChange}
-                                        />
+                                    <Header>Zarejestruj się</Header>
+                                    <Form size="large">
+                                        <Segment stacked>
+                                            <Form.Input
+                                                fluid
+                                                icon="user"
+                                                iconPosition="left"
+                                                placeholder="userName"
+                                                onChange={this.handleChange}
+                                                name="name"
+                                            />
+                                            <Form.Input
+                                                fluid
+                                                icon="user"
+                                                iconPosition="left"
+                                                placeholder="E-mail address"
+                                                onChange={this.handleChange}
+                                                name="email"
+                                            />
+                                            <Form.Input
+                                                fluid
+                                                icon="lock"
+                                                iconPosition="left"
+                                                placeholder="Password"
+                                                type="password"
+                                                name="password"
+                                                onChange={this.handleChange}
+                                            />
 
-                                        <Button
-                                            onClick={this.signUp}
-                                            style={{ color: "#49406dce" }}
-                                            fluid
-                                            size="large"
-                                        >
-                                            Zarejestruj się!
+                                            <Button
+                                                onClick={this.signUp}
+                                                style={{ color: "#49406dce" }}
+                                                fluid
+                                                size="large"
+                                            >
+                                                Zarejestruj się!
                                         </Button>
-                                    </Segment>
-                                </Form>
-                                <Message>
-                                    Masz już konto?{" "}
-                                    <a href="/Login">Zaloguj się!</a>
-                                </Message>
-                            </Grid.Column>
-                        </Grid>
+                                        </Segment>
+                                    </Form>
+                                    <Message>
+                                        Masz już konto?{" "}
+                                        <a href="/Login">Zaloguj się!</a>
+                                    </Message>
+                                </Grid.Column>
+                            </Grid>
+                        </div>
                     )
                 }}
             </AuthConsumer>
