@@ -5,6 +5,8 @@
 }
 
 .eventsList {
+  width: 100%;
+  z-index: 10;
   flex-grow: 1;
   flex-basis: 50%;
   margin-right: 0.5em;
@@ -28,7 +30,12 @@
 }
 
 @media (max-width: 850px) {
+  .eventsList {
+    padding-top: 40px;
+    overflow: unset;
+  }
   .containterProfile {
+    padding-top: 70px;
     flex-direction: column-reverse;
   }
   .userMessage {

@@ -22,7 +22,6 @@
 @media (max-width: 850px) {
   .eventList {
     transition: 0.5s;
-
     height: 85vh;
     overflow: auto;
     flex-basis: 50%;

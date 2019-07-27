@@ -24,7 +24,9 @@ function UserProfile(props) {
                         myEvents={myEvents}
                     />
                 </div>
+
                 <EventsCalendar myEvents={myEvents} />
+
             </div>
         </div>
     ) : (
@@ -36,7 +38,9 @@ function UserProfile(props) {
                             myEvents={myEvents}
                         />
                     </div>
+
                     <EventsCalendar myEvents={myEvents} />
+
                 </div>
             </div>
         )
