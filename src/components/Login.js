@@ -30,13 +30,7 @@ export class Login extends React.Component {
             <AuthConsumer>
                 {loggedUser => {
                     if (loggedUser) {
-                            const redirectUrl =
-                              this.props.location.state &&
-                              this.props.location.state.from &&
-                              this.props.location.state.from.pathname;
-                        
-                            return <Redirect to={redirectUrl ? redirectUrl : "/"} />;
-                
+                        return <Redirect to="/user-profile" />
                     }
 
                     return (

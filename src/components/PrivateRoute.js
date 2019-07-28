@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
-import { Dimmer, Loader } from "semantic-ui-react";
+import { Dimmer} from "semantic-ui-react";
 import { LoaderForBegio } from "./Loader";
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -9,7 +9,7 @@ function PrivateRoute({ component: Component, ...rest }) {
 
   if (isLoggedIn === null) {
     return (
-      <Dimmer active>
+      <Dimmer>
         <LoaderForBegio/>
       </Dimmer>
     );
