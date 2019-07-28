@@ -1,0 +1,22 @@
+.calendarWithEvents{
+height: 80vh;
+width: 100%
+}
+
+@media (max-width: 1100px) {
+    .calendarWithEvents{
+        height: 75vh;
+        }
+  }
+  
+  @media (max-width: 665px) {
+    .calendarWithEvents{
+        height: 70vh;
+        }
+  }
+  
+  @media (max-width: 450px) {
+    .calendarWithEvents{
+        height: 60vh;
+        }
+    }

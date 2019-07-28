@@ -3,10 +3,13 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "moment/locale/pl";
+import "./Calendar.css"
 
 const localizer = momentLocalizer(moment);
 
+
 function EventsCalendar(props) {
+  const state = { scroll: new Date() }
   const { myEvents } = props;
   const currentUserEvents = myEvents
     .map(event =>
@@ -32,7 +35,7 @@ function EventsCalendar(props) {
       )
     );
   return (
-    <div style={{ height: 600, width: "100%", marginBottom: "40px" }}>
+    <div className="calendarWithEvents">
       <Calendar
         localizer={localizer}
         events={currentUserEvents}
@@ -40,6 +43,7 @@ function EventsCalendar(props) {
           month: true,
           day: true
         }}
+        scrollToTime={state.scroll}
         eventPropGetter={() => ({
           style: { backgroundColor: "#49406dce", cursor: "auto" }
         })}
