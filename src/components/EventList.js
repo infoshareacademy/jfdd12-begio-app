@@ -18,7 +18,7 @@ export class EventList extends Component {
 
                     {this.state.listUp === false ? "▲" : "▼"}
                 </button>
-                <ul className="list">
+                <ul className={this.state.listUp === false ? "list" : "listWithScroll"}>
                     {this.props.events.map(event => (
                         <EventListElement
                             isOnUserProfile={this.props.isOnUserProfile}

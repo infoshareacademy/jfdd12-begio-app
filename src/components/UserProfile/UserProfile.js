@@ -11,7 +11,7 @@ function UserProfile(props) {
     return props.myEvents.length !== 0 ? (
         <div className="containterProfile">
 
-            <div className="eventsList">
+            <div style={{ marginTop: "20px" }} className="eventsList">
                 <EventList
                     isOnUserProfile={true}
                     myEvents={myEvents}
