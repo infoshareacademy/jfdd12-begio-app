@@ -9,6 +9,7 @@ const localizer = momentLocalizer(moment);
 
 
 function EventsCalendar(props) {
+  const state = { scroll: new Date() }
   const { myEvents } = props;
   const currentUserEvents = myEvents
     .map(event =>
@@ -42,6 +43,7 @@ function EventsCalendar(props) {
           month: true,
           day: true
         }}
+        scrollToTime={state.scroll}
         eventPropGetter={() => ({
           style: { backgroundColor: "#49406dce", cursor: "auto" }
         })}
