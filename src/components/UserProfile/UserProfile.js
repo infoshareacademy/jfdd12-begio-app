@@ -4,11 +4,13 @@ import { EventList } from "../EventList"
 import "./UserProfile.css"
 import { UserMessage } from "./UserMessage"
 import { LocationContext } from "../../contexts/LocationContext"
+import { useAuth } from "../../hooks/useAuth.js"
 
 function UserProfile(props) {
+    const LoggedUser = useAuth()
     const { myEvents } = useContext(LocationContext)
 
-    return props.myEvents.length !== 0 ? (
+    return  LoggedUser ?  (props.myEvents.length !== 0 ? (
         <div className="containterProfile">
 
             <div style={{ marginTop: "20px" }} className="eventsList">
@@ -45,6 +47,16 @@ function UserProfile(props) {
 
                 </div>
             </div>
+        ))
+        :
+        (
+            <div className="noMatchContener">
+        <img
+            className="noMatchImage"
+            src="https://cdn12.picryl.com/photo/2016/12/31/page-not-found-404-error-bc6717-1024.png"
+            alt="404 Page Not Found"
+        />
+        </div>
         )
 }
 
