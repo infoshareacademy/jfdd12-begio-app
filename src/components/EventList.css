@@ -1,11 +1,11 @@
 .list {
-  height: auto;
+  height: 85vh;
   width: 100%;
   background-color: white;
   list-style-type: none;
 }
 .listWithScroll {
-  height: auto;
+  height: 85vh;
   width: 100%;
   background-color: white;
   list-style-type: none;
@@ -29,6 +29,8 @@
 
 @media (max-width: 850px) {
   .listWithScroll {
+    overflow: scroll;
+    overflow-x: hidden;
     height: 680px;
   }
   .eventList {
