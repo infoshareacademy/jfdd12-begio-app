@@ -36,7 +36,7 @@ class Map extends React.Component {
                                 value.setSelectedEvent(null)
                             }}
                             options={{
-                                // styles: mapStyles,
+
                                 mapTypeControl: false,
                                 fullscreenControl: false,
                                 streetViewControl: false,
@@ -247,9 +247,7 @@ export function DivOnMap(props) {
     return (
         <div style={{ width: "50%" }}>
             <Map
-                //  addMyEvent={props.addMyEvent}
-                //  removeMyEvent={props.removeMyEvent}
-                //  myEvents={props.myEvents}
+
                 {...props}
             />
         </div>

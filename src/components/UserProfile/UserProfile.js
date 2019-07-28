@@ -10,13 +10,15 @@ function UserProfile(props) {
 
     return props.myEvents.length !== 0 ? (
         <div className="containterProfile">
-            <div className="eventsList">
+
+            <div style={{ marginTop: "20px" }} className="eventsList">
                 <EventList
                     isOnUserProfile={true}
                     myEvents={myEvents}
                     events={myEvents}
                 />
             </div>
+            <div className="marginDiv"></div>
             <div style={{ width: "100%", flexBasis: "50%" }}>
                 <div className="userMessage">
                     <UserMessage
@@ -24,7 +26,9 @@ function UserProfile(props) {
                         myEvents={myEvents}
                     />
                 </div>
-                <EventsCalendar myEvents={myEvents} />
+
+                <EventsCalendar theme={{ height: 50 }} myEvents={myEvents} />
+
             </div>
         </div>
     ) : (
@@ -36,7 +40,9 @@ function UserProfile(props) {
                             myEvents={myEvents}
                         />
                     </div>
+
                     <EventsCalendar myEvents={myEvents} />
+
                 </div>
             </div>
         )

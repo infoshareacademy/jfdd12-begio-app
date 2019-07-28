@@ -1,8 +1,16 @@
 .list {
-  height: auto;
+  height: 85vh;
   width: 100%;
   background-color: white;
   list-style-type: none;
+}
+.listWithScroll {
+  height: 85vh;
+  width: 100%;
+  background-color: white;
+  list-style-type: none;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .eventList {
@@ -11,11 +19,81 @@
   flex-basis: 50%;
 }
 
+.showListButton {
+  display: none;
+}
+
+.eventListUp {
+  width: 50%;
+}
+
 @media (max-width: 850px) {
+  .listWithScroll {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 680px;
+  }
   .eventList {
-    margin-top: 44px;
+    margin-top: 45px;
+    transition: 0.5s;
+
     height: 85vh;
     overflow: auto;
     flex-basis: 50%;
+    z-index: 0;
+  }
+
+  .showListButton {
+    display: block;
+    border: none;
+    background: rgb(73, 64, 109);
+    margin: 0 auto;
+    width: 300px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .eventListUp {
+    transition: 0.5s;
+    z-index: 0;
+    margin-top: -610px;
+    width: 100%;
+  }
+}
+@media (max-width: 650px) {
+  .eventList {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .eventList {
+    margin-top: 5px;
+  }
+  .eventListUp {
+    margin-top: -480px;
+  }
+}
+
+@media (height: 812px) {
+  .eventListUp {
+    margin-top: -630px;
+  }
+}
+@media (height: 1024px) {
+  .eventListUp {
+    margin-top: -830px;
+  }
+}
+@media (height: 667px) {
+  .eventListUp {
+    margin-top: -550px;
+  }
+}
+@media (max-height: 500px) {
+  .showListButton {
+    display: none;
   }
 }

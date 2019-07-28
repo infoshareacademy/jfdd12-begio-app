@@ -81,6 +81,7 @@ export function EventListElement(props) {
             break
     }
 
+
     return (
         <li className="listElement">
             <div className="eventInfo">
@@ -114,24 +115,24 @@ export function EventListElement(props) {
                                             </div>
                                         </div>
                                     ) : (
-                                        <div
-                                            className="placeDateTime"
-                                            onClick={() =>
-                                                value.setSelectedEvent(event)
-                                            }
-                                        >
-                                            <div className="materialIcon">
-                                                <MaterialIcon icon="place" />
-                                            </div>
                                             <div
-                                                style={{ cursor: "pointer" }}
-                                                className="placeDateTimeBody"
+                                                className="placeDateTime"
+                                                onClick={() =>
+                                                    value.setSelectedEvent(event)
+                                                }
                                             >
-                                                {event.address.street}{" "}
-                                                {event.address.houseNumber}
+                                                <div className="materialIcon">
+                                                    <MaterialIcon icon="place" />
+                                                </div>
+                                                <div onClick={props.hideList}
+                                                    style={{ cursor: "pointer" }}
+                                                    className="placeDateTimeBody"
+                                                >
+                                                    {event.address.street}{" "}
+                                                    {event.address.houseNumber}
+                                                </div>
                                             </div>
-                                        </div>
-                                    )
+                                        )
                                 }}
                             </LocationConsumer>
                         </div>
@@ -143,10 +144,10 @@ export function EventListElement(props) {
                             </div>
                             <div className="placeDateTimeBody">
                                 {event.startDate.day !== event.endDate.day &&
-                                event.startDate.month === event.endDate.month
+                                    event.startDate.month === event.endDate.month
                                     ? `${event.startDate.day} -  ${
-                                          event.endDate.day
-                                      }`
+                                    event.endDate.day
+                                    }`
                                     : event.startDate.day}
                                 {` ${month} `}
                                 {event.startDate.year}
