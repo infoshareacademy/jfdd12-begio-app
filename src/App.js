@@ -18,6 +18,7 @@ import { useEvents } from "./hooks/useEvents"
 import { useAuth } from "./hooks/useAuth.js"
 import { useUserName } from "./hooks/useUserName"
 import {LoaderForBegio} from "./components/Loader"
+import PrivateRoute from "./components/PrivateRoute";
 
 const NoMatch = () => (
     <div className="noMatchContener">
@@ -68,7 +69,7 @@ function App() {
                             </div>
                         )}
                     />
-                    <Route
+                    <PrivateRoute
                         path="/user-profile"
                         render={() => (
                             <UserProfile
@@ -79,7 +80,6 @@ function App() {
                         )}
                     />
                     <Route path="/login" component={Login} />
-                    <Redirect from="/home" to="/" />
                     <Route path="/sign-up" component={SignUp} />
                     <Redirect from="/home" to="/" />
                     <Route component={NoMatch} />
