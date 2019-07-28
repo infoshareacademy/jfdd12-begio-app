@@ -33,14 +33,15 @@ function UserProfile(props) {
         </div>
     ) : (
             <div className="containterProfile">
-                <div style={{ width: "100%" }}>
+            <div style={{ marginTop: "20px" }} className="eventsList">
                     <div className="userMessage">
                         <UserMessage
                             userName={props.userName}
                             myEvents={myEvents}
                         />
                     </div>
-
+            </div>
+                <div style={{ width: "100%", flexBasis: "50%" }}>
                     <EventsCalendar myEvents={myEvents} />
 
                 </div>
