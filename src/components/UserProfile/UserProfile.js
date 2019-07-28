@@ -4,11 +4,16 @@ import { EventList } from "../EventList"
 import "./UserProfile.css"
 import { UserMessage } from "./UserMessage"
 import { LocationContext } from "../../contexts/LocationContext"
+import {LoaderForBegio} from "../Loader"
+import { useAuth } from "../../hooks/useAuth"
 
 function UserProfile(props) {
     const { myEvents } = useContext(LocationContext)
+    const loggedUser = useAuth()
 
-    return props.myEvents.length !== 0 ? (
+    return  loggedUser == null && props.myEvents.length === 0 ?  (
+        <LoaderForBegio/>
+    ) : (props.myEvents.length !== 0 ? (
         <div className="containterProfile">
 
             <div style={{ marginTop: "20px" }} className="eventsList">
@@ -45,7 +50,7 @@ function UserProfile(props) {
 
                 </div>
             </div>
-        )
+        ))
 }
 
 export default UserProfile

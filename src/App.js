@@ -7,7 +7,6 @@ import {
 } from "react-router-dom"
 import { EventList } from "./components/EventList"
 import { MapView } from "./components/MapView"
-
 import Navbar from "./components/Navbar"
 import UserProfile from "./components/UserProfile"
 import "./App.css"
@@ -18,8 +17,8 @@ import { SignUp } from "./components/SignUp"
 import { useEvents } from "./hooks/useEvents"
 import { useAuth } from "./hooks/useAuth.js"
 import { useUserName } from "./hooks/useUserName"
-import { Dimmer, Loader, Image, Segment } from "semantic-ui-react"
-import AppLogo from "./assets/logoOfApp.png"
+import {LoaderForBegio} from "./components/Loader"
+
 const NoMatch = () => (
     <div className="noMatchContener">
         <img
@@ -40,17 +39,6 @@ function App() {
         firebaseInit.auth().signOut()
     }
 
-    const LoaderExampleSizesInverted = () => (
-        <div style={{ width: "400px", margin: "30px auto" }}>
-            <Segment>
-                <Dimmer active inverted>
-                    <Loader size="massive">Wczytywanie...</Loader>
-                </Dimmer>
-                <Image src={AppLogo} />
-            </Segment>
-        </div>
-    )
-
     return (
         <Router>
             <div>
@@ -63,7 +51,7 @@ function App() {
                         render={() => (
                             <div className="appView">
                                 {loggedUser == null ? (
-                                    LoaderExampleSizesInverted()
+                                    <LoaderForBegio/>
                                 ) : (
                                     <>
                                         {" "}
