@@ -9,6 +9,10 @@ export class EventList extends Component {
     showList = () => {
         this.setState({ listUp: !this.state.listUp });
     };
+
+    hideList = () => {
+        this.setState({ listUp: false });
+    }
     render() {
         return (
             <div
@@ -21,6 +25,7 @@ export class EventList extends Component {
                 <ul className={this.state.listUp === false ? "list" : "listWithScroll"}>
                     {this.props.events.map(event => (
                         <EventListElement
+                            hideList={this.hideList}
                             isOnUserProfile={this.props.isOnUserProfile}
                             key={event.id}
                             addMyEvent={this.props.addMyEvent}
