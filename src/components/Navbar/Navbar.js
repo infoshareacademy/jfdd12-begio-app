@@ -30,7 +30,7 @@ const Navbar = props => {
                             <p className="userName">{props.name} </p>
                         </div>
                     </NavLink>
-                    <NavLink activeClassName="activeNavlink" to="/" exact>
+                    <NavLink  to="/" exact>
                         <span className="logoutStyle" onClick={props.logOut}>
                             Wyloguj się
                         </span>
@@ -38,10 +38,10 @@ const Navbar = props => {
                 </div>
             ) : (
                 <div className="userProfileLogOut">
-                    <NavLink to="/sign-up" exact>
+                    <NavLink activeClassName="activeNavlink" to="/sign-up" exact>
                         <span className="signUpStyle">Utwórz konto</span>
                     </NavLink>
-                    <NavLink to="/login" exact>
+                    <NavLink activeClassName="activeNavlink" to="/login" exact>
                         <span className="loginStyle">Zaloguj się</span>
                     </NavLink>
                 </div>
